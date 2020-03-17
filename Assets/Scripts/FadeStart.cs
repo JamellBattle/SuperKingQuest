@@ -15,10 +15,11 @@ public class FadeStart : MonoBehaviour
     // Update is called once per frame
     public void FadeIn()
     {
-        if (controller)
+        if (SceneManager.GetActiveScene().name == "ProloguePt1")
         {
-            if (SceneManager.GetActiveScene().name == "ProloguePt1")
+            if (controller)
             {
+            
                 controller.StartCoroutine(controller.FadeKing(0.5f));
             }
         }
