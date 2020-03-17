@@ -16,7 +16,7 @@ public class StartButton : MonoBehaviour
     {
         if (loadlevel)
         {
-            loadlevel.LoadNextLevel();
+            loadlevel.LoadNextLevel("ProloguePt1");
         }
     }
 

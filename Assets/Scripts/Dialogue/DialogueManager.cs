@@ -9,12 +9,22 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
     public Text nameText;
     public Text dialogueText;
+    public Text mainText;
+    public Text thoughtText;
+    public SpriteRenderer textbox;
     public Animator textAnim;
+    public Animator thoughtAnim;
+    public AnimationController controller;
+    public LevelLoader loadlevel;
+    public string nextScene;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         sentences = new Queue<string>();
+        mainText = dialogueText;
+        controller = (AnimationController)FindObjectOfType(typeof(AnimationController));
+        loadlevel = (LevelLoader)FindObjectOfType(typeof(LevelLoader));
     }
 
     public virtual void Update()
@@ -56,10 +66,10 @@ public class DialogueManager : MonoBehaviour
 
     public virtual IEnumerator TypeSentence(string sentence)
     {
-        dialogueText.text = "";
+        mainText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            mainText.text += letter;
             yield return 1f;
         }
     }
@@ -68,6 +78,7 @@ public class DialogueManager : MonoBehaviour
     {
 
         textAnim.SetBool("IsOpen", false);
+        loadlevel.LoadNextLevel(nextScene);
 
     }
 
