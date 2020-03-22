@@ -26,10 +26,6 @@ public class LevelLoader : MonoBehaviour
             yield return new WaitForSeconds(time);
             Debug.Log("FirstFade done waiting");
 
-            //firstCharacter.SetBool("Present", true);
-
-            //yield return new WaitForSeconds(1f);
-
             controller.StartCoroutine(controller.FirstFade(0.5f));
         }
         
@@ -37,10 +33,7 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    LoadNextLevel();
-        //}
+       
     }
 
     public void LoadNextLevel(string levelName)

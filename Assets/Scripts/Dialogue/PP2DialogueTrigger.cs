@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PP1DialogueTrigger : DialogueTrigger
+public class PP2DialogueTrigger : DialogueTrigger
 {
-    
     public override void TriggerDialogue()
     {
-        FindObjectOfType<PP1DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<PP2DialogueManager>().StartDialogue(dialogue);
     }
 }

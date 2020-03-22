@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 76818e6471a9c4805901c11b15a591d2
+guid: 715de919604ef4c18898238db55a6e7f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2720986750490905054
-    second: NPCBox
+      213: -5175901361549791178
+    second: King_Regular
   - first:
-      213: -999324308146694106
-    second: KingBox
+      213: 8617031663130293287
+    second: King_Smile
   - first:
-      213: -3046666788060387089
-    second: CocoBox
+      213: -6332452626724981657
+    second: King_Scary
   - first:
-      213: 1925706048961224802
-    second: OswaldBox
+      213: 7550701845688376578
+    second: King_Happy
   - first:
-      213: -6623418111485245502
-    second: HondaBox
+      213: 5491449222564550954
+    second: King_Surprised
   - first:
-      213: 8891365757875848732
-    second: EnemyBox
+      213: -5994169703294044208
+    second: King_Mad
   - first:
-      213: -8113884248214023479
-    second: ThoughtBox
+      213: 6782273084317399115
+    second: KingSheet_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPCBox
+      name: King_Regular
       rect:
         serializedVersion: 2
-        x: 119
-        y: 2186
-        width: 1260
-        height: 293
+        x: 0
+        y: 1208
+        width: 1024
+        height: 604
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 226f17287fc1d3ad0800000000000000
-      internalID: -2720986750490905054
+      spriteID: 6303d5082218b28b0800000000000000
+      internalID: -5175901361549791178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KingBox
+      name: King_Smile
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1861
-        width: 1260
-        height: 294
+        x: 1024
+        y: 1208
+        width: 1024
+        height: 604
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628d08d16dfa122f0800000000000000
-      internalID: -999324308146694106
+      spriteID: 724bc2384a8d59770800000000000000
+      internalID: 8617031663130293287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CocoBox
+      name: King_Scary
       rect:
         serializedVersion: 2
-        x: 124
-        y: 1535
-        width: 1260
-        height: 296
+        x: 0
+        y: 604
+        width: 1024
+        height: 604
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe82eacb2b018b5d0800000000000000
-      internalID: -3046666788060387089
+      spriteID: 764711303eb9e18a0800000000000000
+      internalID: -6332452626724981657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OswaldBox
+      name: King_Happy
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1201
-        width: 1260
-        height: 296
+        x: 1024
+        y: 604
+        width: 1024
+        height: 604
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,62 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260a72ed27b79ba10800000000000000
-      internalID: 1925706048961224802
+      spriteID: 20d5425c25b79c860800000000000000
+      internalID: 7550701845688376578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HondaBox
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 878
-        width: 1260
-        height: 296
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c7880ae154e414a0800000000000000
-      internalID: -6623418111485245502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyBox
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 554
-        width: 1260
-        height: 294
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c16034e5c0a746b70800000000000000
-      internalID: 8891365757875848732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThoughtBox
+      name: King_Surprised
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1475
-        height: 508
+        width: 1024
+        height: 604
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,8 +217,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c2d094f341b56f80800000000000000
-      internalID: -8113884248214023479
+      spriteID: a291e0519fb853c40800000000000000
+      internalID: 5491449222564550954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King_Mad
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7ffbfc96e60dca0800000000000000
+      internalID: -5994169703294044208
       vertices: []
       indices: 
       edges: []

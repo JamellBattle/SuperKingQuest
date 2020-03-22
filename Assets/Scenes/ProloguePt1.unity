@@ -626,13 +626,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 6231108087594723253, guid: 4d0d9076082c04fa498f47f3814bb359,
+  m_Sprite: {fileID: -8113884248214023479, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.7176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.7646, y: 5.29}
+  m_Size: {x: 14.755376, y: 5.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -776,13 +776,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6295149923487954915, guid: 4d0d9076082c04fa498f47f3814bb359,
+  m_Sprite: {fileID: -999324308146694106, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.593924, y: 2.94}
+  m_Size: {x: 12.604592, y: 2.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1064,6 +1064,8 @@ MonoBehaviour:
   KingAnim: {fileID: 0}
   Coco: {fileID: 602788067}
   CocoAnim: {fileID: 0}
+  ObjectOfInterest: {fileID: 0}
+  OOIAnim: {fileID: 0}
   dialoguetrigger: {fileID: 182232837}
 --- !u!1 &1686141292
 GameObject:
@@ -1117,8 +1119,9 @@ MonoBehaviour:
   thoughtAnim: {fileID: 866372163}
   controller: {fileID: 1581786414}
   loadlevel: {fileID: 0}
-  NextScene: ProloguePt1
-  strangerTextSprite: {fileID: -1389606566121546192, guid: 4d0d9076082c04fa498f47f3814bb359,
+  nextScene: ProloguePt2
+  clickingAllowed: 1
+  strangerTextSprite: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
 --- !u!1 &1900093607
 GameObject:

@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: 76818e6471a9c4805901c11b15a591d2
+guid: 8ec578d899c88464594ad91fd9e3d61b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2720986750490905054
-    second: NPCBox
+      213: -5623625024426452023
+    second: Quetzy_Happy
   - first:
-      213: -999324308146694106
-    second: KingBox
+      213: -7308646333320232736
+    second: Quetzy_Regular
   - first:
-      213: -3046666788060387089
-    second: CocoBox
-  - first:
-      213: 1925706048961224802
-    second: OswaldBox
-  - first:
-      213: -6623418111485245502
-    second: HondaBox
-  - first:
-      213: 8891365757875848732
-    second: EnemyBox
-  - first:
-      213: -8113884248214023479
-    second: ThoughtBox
+      213: 2855623503518648155
+    second: Quetzy_Sad
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,148 +107,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPCBox
+      name: Quetzy_Happy
       rect:
         serializedVersion: 2
-        x: 119
-        y: 2186
-        width: 1260
-        height: 293
+        x: 0
+        y: 1536
+        width: 1024
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 226f17287fc1d3ad0800000000000000
-      internalID: -2720986750490905054
+      spriteID: 9cb5015e5ded4f1b0800000000000000
+      internalID: -5623625024426452023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KingBox
+      name: Quetzy_Regular
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1861
-        width: 1260
-        height: 294
+        x: 0
+        y: 768
+        width: 1024
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628d08d16dfa122f0800000000000000
-      internalID: -999324308146694106
+      spriteID: 0e08c79f1e8729a90800000000000000
+      internalID: -7308646333320232736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CocoBox
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 1535
-        width: 1260
-        height: 296
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe82eacb2b018b5d0800000000000000
-      internalID: -3046666788060387089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OswaldBox
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 1201
-        width: 1260
-        height: 296
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 260a72ed27b79ba10800000000000000
-      internalID: 1925706048961224802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HondaBox
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 878
-        width: 1260
-        height: 296
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c7880ae154e414a0800000000000000
-      internalID: -6623418111485245502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyBox
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 554
-        width: 1260
-        height: 294
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c16034e5c0a746b70800000000000000
-      internalID: 8891365757875848732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThoughtBox
+      name: Quetzy_Sad
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1475
-        height: 508
+        width: 1024
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c2d094f341b56f80800000000000000
-      internalID: -8113884248214023479
+      spriteID: b574c7b527631a720800000000000000
+      internalID: 2855623503518648155
       vertices: []
       indices: 
       edges: []

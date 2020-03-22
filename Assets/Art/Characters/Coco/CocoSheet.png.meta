@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 76818e6471a9c4805901c11b15a591d2
+guid: f882c637b94584c7aad2340db7558ec1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2720986750490905054
-    second: NPCBox
+      213: -2442551811445898697
+    second: Coco_Regular
   - first:
-      213: -999324308146694106
-    second: KingBox
+      213: 1483639831080119530
+    second: Coco_Angry
   - first:
-      213: -3046666788060387089
-    second: CocoBox
+      213: -2114482855705324807
+    second: Coco_Happy
   - first:
-      213: 1925706048961224802
-    second: OswaldBox
+      213: 3719031444187157369
+    second: Coco_Mad
   - first:
-      213: -6623418111485245502
-    second: HondaBox
+      213: 2277879381130351237
+    second: Coco_Sad
   - first:
-      213: 8891365757875848732
-    second: EnemyBox
+      213: 9111684736457727126
+    second: Coco_Smile
   - first:
-      213: -8113884248214023479
-    second: ThoughtBox
+      213: 6133900904795612702
+    second: Coco_Smug
+  - first:
+      213: 7604668930456618713
+    second: unused
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -119,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPCBox
+      name: Coco_Regular
       rect:
         serializedVersion: 2
-        x: 119
-        y: 2186
-        width: 1260
-        height: 293
+        x: 0
+        y: 1869
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 226f17287fc1d3ad0800000000000000
-      internalID: -2720986750490905054
+      spriteID: 732c74591105a1ed0800000000000000
+      internalID: -2442551811445898697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KingBox
+      name: Coco_Angry
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1861
-        width: 1260
-        height: 294
+        x: 1024
+        y: 1869
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628d08d16dfa122f0800000000000000
-      internalID: -999324308146694106
+      spriteID: aeca622d092f69410800000000000000
+      internalID: 1483639831080119530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CocoBox
+      name: Coco_Happy
       rect:
         serializedVersion: 2
-        x: 124
-        y: 1535
-        width: 1260
-        height: 296
+        x: 0
+        y: 1246
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe82eacb2b018b5d0800000000000000
-      internalID: -3046666788060387089
+      spriteID: 9f2d706bb09d7a2e0800000000000000
+      internalID: -2114482855705324807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: OswaldBox
+      name: Coco_Mad
       rect:
         serializedVersion: 2
-        x: 119
-        y: 1201
-        width: 1260
-        height: 296
+        x: 1024
+        y: 1246
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260a72ed27b79ba10800000000000000
-      internalID: 1925706048961224802
+      spriteID: 973984be467ac9330800000000000000
+      internalID: 3719031444187157369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HondaBox
+      name: Coco_Sad
       rect:
         serializedVersion: 2
-        x: 119
-        y: 878
-        width: 1260
-        height: 296
+        x: 0
+        y: 623
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c7880ae154e414a0800000000000000
-      internalID: -6623418111485245502
+      spriteID: 58216797a37ac9f10800000000000000
+      internalID: 2277879381130351237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyBox
+      name: Coco_Smile
       rect:
         serializedVersion: 2
-        x: 119
-        y: 554
-        width: 1260
-        height: 294
+        x: 1024
+        y: 623
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c16034e5c0a746b70800000000000000
-      internalID: 8891365757875848732
+      spriteID: 69c59e5fdf4337e70800000000000000
+      internalID: 9111684736457727126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThoughtBox
+      name: Coco_Smug
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1475
-        height: 508
+        width: 1024
+        height: 623
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,8 +262,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c2d094f341b56f80800000000000000
-      internalID: -8113884248214023479
+      spriteID: e162ac5cf5eff1550800000000000000
+      internalID: 6133900904795612702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unused
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 623
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6015ad916398960800000000000000
+      internalID: 7604668930456618713
       vertices: []
       indices: 
       edges: []
