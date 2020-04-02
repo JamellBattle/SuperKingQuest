@@ -26,6 +26,7 @@ public class LevelLoader : MonoBehaviour
             yield return new WaitForSeconds(time);
             Debug.Log("FirstFade done waiting");
 
+
             controller.StartCoroutine(controller.FirstFade(0.5f));
         }
         
