@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &268283688
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268283687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.81, y: -0.47, z: 0}
+  m_LocalPosition: {x: 0.09, y: -0.47, z: 0}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -298,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365633509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.89, y: -0.47, z: -0.32}
+  m_LocalPosition: {x: 0.04, y: -0.47, z: -0.32}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -337,7 +337,7 @@ RectTransform:
   - {fileID: 750399810}
   - {fileID: 1097188769}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -883,9 +883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 1700806039}
-  firstChar: {fileID: 0}
+  firstChar: {fileID: 365633509}
   firstCharAnim: {fileID: 0}
-  King: {fileID: 0}
+  King: {fileID: 365633509}
   KingAnim: {fileID: 0}
   Coco: {fileID: 0}
   CocoAnim: {fileID: 0}
@@ -908,7 +908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467296711
 GameObject:
@@ -1013,23 +1013,119 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558399234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7358cbfb6f848e3a0f9dec2c365b69, type: 3}
+  m_Script: {fileID: 11500000, guid: ad4afe665c53e4ad5bdf53b99354075d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
     name: King
     sentences:
+    - Sheesh. Stupid animal.
     - ...
-    - " It\u2019s been 4 days since I left Babbo\u2019s lab. "
-    - "The world is a lot less exciting than I expected\u2026 This is what we stopped
-      DIO from destroying? "
-    - "By the way it looks, there wasn\u2019t much at stake."
-    - "But still\u2026 "
-    - There has to be something important. Why else would Quetzy and the other feel
-      so inclined to keep it safe?
-    - 'Ah, whatever. '
-    - No use getting stuck on it, just gonna have to keep it moving.
-    - ' ...'
+    - "You can\u2019t be serious. There\u2019s more?"
+    - "I would\u2019ve left you alone, but now I\u2019m getting annoyed."
+    - GO SOMEWHERE ELSE!
+    - Eh?
+    - "\u2026Ow."
+    - "What the!? What\u2019s your problem!? Hiding in a bush in the middle of the
+      night?!"
+    - Apologies. I did not mean to startle you.
+    - "How\u2019d you even get here?!"
+    - I have been following you for the past 48 hours. I did not want to approach
+      you because you seemed very distraught.
+    - 'What the heck is this? '
+    - "First it was a bear, now it\u2019s some girl who looks like something out
+      of one of Babbo\u2019s sims?"
+    - "And she\u2019s been following me for the past TWO DAYS!? "
+    - 'I just want to relax. What am I supposed to do now? '
+    - 'For all I know, this girl might try to kill me! '
+    - "\u2026Excuse me. I would like to request permission to move closer to the
+      fire. My body temperature has lowered below suitable levels."
+    - "I can hear Quetzy\u2019s words in my head."
+    - "\"I\u2019m just saying that you should try being nice to more people like
+      you are to me.\u201D"
+    - "\u2026You gotta be kidding me. Out of all people, why did it have to be someone
+      like this..?"
+    - ...
+    - ...
+    - Fine.
+    - Yay. Thank you.
+    - ...
+    - ...
+    - ...
+    - "It\u2019s been almost 5 minutes. She\u2019s just sitting there, staring at
+      the fire. "
+    - "I don\u2019t even think I\u2019ve seen her blink once."
+    - Is she always like this?
+    - "Why\u2019d she have to end up here? "
+    - Either way, this silence is killing me.
+    - "Should I say something\u2026? "
+    - "\u2026Ah."
+    - Huh?
+    - Body temperature has returned to optimal levels. Cozy.
+    - I apologize for my lack of communication. Body temperature optimization is
+      a process which requires my full attention.
+    - Why have you -
+    - 'Please wait. '
+    - What is it now?
+    - I cannot properly communicate with you unless I can address you properly. Please
+      tell me your name.
+    - "It\u2019s none of your business."
+    - I will not talk to you unless I know your name.
+    - 'Are you serious? '
+    - Why is she so persistent all of a sudden?
+    - "I can\u2019t read her at all\u2026"
+    - "Either way, it doesn\u2019t look like she\u2019s messing with me."
+    - "She\u2019s dead serious\u2026 Guess I don\u2019t have a choice, then."
+    - "\u2026King."
+    - "King\u2026 Understood. I will make sure to commit it to memory. I am Coco."
+    - Why have you been following me for the past 2 days?
+    - 'I am lost. '
+    - When I spotted you, you looked like you knew where you were going, so I assumed
+      that you possessed some knowledge of the surrounding area. Because of that,
+      I decided to follow you.
+    - "Is that so\u2026"
+    - "Sorry to break it to you, but you\u2019re outta luck. I\u2019m just as lost
+      as you are. "
+    - "I see\u2026 I was incorrect. Unfortunate."
+    - "\u201CYou looked like you knew where you were going\u201D?"
+    - 'That sounds like something Quetzy would say. '
+    - What kind of reasoning is that?
+    - King, I would like to make another request.
+    - "\u2026What?"
+    - I would like to remain by the fire for the remainder of the night. It feels
+      very nice and warm.
+    - "\u2026"
+    - No.
+    - 'No. No. No. '
+    - "This is the one question I was praying she wouldn\u2019t ask."
+    - Is this where being nice gets you?
+    - How is Quetzy able to do this all the time?
+    - No way. Go somewhere else.
+    - "\u2026"
+    - "Don\u2019t look at me like that."
+    - "\u2026"
+    - Stop it.
+    - "\u2026"
+    - "Ugh\u2026 Fine! Just stop making that face!"
+    - Yay.
+    - "Don\u2019t ask me for anything else."
+    - Understood. I am now entering Rest Mode. I will see you in the morning.
+    - Rest Mode? What are you-
+    - Huh? What was that!?
+    - "\u2026"
+    - "Her eyes are wide open\u2026 Is she really sleeping!?"
+    - 'Hey! '
+    - "\u2026"
+    - "Sheesh\u2026 She doesn\u2019t waste any time."
+    - 'This night has been a little too much for me. '
+    - 'First I got attacked by a bear. '
+    - "Then this girl comes out of nowhere, and now she\u2019s staying here with
+      me? "
+    - "If I didn\u2019t listen to Quetzy\u2019s stupid advice, I wouldn\u2019t have
+      been in this situation in the first place! "
+    - "Ugh\u2026 No point complaining about it now. Coco probably won\u2019t even
+      wake up until morning."
+    - "Well, hopefully she\u2019ll wake up before me and go somewhere else\u2026"
 --- !u!4 &1558399236
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,7 +1138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1700806038
 PrefabInstance:
@@ -1060,7 +1156,7 @@ PrefabInstance:
         type: 3}
       propertyPath: firstCharacter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 365633510}
     - target: {fileID: 3330666992868908483, guid: 233f4ad984d5b49a995c565acd4019c4,
         type: 3}
       propertyPath: controller
@@ -1149,12 +1245,6 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1700806038}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1700806040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7742949098351191786, guid: 233f4ad984d5b49a995c565acd4019c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1700806038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1700806041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3330666992868908483, guid: 233f4ad984d5b49a995c565acd4019c4,
@@ -1196,7 +1286,7 @@ Transform:
   m_Children:
   - {fileID: 1051311564}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1756961008
 GameObject:
@@ -1248,6 +1338,7 @@ MonoBehaviour:
   CSad: {fileID: 2277879381130351237, guid: f882c637b94584c7aad2340db7558ec1, type: 3}
   KingSprite: {fileID: 365633511}
   KReg: {fileID: -5175901361549791178, guid: 715de919604ef4c18898238db55a6e7f, type: 3}
+  KAngry: {fileID: 21300000, guid: 58b0844d46e074f758c01e76c8af605c, type: 3}
   KMad: {fileID: -5994169703294044208, guid: 715de919604ef4c18898238db55a6e7f, type: 3}
   KShock: {fileID: 21300000, guid: fc08ded3400f04800b5f0f860fbaf29b, type: 3}
 --- !u!4 &1756961010
@@ -1262,7 +1353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1774527792
 GameObject:
@@ -1297,7 +1388,7 @@ RectTransform:
   m_Children:
   - {fileID: 603739604}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1463,8 +1554,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1700806040}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1890705451
 GameObject:
@@ -1688,5 +1779,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

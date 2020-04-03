@@ -15,6 +15,7 @@ public class PP3DialogueManager : DialogueManager
     public Sprite CSad;
     public SpriteRenderer KingSprite;
     public Sprite KReg;
+    public Sprite KAngry;
     public Sprite KMad;
     public Sprite KShock;
     
@@ -43,7 +44,20 @@ public class PP3DialogueManager : DialogueManager
     {
         base.DisplayNextSentence();
 
-        
+        if (sentences.Count == 89)
+        {
+            KingSprite.sprite = KShock;
+        }
+
+        if (sentences.Count == 88)
+        {
+            KingSprite.sprite = KMad;
+        }
+
+        if (sentences.Count == 86)
+        {
+            KingSprite.sprite = KAngry;
+        }
 
 
     }
