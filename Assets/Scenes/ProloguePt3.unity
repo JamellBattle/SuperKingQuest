@@ -287,7 +287,11 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 6.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &365633512
@@ -583,7 +587,11 @@ SpriteRenderer:
   m_Size: {x: 12.604592, y: 2.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &882488173
@@ -741,7 +749,11 @@ SpriteRenderer:
   m_Size: {x: 25.754246, y: 12.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1097188766
@@ -829,7 +841,11 @@ SpriteRenderer:
   m_Size: {x: 14.755376, y: 5.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+<<<<<<< Updated upstream
   m_WasSpriteAssigned: 1
+=======
+  m_WasSpriteAssigned: 0
+>>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!224 &1097188769
@@ -889,12 +905,15 @@ MonoBehaviour:
   KingAnim: {fileID: 0}
   Coco: {fileID: 0}
   CocoAnim: {fileID: 0}
+<<<<<<< Updated upstream
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flashback: {fileID: 0}
   FBAnim: {fileID: 0}
   Enemy: {fileID: 0}
   EnemyAnim: {fileID: 0}
+=======
+>>>>>>> Stashed changes
   dialoguetrigger: {fileID: 1558399235}
 --- !u!4 &1290272367
 Transform:
