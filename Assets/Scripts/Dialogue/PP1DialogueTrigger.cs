@@ -5,7 +5,6 @@ using UnityEngine;
 public class PP1DialogueTrigger : DialogueTrigger
 {
     
-
     public override void TriggerDialogue()
     {
         FindObjectOfType<PP1DialogueManager>().StartDialogue(dialogue);
