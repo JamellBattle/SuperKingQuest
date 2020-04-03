@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     public AnimationController controller;
     public LevelLoader loadlevel;
     public string nextScene;
+    public bool clickingAllowed = true;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -29,10 +30,14 @@ public class DialogueManager : MonoBehaviour
 
     public virtual void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            DisplayNextSentence();
+        if (clickingAllowed) {
+            if (Input.GetMouseButtonDown(0))
+            {
+                DisplayNextSentence();
+            }
+
         }
+        
     }
 
     public virtual void StartDialogue(Dialogue dialogue)
@@ -45,6 +50,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (string sentence in dialogue.sentences)
         {
+
             sentences.Enqueue(sentence);
         }
 

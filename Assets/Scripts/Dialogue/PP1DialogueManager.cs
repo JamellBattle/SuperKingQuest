@@ -7,6 +7,7 @@ public class PP1DialogueManager : DialogueManager
 
 
     public Sprite strangerTextSprite;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -44,10 +45,12 @@ public class PP1DialogueManager : DialogueManager
             nameText.text = "???";
             thoughtAnim.SetBool("Thinking", false);
             StartCoroutine(KingLeaving(3f));
+            clickingAllowed = false;
             
         }
     }
 
+   
     public override IEnumerator TypeSentence(string sentence)
     {
         return base.TypeSentence(sentence);
@@ -62,10 +65,10 @@ public class PP1DialogueManager : DialogueManager
     }
 
 
-    //additional Coroutines exclusive to this manager
+    //Additional Coroutines exclusive to this Dialogue manager
     public IEnumerator KingLeaving(float wait)
     {
-        controller.KingAnim.speed = (0.1f);
+        controller.KingAnim.speed = 0.1f;
         controller.HideKing();
         yield return new WaitForSeconds(wait);
         StartCoroutine(StrangerAppears(0.5f));
@@ -78,6 +81,7 @@ public class PP1DialogueManager : DialogueManager
         controller.ShowCoco();
         yield return new WaitForSeconds(wait);
         textAnim.SetBool("IsOpen", true);
+        clickingAllowed = true;
     }
 
     
