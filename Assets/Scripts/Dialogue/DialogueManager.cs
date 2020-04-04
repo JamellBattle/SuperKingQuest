@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     public AnimationController controller;
     public LevelLoader loadlevel;
     public string nextScene;
-    public bool clickingAllowed = true;
+    public bool clickingAllowed = false;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     public virtual void StartDialogue(Dialogue dialogue)
     {
         textAnim.SetBool("IsOpen", true);
-
+        clickingAllowed = true;
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -84,9 +84,22 @@ public class DialogueManager : MonoBehaviour
     {
 
         textAnim.SetBool("IsOpen", false);
+        thoughtAnim.SetBool("Thinking", false);
         loadlevel.LoadNextLevel(nextScene);
 
     }
 
+    public virtual void SetName(string name)
+    {
+        nameText.text = name;
+    }
+
+    public virtual void SetBox(Sprite newBox)
+    {
+        textbox.sprite = newBox;
+    }
+
     
+
+
 }

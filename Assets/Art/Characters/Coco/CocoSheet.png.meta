@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2442551811445898697
-    second: Coco_Regular
+    second: Coco_Reg
   - first:
       213: 1483639831080119530
     second: Coco_Angry
@@ -25,7 +25,7 @@ TextureImporter:
     second: Coco_Smug
   - first:
       213: 7604668930456618713
-    second: unused
+    second: Coco_Hidden
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coco_Regular
+      name: Coco_Reg
       rect:
         serializedVersion: 2
         x: 0
@@ -170,7 +170,7 @@ TextureImporter:
         x: 0
         y: 1246
         width: 1024
-        height: 623
+        height: 621
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,7 +191,7 @@ TextureImporter:
         x: 1024
         y: 1246
         width: 1024
-        height: 623
+        height: 621
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,9 +210,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 623
+        y: 622
         width: 1024
-        height: 623
+        height: 622
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,7 +233,7 @@ TextureImporter:
         x: 1024
         y: 623
         width: 1024
-        height: 623
+        height: 621
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,7 +254,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 1024
-        height: 623
+        height: 621
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,13 +269,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: unused
+      name: Coco_Hidden
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
         width: 1024
-        height: 623
+        height: 621
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

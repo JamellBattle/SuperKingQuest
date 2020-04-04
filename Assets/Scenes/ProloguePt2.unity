@@ -871,10 +871,12 @@ MonoBehaviour:
   CocoAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 1275223678}
   OOIAnim: {fileID: 0}
-  Flashback: {fileID: 1479271729}
-  FBAnim: {fileID: 0}
+  Flash: {fileID: 1479271729}
+  FlashAnim: {fileID: 0}
   Enemy: {fileID: 283584619}
   EnemyAnim: {fileID: 0}
+  Wipe: {fileID: 0}
+  WipeAnim: {fileID: 0}
   dialoguetrigger: {fileID: 807337227}
 --- !u!4 &920161288
 Transform:

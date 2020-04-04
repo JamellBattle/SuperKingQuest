@@ -14,10 +14,14 @@ public class AnimationController : MonoBehaviour
     public Animator CocoAnim;
     public GameObject ObjectOfInterest;
     public Animator OOIAnim;
-    public GameObject Flashback;
-    public Animator FBAnim;
+    public GameObject Flash;
+    public Animator FlashAnim;
     public GameObject Enemy;
     public Animator EnemyAnim;
+    public GameObject Wipe;
+    public Animator WipeAnim;
+    public GameObject Sky;
+    public Animator SkyAnim;
     public DialogueTrigger dialoguetrigger;
     
 
@@ -50,9 +54,21 @@ public class AnimationController : MonoBehaviour
             OOIAnim = ObjectOfInterest.GetComponent<Animator>();
         }
 
-        if (Flashback) {
-            FBAnim = Flashback.GetComponent<Animator>();
+        if (Flash) {
+            FlashAnim = Flash.GetComponent<Animator>();
             
+        }
+
+        if (Wipe)
+        {
+            WipeAnim = Wipe.GetComponent<Animator>();
+
+        }
+
+        if (Sky)
+        {
+            SkyAnim = Sky.GetComponent<Animator>();
+            SkyAnim.speed = 0.1f;
         }
 
 
@@ -141,15 +157,28 @@ public class AnimationController : MonoBehaviour
 
     public void FlashStart()
     {
-        FBAnim.SetBool("Flashbacking", true);
+        FlashAnim.SetBool("Flashbacking", true);
     }
 
     public void FlashEnd()
     {
-        FBAnim.SetBool("Flashbacking", false);
+        FlashAnim.SetBool("Flashbacking", false);
     }
 
+    public void WipeStart()
+    {
+        WipeAnim.SetBool("Wiping", true);
+    }
 
+    public void WipeEnd()
+    {
+        WipeAnim.SetBool("Wiping", false);
+    }
+
+    public void SkyFade()
+    {
+        SkyAnim.SetBool("Present", true);
+    }
 
 
 
