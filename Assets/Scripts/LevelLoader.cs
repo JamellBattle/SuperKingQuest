@@ -19,17 +19,25 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator firstFade(float time) {
 
-        Debug.Log("FirstFade Activated");
+        if (controller)
+        {
+            Debug.Log("FirstFade Activated");
 
-        if (firstCharacter) {
-            Debug.Log("FirstFade now waiting");
-            yield return new WaitForSeconds(time);
-            Debug.Log("FirstFade done waiting");
+            if (firstCharacter)
+            {
+                Debug.Log("FirstFade now waiting");
+                yield return new WaitForSeconds(time);
+                Debug.Log("FirstFade done waiting");
 
+            }
+            else
+            {
+                yield return new WaitForSeconds(time);
+            }
 
             controller.StartCoroutine(controller.FirstFade(0.5f));
         }
-        
+
     }
     // Update is called once per frame
     void Update()

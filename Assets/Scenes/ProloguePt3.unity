@@ -617,7 +617,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 1404365540}
   controller: {fileID: 1229051630}
   loadlevel: {fileID: 1808015789}
-  nextScene: ProloguePt3
+  nextScene: PrologueEnd
   clickingAllowed: 1
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}

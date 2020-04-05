@@ -28,8 +28,12 @@ public class AnimationController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //this gets the animator for the character designated as the first character to appear in the scene
-        firstCharAnim = firstChar.GetComponent<Animator>();
+        if (firstChar)
+        {
+            //this gets the animator for the character designated as the first character to appear in the scene
+            firstCharAnim = firstChar.GetComponent<Animator>();
+        }
+        
 
         //These if statements are checking if these objects/characters will even be in the scene.
         //If they were given a gameObject value, then get the animator from it, if not, then don't.
@@ -84,11 +88,17 @@ public class AnimationController : MonoBehaviour
 
     public IEnumerator FirstFade(float wait)
     {
-        if (firstChar.name == "King")
+        if (firstChar)
         {
-            ShowKing();
-            yield return new WaitForSeconds(wait);
+            if (firstChar.name == "King")
+            {
+                ShowKing();
+                yield return new WaitForSeconds(wait);
+            }
         }
+        
+
+       
         
         BeginDialogue();
     }

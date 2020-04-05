@@ -5,16 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ProloguePt1.unity
     guid: 68fb94e9387f9405895c479726944ca4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ProloguePt2.unity
     guid: 597c7691d9e4247c89134f7cccf4ffc9
   - enabled: 1
     path: Assets/Scenes/FightSceneEarly.unity
     guid: 8d244352b9f16db4c97a639cb8307373
+  - enabled: 1
+    path: Assets/Scenes/ProloguePt3.unity
+    guid: 07b05a7748e774bd780b0aa9ec4ee16b
+  - enabled: 1
+    path: Assets/Scenes/PrologueEnd.unity
+    guid: 399d61fd50b2d47c8ad432ac549b3fff
   m_configObjects: {}

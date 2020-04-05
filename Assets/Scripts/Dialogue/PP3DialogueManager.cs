@@ -42,6 +42,8 @@ public class PP3DialogueManager : DialogueManager
 
     public override void StartDialogue(Dialogue dialogue)
     {
+        textAnim.SetBool("IsOpen", true);
+        nameText.text = dialogue.name;
         base.StartDialogue(dialogue);
     }
 
@@ -51,6 +53,7 @@ public class PP3DialogueManager : DialogueManager
 
         if (sentences.Count == 89)
         {
+            
             KingSprite.sprite = KShock;
         }
 
@@ -66,6 +69,7 @@ public class PP3DialogueManager : DialogueManager
 
         if (sentences.Count == 85)
         {
+            
             clickingAllowed = false;
             StartCoroutine(Smack());
         }
@@ -78,6 +82,7 @@ public class PP3DialogueManager : DialogueManager
 
         if (sentences.Count == 83)
         {
+            
             clickingAllowed = false;
             StartCoroutine(CocotoKing());
         }
@@ -562,13 +567,6 @@ public class PP3DialogueManager : DialogueManager
 
         
 
-
-
-
-
-
-
-
     }
 
     public override IEnumerator TypeSentence(string sentence)
@@ -587,6 +585,7 @@ public class PP3DialogueManager : DialogueManager
     //Additonal Coroutines Exclusive to this Dialogue Manager
     public IEnumerator KingtoCoco()
     {
+        
         if (mainText == thoughtText)
         {
             mainText = dialogueText;
@@ -608,12 +607,13 @@ public class PP3DialogueManager : DialogueManager
         
         yield return new WaitForSeconds(0.2f);
         textAnim.SetBool("IsOpen", true);
+        
         clickingAllowed = true;
 
     }
 
     public IEnumerator CocotoKing()
-    {
+    {                
         if (mainText == thoughtText)
         {
             mainText = dialogueText;
@@ -627,17 +627,20 @@ public class PP3DialogueManager : DialogueManager
         SetName("King");
         yield return new WaitForSeconds(0.2f);
         textAnim.SetBool("IsOpen", true);
+        
         clickingAllowed = true;
 
     }
 
     public IEnumerator Smack()
     {
-
+        
+        
         textAnim.SetBool("IsOpen", false);
         yield return new WaitForSeconds(1f);
         KingSprite.sprite = KShock;
         yield return new WaitForSeconds(0.5f);
+        
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
 
@@ -645,7 +648,8 @@ public class PP3DialogueManager : DialogueManager
 
     public IEnumerator CocoReveal()
     {
-
+        
+        
         textAnim.SetBool("IsOpen", false);
         controller.HideKing();
         yield return new WaitForSeconds(1f);
