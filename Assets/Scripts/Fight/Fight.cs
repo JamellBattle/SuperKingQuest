@@ -148,7 +148,6 @@ public class Fight : MonoBehaviour
                     }
                     enemyStatAfflict = 0;
                 }
-                
             }
             if (timer >= 2.75 && timer < 2.9)
             {
@@ -513,6 +512,159 @@ public class Fight : MonoBehaviour
         {
             timerOn = 1;
             fightMode = 1;
+        }
+    }
+
+    public void playerMove(string action)
+    {
+        if (action == "fight" || action == "special")
+        {
+            //Player Deal Damage
+            if (timer < 0.15)
+            {
+                hero.move(0.05f);
+            }
+            if (timer >= 0.15 && timer < 0.3)
+            {
+                hero.move(-0.05f);
+            }
+            //Enemy Take Damage
+            if (timer > 0.6 && timer < 0.75)
+            {
+                enemy.move(0.05f);
+            }
+            if (timer >= 0.75 && timer < 0.9)
+            {
+                enemy.move(-0.05f);
+            }
+        }
+        if (action == "fight")
+        {
+            //Enemy takes regular damage
+            if (timer >= 0.75 && timer < 0.9)
+            {
+                enemy.move(-0.05f);
+                if (enemyDamage == 1)
+                {
+                    enemy.TakeDamage(hero.getSTR(move));
+                    enemyDamage = 0;
+                }
+            }
+        }
+        if (action == "item")
+        {
+            //Player Item
+            if (timer > 0.6 && timer < 0.75)
+            {
+                if (enemyDamage == 1)
+                {
+                    hero.item(item);
+                    if (hero.getStatus() == "OK")
+                    {
+                        maxTime = 2.9f;
+                    }
+                    for (int i = itemIndex; i < itemButt.Length - 1; i++)
+                    {
+                        itemButt[i].setItem(itemButt[i + 1].getItem());
+                    }
+                    enemyDamage = 0;
+                }
+            }
+        }
+        if (action == "defend")
+        {
+            //Player Defend
+            if (timer > 0.6 && timer < 0.75)
+            {
+                if (enemyDamage == 1)
+                {
+                    hero.defend(1);
+                    enemyDamage = 0;
+                }
+            }
+        }
+        if (action == "special")
+        {
+
+        }
+        
+         //Status
+         if (hero.getStatus() != "OK" && hero.getStatus() != "Curse" && hero.getStatus() != "Silenced" && statTimeIncrease == 1)
+            {
+                maxTime = 4.9f;
+                heroStatDamage = 1;
+                statTimeIncrease = 0;
+            }
+            if (timer >= 3.75 && hero.getStatus() == "Burn" && heroStatDamage == 1)
+            {
+                hero.TakeDamage(hero.getMaxHealth() / 16);
+                heroStatDamage = 0;
+            }
+            if (timer >= 3.75 && hero.getStatus() == "Poison" && heroStatDamage == 1)
+            {
+                hero.TakeDamage(hero.getMaxHealth() / 16);
+                heroStatDamage = 0;
+            }
+    }
+
+    public void enemyMove(string action)
+    {
+        //Enemy Deal Damage
+        if (timer > 2 && timer < 2.15)
+        {
+            enemy.move(-0.05f);
+        }
+        if (timer >= 2.15 && timer < 2.3)
+        {
+            enemy.move(0.05f);
+        }
+        if (action != "defend")
+        {
+            //Player Take Damage
+            if (timer > 2.6 && timer < 2.75)
+            {
+                hero.move(-0.05f);
+                if (enemyStatAfflict == 1)
+                {
+                    if (Random.Range(0, 10) == 0)
+                    {
+                        maxTime = 4.9f;
+                        enemyStatAfflict2 = 1;
+                    }
+                    enemyStatAfflict = 0;
+                }
+            }
+            if (timer >= 2.75 && timer < 2.9)
+            {
+                hero.move(0.05f);
+                if (heroDamage == 1)
+                {
+                    hero.TakeDamage(enemy.getSTR());
+                    if (enemyStatAfflict2 == 1)
+                    {
+                        hero.setStatus("Burn");
+                        enemyStatAfflict2 = 0;
+                    }
+                    heroDamage = 0;
+                }
+            }
+        }
+        else
+        {
+            //Player Take Damage
+            if (timer > 2.6 && timer < 2.75)
+            {
+                hero.move(-0.05f);
+            }
+            if (timer >= 2.75 && timer < 2.9)
+            {
+                hero.move(0.05f);
+                if (heroDamage == 1)
+                {
+                    hero.TakeDamage(enemy.getSTR() / 2);
+                    heroDamage = 0;
+                }
+            }
         }
     }
 

@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class heroStats : MonoBehaviour
 {
     int str = 5;
+    int spl = 15;
     int health = 30;
     int special = 10;
     int burnEffect = 1;
+    int poisonEffect = 1;
     string status = "OK";
     public Text Health;
     public Text Special;
@@ -64,7 +66,12 @@ public class heroStats : MonoBehaviour
         {
             health = 30;
         }
+        if (special > 10)
+        {
+            special = 10;
+        }
         Health.text = "HP: " + health + "/30";
+        Special.text = "SP: " + special + "/10";
         Status.text = status;
     }
     public void defend(int defence)
@@ -78,16 +85,18 @@ public class heroStats : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = mainSprite;
         }
     }
-    public int getSTR()
-    {
-        return str;
-    }
-
     public int getMaxHealth()
     {
         return 30;
     }
-
+    public int getSTR()
+    {
+        return str;
+    }
+    public int getSPL()
+    {
+        return spl;
+    }
     public int getSTR(string move)
     {
         if (status == "Burn")
@@ -120,10 +129,58 @@ public class heroStats : MonoBehaviour
         }
         return str;
     }
+    public int getSPL(string move)
+    {
+        if (status == "Poison")
+        {
+            poisonEffect = 2;
+        }
+        else
+        {
+            poisonEffect = 1;
+        }
+
+        if (move == "fireball")
+        {
+            return 21 / poisonEffect;
+        }
+
+        if (move == "superjump")
+        {
+            return 36 / poisonEffect;
+        }
+        return spl;
+    }
 
     public string getStatus()
     {
         return status;
+    }
+
+    public bool checkSpecial(string move)
+    {
+        if (move == "fireball" && special >= 2)
+        {
+            return true;
+        }
+        if (move == "superjump" && special >= 5)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void setSP(string move)
+    {
+        if (move == "fireball")
+        {
+            special -= 2;
+        }
+        if (move == "superjump")
+        {
+            special -= 5;
+        }
+        Special.text = "SP: " + special + "/10";
     }
 
     public void setStatus(string newStatus)

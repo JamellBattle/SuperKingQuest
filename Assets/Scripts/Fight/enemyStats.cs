@@ -7,6 +7,8 @@ public class enemyStats : MonoBehaviour
 {
     int str = 10;
     int health = 60;
+    string attackStatus = "Burn";
+    int statusChance = 5;
     public Text Health;
     public void move(float speed)
     {
@@ -38,6 +40,15 @@ public class enemyStats : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public string getAttackStatus()
+    {
+        return attackStatus;
+    }
+    public int getStatusChance()
+    {
+        return statusChance;
     }
 
     public void kill()
