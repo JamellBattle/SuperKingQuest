@@ -17,7 +17,9 @@ public class DialogueManager : MonoBehaviour
     public AnimationController controller;
     public LevelLoader loadlevel;
     public string nextScene;
-    public bool clickingAllowed = true;
+    public bool clickingAllowed = false;
+   
+    
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -42,11 +44,9 @@ public class DialogueManager : MonoBehaviour
 
     public virtual void StartDialogue(Dialogue dialogue)
     {
-        textAnim.SetBool("IsOpen", true);
-
-        nameText.text = dialogue.name;
-
+        clickingAllowed = true;
         sentences.Clear();
+        nameText.text = dialogue.name;
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -66,8 +66,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        StopAllCoroutines(); 
+        StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        
+        
     }
 
     public virtual IEnumerator TypeSentence(string sentence)
@@ -84,9 +86,27 @@ public class DialogueManager : MonoBehaviour
     {
 
         textAnim.SetBool("IsOpen", false);
+        thoughtAnim.SetBool("Thinking", false);
         loadlevel.LoadNextLevel(nextScene);
 
     }
 
+    public virtual void SetName(string name)
+    {
+        nameText.text = name;
+    }
+
+    public virtual void SetBox(Sprite newBox)
+    {
+        textbox.sprite = newBox;
+    }
+
+    public virtual void changeEmotion(SpriteRenderer renderer, Sprite emotion)
+    {
+        renderer.sprite = emotion;
+    }
+
     
+
+
 }

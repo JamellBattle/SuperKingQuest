@@ -37,6 +37,8 @@ public class PP2DialogueManager : DialogueManager
 
     public override void StartDialogue(Dialogue dialogue)
     {
+        textAnim.SetBool("IsOpen", true);
+        nameText.text = dialogue.name;
         base.StartDialogue(dialogue);
     }
 

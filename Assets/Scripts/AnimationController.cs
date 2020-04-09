@@ -14,18 +14,26 @@ public class AnimationController : MonoBehaviour
     public Animator CocoAnim;
     public GameObject ObjectOfInterest;
     public Animator OOIAnim;
-    public GameObject Flashback;
-    public Animator FBAnim;
+    public GameObject Flash;
+    public Animator FlashAnim;
     public GameObject Enemy;
     public Animator EnemyAnim;
+    public GameObject Wipe;
+    public Animator WipeAnim;
+    public GameObject Sky;
+    public Animator SkyAnim;
     public DialogueTrigger dialoguetrigger;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //this gets the animator for the character designated as the first character to appear in the scene
-        firstCharAnim = firstChar.GetComponent<Animator>();
+        if (firstChar)
+        {
+            //this gets the animator for the character designated as the first character to appear in the scene
+            firstCharAnim = firstChar.GetComponent<Animator>();
+        }
+        
 
         //These if statements are checking if these objects/characters will even be in the scene.
         //If they were given a gameObject value, then get the animator from it, if not, then don't.
@@ -50,9 +58,21 @@ public class AnimationController : MonoBehaviour
             OOIAnim = ObjectOfInterest.GetComponent<Animator>();
         }
 
-        if (Flashback) {
-            FBAnim = Flashback.GetComponent<Animator>();
+        if (Flash) {
+            FlashAnim = Flash.GetComponent<Animator>();
             
+        }
+
+        if (Wipe)
+        {
+            WipeAnim = Wipe.GetComponent<Animator>();
+
+        }
+
+        if (Sky)
+        {
+            SkyAnim = Sky.GetComponent<Animator>();
+            SkyAnim.speed = 0.1f;
         }
 
 
@@ -68,11 +88,17 @@ public class AnimationController : MonoBehaviour
 
     public IEnumerator FirstFade(float wait)
     {
-        if (firstChar.name == "King")
+        if (firstChar)
         {
-            ShowKing();
-            yield return new WaitForSeconds(wait);
+            if (firstChar.name == "King")
+            {
+                ShowKing();
+                yield return new WaitForSeconds(wait);
+            }
         }
+        
+
+       
         
         BeginDialogue();
     }
@@ -141,15 +167,28 @@ public class AnimationController : MonoBehaviour
 
     public void FlashStart()
     {
-        FBAnim.SetBool("Flashbacking", true);
+        FlashAnim.SetBool("Flashbacking", true);
     }
 
     public void FlashEnd()
     {
-        FBAnim.SetBool("Flashbacking", false);
+        FlashAnim.SetBool("Flashbacking", false);
     }
 
+    public void WipeStart()
+    {
+        WipeAnim.SetBool("Wiping", true);
+    }
 
+    public void WipeEnd()
+    {
+        WipeAnim.SetBool("Wiping", false);
+    }
+
+    public void SkyFade()
+    {
+        SkyAnim.SetBool("Present", true);
+    }
 
 
 

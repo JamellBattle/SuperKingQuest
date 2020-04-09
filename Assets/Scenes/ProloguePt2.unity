@@ -725,7 +725,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 925847716}
   controller: {fileID: 920161287}
   loadlevel: {fileID: 1442883447}
-  nextScene: ProloguePt2
+  nextScene: ProloguePt3
   clickingAllowed: 1
   EnemyBox: {fileID: 8891365757875848732, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
@@ -871,10 +871,14 @@ MonoBehaviour:
   CocoAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 1275223678}
   OOIAnim: {fileID: 0}
-  Flashback: {fileID: 1479271729}
-  FBAnim: {fileID: 0}
+  Flash: {fileID: 1479271729}
+  FlashAnim: {fileID: 0}
   Enemy: {fileID: 283584619}
   EnemyAnim: {fileID: 0}
+  Wipe: {fileID: 0}
+  WipeAnim: {fileID: 0}
+  Sky: {fileID: 0}
+  SkyAnim: {fileID: 0}
   dialoguetrigger: {fileID: 807337227}
 --- !u!4 &920161288
 Transform:
@@ -1145,7 +1149,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 7684ebd8a13e842d490f11b0125b4b29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
