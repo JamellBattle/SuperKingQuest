@@ -29,6 +29,13 @@ public class heroStats : MonoBehaviour
         Vector3 movePosition = new Vector3(transform.position.x + speed, 0.71f, 0);
         transform.position = movePosition;
     }
+
+    public void attMove(float speed)
+    {
+        //Debug.Log("COCK");
+        Vector3 movePosition = new Vector3(transform.position.x + speed, 0.71f, 0);
+        transform.position = movePosition;
+    }
     public void TakeDamage(int dam)
     {
         health = health - dam;
@@ -204,6 +211,17 @@ public class heroStats : MonoBehaviour
     public void kill()
     {
         Vector3 movePosition = new Vector3(-1000f, 0.71f, 0);
+        transform.position = movePosition;
+    }
+
+    public float getX()
+    {
+        return this.transform.position.x;
+    }
+
+    public void setX(float x)
+    {
+        Vector3 movePosition = new Vector3(x, 0.71f, 0);
         transform.position = movePosition;
     }
 }

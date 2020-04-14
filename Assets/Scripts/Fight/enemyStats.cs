@@ -16,6 +16,13 @@ public class enemyStats : MonoBehaviour
         Vector3 movePosition = new Vector3(transform.position.x + speed, 1.07f, 0);
         transform.position = movePosition;
     }
+
+    public void damMove(float speed)
+    {
+        //Debug.Log("COCK");
+        Vector3 movePosition = new Vector3(transform.position.x + speed, 1.07f, 0);
+        transform.position = movePosition;
+    }
     public void TakeDamage(int dam)
     {
         health = health - dam;
@@ -53,7 +60,18 @@ public class enemyStats : MonoBehaviour
 
     public void kill()
     {
-        Vector3 movePosition = new Vector3(-1000f, 0.71f, 0);
+        Vector3 movePosition = new Vector3(-1000f, 1.07f, 0);
+        transform.position = movePosition;
+    }
+
+    public float getX()
+    {
+        return this.transform.position.x;
+    }
+
+    public void setX(float x)
+    {
+        Vector3 movePosition = new Vector3(x, 1.07f, 0);
         transform.position = movePosition;
     }
 }
