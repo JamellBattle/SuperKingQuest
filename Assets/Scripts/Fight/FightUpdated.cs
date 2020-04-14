@@ -31,6 +31,9 @@ public class FightUpdated : MonoBehaviour
     int b = 0;
     float c = 0;
     int d = 0;
+    public AudioSource Hit;
+    public AudioSource Move;
+    public AudioSource Menu;
     public heroStats hero;
     public enemyStats enemy;
     public ChooseAction chooseAction;
@@ -111,7 +114,6 @@ public class FightUpdated : MonoBehaviour
             //Action box comes up at the end of both turns
             if (chooseAction.getY() < -2.537844 && timer > maxTime - 0.4f)
             {
-                Debug.Log("AAAAAA");
                 chooseAction.move(0.075f);
             }
             playerTurn(currAction); //Player's Turn
@@ -239,20 +241,22 @@ public class FightUpdated : MonoBehaviour
             //Player Deal Damage
             if (timer < 0.15 && attMove < 0.23f)
             {
+                Move.Play();
                 hero.move(attMove);
                 attMove += 0.01f;
-                Debug.Log("PlayerTurn attMove right: " + attMove);
+             //   Debug.Log("PlayerTurn attMove right: " + attMove);
             }
             if (timer >= 0.15 && timer < 0.3 && attMove > 0 && hero.getX() > initialPlayerSpot)
             {
                 hero.move(-attMove);
                 attMove -= 0.01f;
-                Debug.Log("PlayerTurn attMove left: " + attMove);
+              //  Debug.Log("PlayerTurn attMove left: " + attMove);
             }
             //Enemy Take Damage
 
             if (timer >= 0.6 && timer < 0.63) //Screen shake
             {
+                Hit.Play();
                 a = 1.0f;
                 b = 0;
             }
@@ -260,13 +264,13 @@ public class FightUpdated : MonoBehaviour
             {
                 enemy.move(damMove);
                 damMove -= 0.01f;
-                Debug.Log("PlayerTurn damMove right: " + damMove);
+               // Debug.Log("PlayerTurn damMove right: " + damMove);
             }
             if (timer >= 0.75 && timer < 0.9 && damMove < 0.22f && enemy.getX() > initialEnemySpot)
             {
                 enemy.move(-damMove);
                 damMove += 0.01f;
-                Debug.Log("PlayerTurn damMove left: " + damMove);
+                //Debug.Log("PlayerTurn damMove left: " + damMove);
             }
         }
         if (action == "fight")
@@ -335,6 +339,7 @@ public class FightUpdated : MonoBehaviour
         }
         if (timer >= 3.75 && hero.getStatus() == "Burn" && heroStatDamage == 1)
         {
+            Hit.Play();
             c = 0.7f;
             d = 0;
             hero.TakeDamage(hero.getMaxHealth() / 16);
@@ -350,17 +355,22 @@ public class FightUpdated : MonoBehaviour
     public void enemyTurn(string action)
     {
         //Enemy Deal Damage
+        if (timer > 2.09 && timer < 2.1)
+        {
+            Debug.Log(timer);
+            Move.Play();
+        }
         if (timer > 2 && timer < 2.15 && attMove < 0.23)
         {
             enemy.move(-attMove);
             attMove += 0.01f;
-            Debug.Log("EnemyTurn attMove left: " + attMove);
+           // Debug.Log("EnemyTurn attMove left: " + attMove);
         }
         if (timer >= 2.15 && timer < 2.3 && attMove > 0 && enemy.getX() < initialEnemySpot)
         {
             enemy.move(attMove);
             attMove -= 0.01f;
-            Debug.Log("EnemyTurn attMove right: " + attMove);
+            //Debug.Log("EnemyTurn attMove right: " + attMove);
         }
         if (action != "defend")
         {
@@ -368,6 +378,7 @@ public class FightUpdated : MonoBehaviour
             enemyStatusAfflict(enemy.getAttackStatus(), enemy.getStatusChance(), heroDamage); //Random Status Affliction
             if (timer >= 2.6 && timer < 2.63) //Screen shake
             {
+                Hit.Play();
                 a = 1.0f;
                 b = 0;
             }
@@ -375,13 +386,13 @@ public class FightUpdated : MonoBehaviour
             {
                 hero.move(-damMove);
                 damMove -= 0.01f;
-                Debug.Log("EnemyTurn damMove left: " + damMove);
+                //Debug.Log("EnemyTurn damMove left: " + damMove);
             }
             if (timer >= 2.75 && timer < 2.9 && damMove < 0.23f && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
                 damMove += 0.01f;
-                Debug.Log("EnemyTurn damMove right: " + damMove);
+                //Debug.Log("EnemyTurn damMove right: " + damMove);
                 if (heroDamage == 1)
                 {
                     hero.TakeDamage(enemy.getSTR());
@@ -394,6 +405,7 @@ public class FightUpdated : MonoBehaviour
             //Player Take Damage
             if (timer >= 2.6 && timer < 2.63) //Screen shake
             {
+                Hit.Play();
                 a = 0.5f;
                 b = 0;
             }
@@ -401,13 +413,13 @@ public class FightUpdated : MonoBehaviour
             {
                 hero.move(-damMove);
                 damMove -= 0.01f;
-                Debug.Log("damMove: " + damMove);
+               // Debug.Log("damMove: " + damMove);
             }
             if (timer >= 2.75 && timer < 2.9 && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
                 damMove += 0.01f;
-                Debug.Log("damMove: " + damMove);
+              //  Debug.Log("damMove: " + damMove);
                 if (heroDamage == 1)
                 {
                     hero.TakeDamage(enemy.getSTR() / 2);
@@ -419,6 +431,7 @@ public class FightUpdated : MonoBehaviour
 
     public void fight(string newMove)
     {
+        Menu.Play();
         if (timer <= 0 && hero.getStatus() != "Curse")
         {
             move = newMove;
@@ -429,6 +442,7 @@ public class FightUpdated : MonoBehaviour
 
     public void useItem(int newItemIndex)
     {
+        Menu.Play();
         if (timer <= 0 && itemButt[newItemIndex].getItem() != "")
         {
             itemIndex = newItemIndex;
@@ -440,6 +454,7 @@ public class FightUpdated : MonoBehaviour
 
     public void defend()
     {
+        Menu.Play();
         if (timer <= 0)
         {
             timerOn = 1;
@@ -449,6 +464,7 @@ public class FightUpdated : MonoBehaviour
 
     public void special(string newMove)
     {
+        Menu.Play();
         if (timer <= 0 && hero.getStatus() != "Silence" && hero.checkSpecial(newMove))
         {
             hero.setSP(newMove);
@@ -460,6 +476,7 @@ public class FightUpdated : MonoBehaviour
 
     public void switchBox(string newBox)
     {
+        Menu.Play();
         if (timer <= 0)
         {
             timerOn = 1;
@@ -473,26 +490,22 @@ public class FightUpdated : MonoBehaviour
 
         if (mainCamera.getX() < c && d == 0 && c > 0)
         {
-            Debug.Log("LLEEEFFT");
             mainCamera.moveX(0.3f);
         }
         if (mainCamera.getX() >= c && d == 0 && c > 0)
         {
             c -= 0.1f;
             c *= -1;
-            Debug.Log(c);
             d = 1;
         }
         if (mainCamera.getX() > c && d == 1 && c < 0)
         {
-            Debug.Log("RRIIIGHHHT");
             mainCamera.moveX(-0.3f);
         }
         if (mainCamera.getX() <= c && d == 1 && c < 0)
         {
             c += 0.1f;
             c *= -1;
-            Debug.Log(c);
             d = 0;
         }
         if (c < 0.1 && c > -0.1 && a < 0.1 && a > -0.1)
@@ -507,26 +520,22 @@ public class FightUpdated : MonoBehaviour
         
             if (mainCamera.getY() < a && b == 0 && a > 0)
             {
-                Debug.Log("UUPPPP " + a);
                 mainCamera.moveY(0.3f);
             }
             if (mainCamera.getY() >= a && b == 0 && a > 0)
             {
                 a -= 0.1f;
                 a *= -1;
-                Debug.Log(a);
                 b = 1;
             }
             if (mainCamera.getY() > a && b == 1 && a < 0)
             {
-                Debug.Log("DDOOWWN");
                 mainCamera.moveY(-0.3f);
             }
             if (mainCamera.getY() <= a && b == 1 && a < 0)
             {
                 a += 0.1f;
                 a *= -1;
-                Debug.Log(a);
                 b = 0;
             }
             if (a < 0.1 && a > -0.1 && c < 0.1 && c > -0.1)
