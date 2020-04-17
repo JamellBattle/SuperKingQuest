@@ -6,12 +6,21 @@ public class AnimationController : MonoBehaviour
 {
 
     public Animator Fade;
+    //Animators for First character(s) that appears
     public GameObject firstChar;
     public Animator firstCharAnim;
+    public GameObject firstChar2;
+    public Animator firstChar2Anim;
+
+    //Animators for each character
     public GameObject King;
     public Animator KingAnim;
     public GameObject Coco;
     public Animator CocoAnim;
+    public GameObject Sveri;
+    public Animator SveriAnim;
+
+    //Animators for Miscellaneous things
     public GameObject ObjectOfInterest;
     public Animator OOIAnim;
     public GameObject Flash;
@@ -33,13 +42,21 @@ public class AnimationController : MonoBehaviour
             //this gets the animator for the character designated as the first character to appear in the scene
             firstCharAnim = firstChar.GetComponent<Animator>();
         }
-        
+
+        if (firstChar2)
+        {
+            //this gets the animator for the character designated as the first character to appear in the scene
+            firstChar2Anim = firstChar2.GetComponent<Animator>();
+        }
+
 
         //These if statements are checking if these objects/characters will even be in the scene.
         //If they were given a gameObject value, then get the animator from it, if not, then don't.
         //By doing this, I can script in variables for objects that won't always be present in the scene
         //and the script will not complain if they aren't set to anything.
 
+
+        //Checking for characters
         if (King) {
             KingAnim = King.GetComponent<Animator>();
         }
@@ -54,6 +71,13 @@ public class AnimationController : MonoBehaviour
             EnemyAnim = Enemy.GetComponent<Animator>();
         }
 
+        if (Sveri)
+        {
+            SveriAnim = Sveri.GetComponent<Animator>();
+        }
+
+
+        //Checking for Miscellaneous things
         if (ObjectOfInterest) {
             OOIAnim = ObjectOfInterest.GetComponent<Animator>();
         }
@@ -93,8 +117,17 @@ public class AnimationController : MonoBehaviour
             if (firstChar.name == "King")
             {
                 ShowKing();
-                yield return new WaitForSeconds(wait);
+                
             }
+
+            if (firstChar2)
+            {
+                if (firstChar2.name == "Coco")
+                {
+                    ShowCoco();
+                }
+            }
+            yield return new WaitForSeconds(wait);
         }
         
 
@@ -135,6 +168,16 @@ public class AnimationController : MonoBehaviour
     {
         CocoAnim.SetBool("Present", false);
 
+    }
+
+    public void ShowSveri()
+    {
+        SveriAnim.SetBool("Present", true);
+    }
+
+    public void HideSveri()
+    {
+        SveriAnim.SetBool("Present", false);
     }
 
     //Functions for a enemy (who doesn't have any unique animation)
