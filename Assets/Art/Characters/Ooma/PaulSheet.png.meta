@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 58ec38075f4724b26ab1958e1a313b24
+guid: a59b8b5e98b644f6cb50b9fb24f906ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8796205961679382766
-    second: Khan_Happy
+      213: -364843024731812676
+    second: Paul_Happy
   - first:
-      213: -6846598852593779405
-    second: Khan_Mad
+      213: 2074901255712216736
+    second: Paul_Mad
   - first:
-      213: -418928706739387744
-    second: Khan_Pout
+      213: 7505480683941683352
+    second: Paul_Regular
   - first:
-      213: 9074669388163251983
-    second: Khan_Regular
-  - first:
-      213: -7574762384086955116
-    second: Khan_Sad
+      213: 971291470761657326
+    second: Paul_Sad
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -113,106 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Khan_Happy
+      name: Paul_Happy
       rect:
         serializedVersion: 2
         x: 0
-        y: 1318
-        width: 1024
-        height: 659
+        y: 610
+        width: 971
+        height: 610
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee8a215c7b6621a70800000000000000
-      internalID: 8796205961679382766
+      spriteID: cbcc418b331dfeaf0800000000000000
+      internalID: -364843024731812676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Khan_Mad
+      name: Paul_Mad
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1318
-        width: 1024
-        height: 659
+        x: 971
+        y: 610
+        width: 971
+        height: 610
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33dfc8f4e9efbf0a0800000000000000
-      internalID: -6846598852593779405
+      spriteID: 0a61db2e2b78bcc10800000000000000
+      internalID: 2074901255712216736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Khan_Pout
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 659
-        width: 1024
-        height: 659
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a2c5909f8aaf2af0800000000000000
-      internalID: -418928706739387744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Khan_Regular
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 659
-        width: 1024
-        height: 659
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0ff4979ab3bfed70800000000000000
-      internalID: 9074669388163251983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Khan_Sad
+      name: Paul_Regular
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 659
+        width: 971
+        height: 610
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49b81869eb901e690800000000000000
-      internalID: -7574762384086955116
+      spriteID: 89066e29ae2d82860800000000000000
+      internalID: 7505480683941683352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Sad
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 0
+        width: 971
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee38d105278ba7d00800000000000000
+      internalID: 971291470761657326
       vertices: []
       indices: 
       edges: []
