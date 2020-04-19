@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
 
         sentence = sentences.Dequeue();
 
-        Debug.Log("displaynextsentence/typesentence has been called");
+        
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
 

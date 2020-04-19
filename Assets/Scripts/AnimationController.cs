@@ -19,6 +19,10 @@ public class AnimationController : MonoBehaviour
     public Animator CocoAnim;
     public GameObject Sveri;
     public Animator SveriAnim;
+    public GameObject Paul;
+    public Animator PaulAnim;
+    public GameObject Khan;
+    public Animator KhanAnim;
 
     //Animators for Miscellaneous things
     public GameObject ObjectOfInterest;
@@ -31,7 +35,7 @@ public class AnimationController : MonoBehaviour
     public Animator WipeAnim;
     public GameObject Sky;
     public Animator SkyAnim;
-    public DialogueTrigger dialoguetrigger;
+    public DialogueTrigger dialogueTrigger;
     
 
     // Start is called before the first frame update
@@ -74,6 +78,16 @@ public class AnimationController : MonoBehaviour
         if (Sveri)
         {
             SveriAnim = Sveri.GetComponent<Animator>();
+        }
+
+        if (Paul)
+        {
+            PaulAnim = Paul.GetComponent<Animator>();
+        }
+
+        if (Khan)
+        {
+            KhanAnim = Khan.GetComponent<Animator>();
         }
 
 
@@ -126,6 +140,10 @@ public class AnimationController : MonoBehaviour
                 {
                     ShowCoco();
                 }
+                else if (firstChar2.name == "Paul")
+                {
+                    ShowPaul();
+                }
             }
             yield return new WaitForSeconds(wait);
         }
@@ -138,38 +156,35 @@ public class AnimationController : MonoBehaviour
 
     public void BeginDialogue()
     {
-        dialoguetrigger.TriggerDialogue();
+        dialogueTrigger.TriggerDialogue();
     }
 
 
     //All functions to show/hide characters/objects
 
-    //Functions for King
+    //King
     public void ShowKing()
     {
         KingAnim.SetBool("Present", true);
-
     }
 
     public void HideKing()
     {
-        KingAnim.SetBool("Present", false);
-        
+        KingAnim.SetBool("Present", false);       
     }
 
-    //Functions for Coco
+    //Coco
     public void ShowCoco()
     {
         CocoAnim.SetBool("Present", true);
-
     }
 
     public void HideCoco()
     {
         CocoAnim.SetBool("Present", false);
-
     }
 
+    //Sveri
     public void ShowSveri()
     {
         SveriAnim.SetBool("Present", true);
@@ -178,6 +193,28 @@ public class AnimationController : MonoBehaviour
     public void HideSveri()
     {
         SveriAnim.SetBool("Present", false);
+    }
+
+    //Paul
+    public void ShowPaul()
+    {
+        PaulAnim.SetBool("Present", true);
+    }
+
+    public void HidePaul()
+    {
+        PaulAnim.SetBool("Present", false);
+    }
+
+    //Khan
+    public void ShowKhan()
+    {
+        KhanAnim.SetBool("Present", true);
+    }
+
+    public void HideKhan()
+    {
+        KhanAnim.SetBool("Present", false);
     }
 
     //Functions for a enemy (who doesn't have any unique animation)
@@ -218,6 +255,7 @@ public class AnimationController : MonoBehaviour
         FlashAnim.SetBool("Flashbacking", false);
     }
 
+    //Wipe transition
     public void WipeStart()
     {
         WipeAnim.SetBool("Wiping", true);
@@ -228,6 +266,7 @@ public class AnimationController : MonoBehaviour
         WipeAnim.SetBool("Wiping", false);
     }
 
+    //Fade to the sky
     public void SkyFade()
     {
         SkyAnim.SetBool("Present", true);

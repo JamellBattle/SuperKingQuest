@@ -8,24 +8,40 @@ public class Act1P2DialogueManager : DialogueManager
     public Sprite CocoBox;
     public Sprite KingBox;
     public Sprite NPCBox;
-    public SpriteRenderer CocoSprite;
-    public Animator CocoAnim;
+    SpriteRenderer CocoSprite;
+    //Animator CocoAnim;
     public Sprite CSmile;
     public Sprite CReg;
     public Sprite CSad;
     public Sprite CMad;
     public Sprite CSmug;
-    public SpriteRenderer KingSprite;
+    SpriteRenderer KingSprite;
     public Sprite KReg;
     public Sprite KAngry;
     public Sprite KMad;
     public Sprite KShock;
     public Sprite KSurprise;
-    public GameObject Sveri;
-    public Animator SveriAnim;
-    public SpriteRenderer SveriSprite;
+    //Animator SveriAnim;
+    SpriteRenderer SveriSprite;
+    public Sprite SMad;
+    public Sprite SAngry;
+    //Animator PaulAnim;
+    SpriteRenderer PaulSprite;
+    public Sprite PReg;
+    public Sprite PHappy;
+    public Sprite PMad;
+    public Sprite PSad;
+    //Animator KhanAnim;
+    SpriteRenderer KhanSprite;
+    public Sprite KhReg;
+    public Sprite KhPout;
+    public Sprite KhMad;
+    public Sprite KhSad;
     GameObject King;
     GameObject Coco;
+    GameObject Sveri;
+    GameObject Paul;
+    GameObject Khan;
 
     // Start is called before the first frame update
     public override void Start()
@@ -33,6 +49,17 @@ public class Act1P2DialogueManager : DialogueManager
         base.Start();
         King = controller.King;
         Coco = controller.Coco;
+        Sveri = controller.Sveri;
+        Paul = controller.Paul;
+        Khan = controller.Khan;
+        KingSprite = King.GetComponent<SpriteRenderer>();
+        CocoSprite = Coco.GetComponent<SpriteRenderer>();
+        SveriSprite = Sveri.GetComponent<SpriteRenderer>();
+        PaulSprite = Paul.GetComponent<SpriteRenderer>();
+        KhanSprite = Khan.GetComponent<SpriteRenderer>();
+        SetBox(NPCBox);
+
+
 
     }
 
@@ -52,7 +79,28 @@ public class Act1P2DialogueManager : DialogueManager
     {
         base.DisplayNextSentence();
 
-        
+        if (sentences.Count == 38)
+        {
+            SetBox(CocoBox);
+            SetName("Coco");
+        }
+
+        if (sentences.Count == 37)
+        {
+            clickingAllowed = false;
+            StartCoroutine(KhanAppears());
+        }
+
+        if (sentences.Count == 35)
+        {
+            changeEmotion(KhanSprite, KhPout);
+        }
+
+        if (sentences.Count == 34)
+        {
+            changeEmotion(PaulSprite, PHappy);
+        }
+
     }
 
    
@@ -71,19 +119,15 @@ public class Act1P2DialogueManager : DialogueManager
 
 
     //Additional Coroutines exclusive to this Dialogue manager
-    public IEnumerator SveriAppears()
+    public IEnumerator KhanAppears()
     {
-
+        textAnim.SetBool("IsOpen", false);
         controller.HideCoco();
+        changeEmotion(KhanSprite, KhSad);
         yield return new WaitForSeconds(1f);
-        changeEmotion(CocoSprite, CSad);
-        Vector3 newpos2 = new Vector3(-2.83f, -0.47f, 0.04f);
-        Coco.transform.position = newpos2;
-        controller.ShowCoco();
-        controller.ShowSveri();
+        controller.ShowKhan();
         SetBox(NPCBox);
         SetName("???");
-        yield return new WaitForSeconds(1f);
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
     }

@@ -13,7 +13,7 @@ public class SentenceWriter : MonoBehaviour
     }
     public void StartWritingSentence()
     {
-        Debug.Log("sentencewriter has been called");
+        
         dm.StopAllCoroutines();
         dm.StartCoroutine(dm.TypeSentence(sentence));
     }

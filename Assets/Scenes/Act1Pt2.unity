@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 98036705}
   - component: {fileID: 98036707}
   - component: {fileID: 98036706}
+  - component: {fileID: 98036708}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -230,6 +231,122 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &98036708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98036704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 341185419}
+  sentence: 
+--- !u!1 &103545799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103545802}
+  - component: {fileID: 103545801}
+  - component: {fileID: 103545800}
+  m_Layer: 0
+  m_Name: Sveri
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &103545800
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103545799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 0a8e20be7ab8244b9a6534f229b87d18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &103545801
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103545799}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7350925537069126475, guid: 7925fe13b2a374148bb7404037b02c36,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.24, y: 7.1005654}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &103545802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103545799}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.27, y: 0.16, z: 0}
+  m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249556154
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +358,7 @@ GameObject:
   - component: {fileID: 249556157}
   - component: {fileID: 249556156}
   - component: {fileID: 249556155}
+  - component: {fileID: 249556158}
   m_Layer: 0
   m_Name: ThoughtBox
   m_TagString: Untagged
@@ -339,6 +457,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 12.593924, y: 2.94}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &249556158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249556154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 341185419}
+  sentence: 
 --- !u!1 &341185418
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,36 +500,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcbfee0bf069430a8e0dc22d1f3096a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
+  nameText: {fileID: 419002160}
+  dialogueText: {fileID: 1436233993}
   mainText: {fileID: 0}
-  thoughtText: {fileID: 0}
-  textbox: {fileID: 0}
-  textAnim: {fileID: 0}
-  thoughtAnim: {fileID: 0}
+  thoughtText: {fileID: 1641345335}
+  textbox: {fileID: 681658037}
+  textAnim: {fileID: 98036706}
+  thoughtAnim: {fileID: 249556155}
   controller: {fileID: 0}
   loadlevel: {fileID: 0}
   nextScene: 
   clickingAllowed: 0
-  CocoBox: {fileID: 0}
-  KingBox: {fileID: 0}
-  NPCBox: {fileID: 0}
-  CocoSprite: {fileID: 0}
-  CocoAnim: {fileID: 0}
-  CSmile: {fileID: 0}
-  CReg: {fileID: 0}
-  CSad: {fileID: 0}
-  CMad: {fileID: 0}
-  CSmug: {fileID: 0}
-  KingSprite: {fileID: 0}
-  KReg: {fileID: 0}
-  KAngry: {fileID: 0}
-  KMad: {fileID: 0}
-  KShock: {fileID: 0}
-  KSurprise: {fileID: 0}
-  Sveri: {fileID: 0}
-  SveriAnim: {fileID: 0}
-  SveriSprite: {fileID: 0}
+  sentence: 
+  CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
+    type: 3}
+  KingBox: {fileID: -999324308146694106, guid: 76818e6471a9c4805901c11b15a591d2, type: 3}
+  NPCBox: {fileID: -2720986750490905054, guid: 76818e6471a9c4805901c11b15a591d2, type: 3}
+  CSmile: {fileID: 9111684736457727126, guid: f882c637b94584c7aad2340db7558ec1, type: 3}
+  CReg: {fileID: -2442551811445898697, guid: f882c637b94584c7aad2340db7558ec1, type: 3}
+  CSad: {fileID: 2277879381130351237, guid: f882c637b94584c7aad2340db7558ec1, type: 3}
+  CMad: {fileID: 3719031444187157369, guid: f882c637b94584c7aad2340db7558ec1, type: 3}
+  CSmug: {fileID: 6133900904795612702, guid: f882c637b94584c7aad2340db7558ec1, type: 3}
+  KReg: {fileID: -5175901361549791178, guid: 715de919604ef4c18898238db55a6e7f, type: 3}
+  KAngry: {fileID: 21300000, guid: 58b0844d46e074f758c01e76c8af605c, type: 3}
+  KMad: {fileID: -5994169703294044208, guid: 715de919604ef4c18898238db55a6e7f, type: 3}
+  KShock: {fileID: 21300000, guid: fc08ded3400f04800b5f0f860fbaf29b, type: 3}
+  KSurprise: {fileID: 5491449222564550954, guid: 715de919604ef4c18898238db55a6e7f,
+    type: 3}
+  SMad: {fileID: -5951983647913580196, guid: 7925fe13b2a374148bb7404037b02c36, type: 3}
+  SAngry: {fileID: -529209715654216090, guid: 7925fe13b2a374148bb7404037b02c36, type: 3}
+  PReg: {fileID: 7505480683941683352, guid: a59b8b5e98b644f6cb50b9fb24f906ab, type: 3}
+  PHappy: {fileID: -364843024731812676, guid: a59b8b5e98b644f6cb50b9fb24f906ab, type: 3}
+  PMad: {fileID: 2074901255712216736, guid: a59b8b5e98b644f6cb50b9fb24f906ab, type: 3}
+  PSad: {fileID: 971291470761657326, guid: a59b8b5e98b644f6cb50b9fb24f906ab, type: 3}
+  KhReg: {fileID: 9074669388163251983, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
+  KhPout: {fileID: -418928706739387744, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
+  KhMad: {fileID: -6846598852593779405, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
+  KhSad: {fileID: -7574762384086955116, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
 --- !u!4 &341185420
 Transform:
   m_ObjectHideFlags: 0
@@ -474,25 +613,28 @@ MonoBehaviour:
       get rid of the poison the same day!
     - "The way people talk about him, that big sign isn\u2019t just for show. "
     - Maybe before we leave, I could-
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - "What\u2019s that?"
+    - "EVERYONE, PLEASE GET INSIDE! IT\u2019S THE GORGONS!"
+    - The Gorgons?
+    - 'Who is that? What is that? '
+    - Paul! Khan! I need your assistance! Please, come with me! We need to keep more
+      from coming in!
+    - Got it!
+    - "Sorry this meeting had to get cut short. Let\u2019s talk again later, yeah?"
+    - Understood.
+    - "King, it appears the village is in danger. Although, I am not sure what a
+      \u201CGorgon\u201D is."
+    - "Yeah\u2026"
+    - King, behind you.
+    - Huh?
+    - Ooga ooga ooga ooga!!!!
+    - What the heck are those things!?
+    - Given the current circumstances, those must be the Gorgons that Sveri mentioned.
+    - Annoying.
+    - Ooga ooga ooga ooga!!
+    - "If you hadn\u2019t come at me, I would\u2019ve ignored you. But just looking
+      at you is getting my on nerves now!"
+    - Take this!
 --- !u!4 &361485937
 Transform:
   m_ObjectHideFlags: 0
@@ -594,6 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619212993}
   - component: {fileID: 619212992}
+  - component: {fileID: 619212994}
   m_Layer: 0
   m_Name: Paul
   m_TagString: Untagged
@@ -666,6 +809,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &619212994
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619212991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 730231280ed4b4b338583b8a5b38f9b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &681658035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1239,7 @@ PrefabInstance:
         type: 3}
       propertyPath: firstCharacter
       value: 
-      objectReference: {fileID: 1485205061}
+      objectReference: {fileID: 905449492}
     - target: {fileID: 3330666992868908483, guid: 233f4ad984d5b49a995c565acd4019c4,
         type: 3}
       propertyPath: controller
@@ -1343,7 +1505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1485205061
 Animator:
   serializedVersion: 3
@@ -1535,16 +1697,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 1417531390}
-  firstChar: {fileID: 1485205060}
+  firstChar: {fileID: 905449491}
   firstCharAnim: {fileID: 0}
-  firstChar2: {fileID: 905449491}
+  firstChar2: {fileID: 619212991}
   firstChar2Anim: {fileID: 0}
   King: {fileID: 1485205060}
   KingAnim: {fileID: 0}
   Coco: {fileID: 905449491}
   CocoAnim: {fileID: 0}
-  Sveri: {fileID: 0}
+  Sveri: {fileID: 103545799}
   SveriAnim: {fileID: 0}
+  Paul: {fileID: 619212991}
+  PaulAnim: {fileID: 0}
+  Khan: {fileID: 2108377200}
+  KhanAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
@@ -1555,7 +1721,7 @@ MonoBehaviour:
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}
   SkyAnim: {fileID: 0}
-  dialoguetrigger: {fileID: 0}
+  dialogueTrigger: {fileID: 361485936}
 --- !u!4 &1868149974
 Transform:
   m_ObjectHideFlags: 0
@@ -1580,6 +1746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108377201}
   - component: {fileID: 2108377202}
+  - component: {fileID: 2108377203}
   m_Layer: 0
   m_Name: Khan
   m_TagString: Untagged
@@ -1595,7 +1762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108377200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.55, y: -0.09, z: 0}
+  m_LocalPosition: {x: -4.35, y: -0.09, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1652,3 +1819,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2108377203
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108377200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: ff981f9587f9b4389a8ef4640a94c9cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
