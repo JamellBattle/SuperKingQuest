@@ -442,8 +442,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 
-    sentences: []
+    name: ???
+    sentences:
+    - "\u2026and depending on the type of fish, sometimes I might have to use a metal
+      spear instead of a wooden one. We don\u2019t have many of those, so I try to
+      use them sparingly. "
+    - I see. Interesting.
+    - "I don\u2019t understand how you do it. Fishing\u2019s no fun! You can\u2019t
+      wrestle fish like you can wrestle bears when you hunt on land."
+    - "Fishing\u2019s no fun to YOU, yeah. You probably love bear wrestling so much
+      because you\u2019re built like one!"
+    - Hey!!
+    - Hahahaha!
+    - There you are!
+    - Oh, King.
+    - "As if it isn\u2019t already hard enough to keep track of you as is\u2026 What
+      are you doing here, anyways?"
+    - "I was talking to these two men about hunting animals. They are known as the
+      \u201Chunting brothers\u201D by the people who live here."
+    - 'No way. Brothers? '
+    - "One of them looks about the same size as me, and the other one is the size
+      of a bear\u2026 "
+    - 'Paul, Khan, this is King. '
+    - "Yo. I\u2019m Paul."
+    - "I\u2019m Khan!"
+    - "Hey\u2026"
+    - "King, did you see the big sign that said \u201CDoctor Oswald\u201D on it?
+      Paul and Khan showed it to me. It is very noticeable."
+    - Yeah, I did. What about it?
+    - The doc is the best! I got bitten by a Tiger Snake once, and he was able to
+      get rid of the poison the same day!
+    - "The way people talk about him, that big sign isn\u2019t just for show. "
+    - Maybe before we leave, I could-
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
 --- !u!4 &361485937
 Transform:
   m_ObjectHideFlags: 0

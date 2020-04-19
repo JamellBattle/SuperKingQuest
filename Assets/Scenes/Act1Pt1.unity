@@ -617,6 +617,7 @@ GameObject:
   - component: {fileID: 947259626}
   - component: {fileID: 947259625}
   - component: {fileID: 947259624}
+  - component: {fileID: 947259627}
   m_Layer: 0
   m_Name: ThoughtBox
   m_TagString: Untagged
@@ -715,6 +716,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 12.593924, y: 2.94}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &947259627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947259623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 1784508216}
+  sentence: 
 --- !u!1 &1012628716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1172,7 @@ MonoBehaviour:
   loadlevel: {fileID: 234661039}
   nextScene: Act1Pt1
   clickingAllowed: 0
+  sentence: 
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   KingBox: {fileID: -999324308146694106, guid: 76818e6471a9c4805901c11b15a591d2, type: 3}
@@ -1306,6 +1322,7 @@ GameObject:
   - component: {fileID: 1948722525}
   - component: {fileID: 1948722527}
   - component: {fileID: 1948722526}
+  - component: {fileID: 1948722528}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1404,6 +1421,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1948722528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948722524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 1784508216}
+  sentence: 
 --- !u!1001 &1993965069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1546,32 +1577,32 @@ MonoBehaviour:
     - "Yeah\u2026"
     - King, somebody is approaching.
     - Huh?
-    - " She\u2019s right. "
+    - "She\u2019s right. "
     - "Somebody is coming this way, and he\u2019s moving pretty fast. "
     - "Are we somewhere we shouldn\u2019t be?"
-    - ' Welcome, strangers! '
+    - 'Welcome, strangers! '
     - "\u2026"
     - Hello.
-    - ' Who is this guy? '
+    - 'Who is this guy? '
     - "The way he\u2019s armed, I thought he was coming to take us out."
     - Is he not worried that we could be here to cause trouble?
-    - ' This is Ooma village! Are you two travelers? '
+    - 'This is Ooma village! Are you two travelers? '
     - Yes.
     - "I see! If that\u2019s the case, allow me to escort you to the local inn. Please,
       make yourself at home here!"
     - "\u2026"
     - Understood. Please lead the way.
-    - " This place is pretty big for a forest village\u2026"
+    - "This place is pretty big for a forest village\u2026"
     - "It looks like there\u2019s shops, fishermen, and\u2026 that?"
-    - " Ah, I see you\u2019ve taken an interest in Doctor Oswald\u2019s Office. That
+    - "Ah, I see you\u2019ve taken an interest in Doctor Oswald\u2019s Office. That
       sign is ridiculous, isn\u2019t it? He\u2019s a great man, though. You should
       pay him a visit sometime!"
     - "Oswald\u2026"
-    - ' They even have a doctor here? '
+    - 'They even have a doctor here? '
     - "Still, who would have thought all of this could exist in the middle of a forest\u2026?"
     - "It\u2019s actually kind of impressive."
-    - ' And here we are! This is our inn. Please, feel free to stay to make yourself
-      at home.'
+    - And here we are! This is our inn. Please, feel free to stay to make yourself
+      at home.
     - Got it.
     - "By the way, I'm Sveri. I\u2019m the village guard, so it\u2019s my duty to
       keep an eye out for any incoming strangers. If you need anything else, I'll
@@ -1579,11 +1610,11 @@ MonoBehaviour:
     - "Sveri, huh\u2026 Well, I guess it wouldn\u2019t hurt to remember him. Coco,
       let\u2019s\u2026"
     - Huh?
-    - " She\u2019s not here. "
+    - "She\u2019s not here. "
     - 'Has she been gone the entire time? '
     - She was just behind me at the entrance!
-    - ' Where the heck did she go!?'
-    - " Oh, come on. I really can\u2019t catch a break, can I\u2026?"
+    - Where the heck could she have gone!?
+    - "Oh, come on. I really can\u2019t catch a break, can I\u2026?"
 --- !u!4 &1996157536
 Transform:
   m_ObjectHideFlags: 0

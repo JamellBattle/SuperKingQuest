@@ -234,10 +234,14 @@ MonoBehaviour:
   Fade: {fileID: 1952933498}
   firstChar: {fileID: 1122967097}
   firstCharAnim: {fileID: 1122967098}
+  firstChar2: {fileID: 0}
+  firstChar2Anim: {fileID: 0}
   King: {fileID: 1037555097}
   KingAnim: {fileID: 0}
   Coco: {fileID: 1066692641}
   CocoAnim: {fileID: 0}
+  Sveri: {fileID: 0}
+  SveriAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
@@ -274,6 +278,7 @@ GameObject:
   - component: {fileID: 451037288}
   - component: {fileID: 451037290}
   - component: {fileID: 451037289}
+  - component: {fileID: 451037291}
   m_Layer: 0
   m_Name: ThoughtBox
   m_TagString: Untagged
@@ -372,6 +377,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &451037291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451037287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 768338412}
+  sentence: 
 --- !u!1 &620352497
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,47 +501,47 @@ MonoBehaviour:
     name: King
     sentences:
     - "Ow, that\u2019s bright\u2026 Morning already, huh?"
-    - ' Ack!'
+    - Ack!
     - Good morning, King. Are you well rested?
     - "What\u2019s wrong with you!?"
     - What do you mean? Did I frighten you?
     - Of course you did! Why were you so close to my face?!
-    - 'I was monitoring your sleep. If you had stopped breathing for any reason,
-      I would have taken the appropriate countermeasures. '
+    - 'I was monitoring your sleep. If you had stopped breathing, I would need to
+      take the appropriate countermeasures. '
     - "Ugh\u2026"
-    - ' I knew letting her sleep here was a horrible idea. '
+    - 'I knew letting her sleep here was a horrible idea. '
     - "Wanting her to leave was asking for too much\u2026"
     - 'Still, maybe she was just waiting here until I woke up. '
     - "Me and her are both lost, so she doesn\u2019t have a reason to follow me anymore."
-    - " Whatever. There's no point in staying here, so I\u2019m going. See you around."
+    - "Whatever. There's no point in staying here, so I\u2019m going. See you around."
     - Understood.
-    - ' How long have I been walking now? '
+    - 'How long have I been walking now? '
     - All these trees look the same...
     - 'What was her name, Coco? '
     - She was just sitting there when I left.
     - "She\u2019s weird, so I wonder if she\u2019s even moved at all\u2026"
     - "Either way, she\u2019s not my problem. Shouldn\u2019t have been following
       me in the first place."
-    - ' Sheesh, is there anything around here? I feel like this walk is endless.'
+    - Sheesh, is there anything around here? I feel like this walk is endless.
     - Excuse me. I would like to make a suggestion.
     - Eh!?
     - 'What are you doing here!? '
     - I am following you.
     - "But I\u2019m lost! I\u2019m not leading you anywhere!"
-    - That is true. But I believe when lost, having more people present increases
-      the chances of finding the correct path.
-    - " You can\u2019t be serious right now."
+    - That is true. However, when lost, having more people present increases the
+      chances of finding the correct path.
+    - "You can\u2019t be serious right now."
     - "She\u2019s been following me the entire time!?"
     - Just who does she think she is?!
-    - ' King, please look.'
+    - King, please look.
     - "Those are\u2026"
     - Footprints. Human footprints. I am sure that if we follow them, we will find
       someone.
-    - " As much as I hate to admit it, she\u2019s right."
+    - "As much as I hate to admit it, she\u2019s right."
     - "Those footprints don\u2019t look that old, so someone definitely came through
       here earlier."
     - "If we followed them, we\u2019d definitely find something\u2026"
-    - " Huh\u2026"
+    - "Huh\u2026"
     - Had I not been here, we would have not noticed these footprints. This is because
       there were two of us here instead of just one. Lucky.
     - "Ugh\u2026 there\u2019s no point in complaining anymore. C\u2019mon, Coco,
@@ -681,8 +700,9 @@ MonoBehaviour:
   thoughtAnim: {fileID: 451037289}
   controller: {fileID: 221683489}
   loadlevel: {fileID: 1952933497}
-  nextScene: PrologueEnd
+  nextScene: Act1Pt1
   clickingAllowed: 0
+  sentence: 
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   KingBox: {fileID: -999324308146694106, guid: 76818e6471a9c4805901c11b15a591d2, type: 3}
@@ -1451,6 +1471,7 @@ GameObject:
   - component: {fileID: 1618702814}
   - component: {fileID: 1618702816}
   - component: {fileID: 1618702815}
+  - component: {fileID: 1618702817}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1549,6 +1570,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1618702817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618702813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 768338412}
+  sentence: 
 --- !u!1 &1687649186
 GameObject:
   m_ObjectHideFlags: 0
