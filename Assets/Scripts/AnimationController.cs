@@ -133,6 +133,10 @@ public class AnimationController : MonoBehaviour
                 ShowKing();
                 
             }
+            else if (firstChar.name == "Coco")
+            {
+                ShowCoco();
+            }
 
             if (firstChar2)
             {

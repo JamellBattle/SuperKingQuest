@@ -504,7 +504,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1436233993}
   mainText: {fileID: 0}
   thoughtText: {fileID: 1641345335}
-  textbox: {fileID: 681658037}
+  textbox: {fileID: 98036707}
   textAnim: {fileID: 98036706}
   thoughtAnim: {fileID: 249556155}
   controller: {fileID: 0}
@@ -537,6 +537,7 @@ MonoBehaviour:
   KhPout: {fileID: -418928706739387744, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
   KhMad: {fileID: -6846598852593779405, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
   KhSad: {fileID: -7574762384086955116, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
+  KhHappy: {fileID: 8796205961679382766, guid: 58ec38075f4724b26ab1958e1a313b24, type: 3}
 --- !u!4 &341185420
 Transform:
   m_ObjectHideFlags: 0
@@ -593,7 +594,7 @@ MonoBehaviour:
       because you\u2019re built like one!"
     - Hey!!
     - Hahahaha!
-    - There you are!
+    - THERE YOU ARE!
     - Oh, King.
     - "As if it isn\u2019t already hard enough to keep track of you as is\u2026 What
       are you doing here, anyways?"
@@ -605,15 +606,15 @@ MonoBehaviour:
     - 'Paul, Khan, this is King. '
     - "Yo. I\u2019m Paul."
     - "I\u2019m Khan!"
-    - "Hey\u2026"
+    - "\u2026"
     - "King, did you see the big sign that said \u201CDoctor Oswald\u201D on it?
       Paul and Khan showed it to me. It is very noticeable."
     - Yeah, I did. What about it?
     - The doc is the best! I got bitten by a Tiger Snake once, and he was able to
       get rid of the poison the same day!
     - "The way people talk about him, that big sign isn\u2019t just for show. "
-    - Maybe before we leave, I could-
-    - "What\u2019s that?"
+    - Maybe before we leave, I could...
+    - Huh?
     - "EVERYONE, PLEASE GET INSIDE! IT\u2019S THE GORGONS!"
     - The Gorgons?
     - 'Who is that? What is that? '
@@ -1186,7 +1187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905449491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.49, y: -0.47, z: 0.04}
+  m_LocalPosition: {x: -4.7, y: -0.47, z: 0.04}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1564,7 +1565,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5491449222564550954, guid: 715de919604ef4c18898238db55a6e7f,
+  m_Sprite: {fileID: -5994169703294044208, guid: 715de919604ef4c18898238db55a6e7f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1762,7 +1763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108377200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.35, y: -0.09, z: 0}
+  m_LocalPosition: {x: -4.35, y: -0.09, z: 0.11}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}

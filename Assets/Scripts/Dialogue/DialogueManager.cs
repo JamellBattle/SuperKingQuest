@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    private readonly List<char> punctuationCharacters = new List<char>
+    {
+        '.',
+        ',',
+        '?',
+        '!'
+
+    };
 
     public Queue<string> sentences;
     public Text nameText;
@@ -75,13 +83,30 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    private bool CheckPunctuation(char c)
+    {
+        if (punctuationCharacters.Contains(c))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public virtual IEnumerator TypeSentence(string sentence)
     {
         mainText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            mainText.text += letter;
             yield return 1f;
+            mainText.text += letter;
+            
+            if (CheckPunctuation(letter))
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 

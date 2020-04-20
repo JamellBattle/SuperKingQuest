@@ -17,4 +17,9 @@ public class SentenceWriter : MonoBehaviour
         dm.StopAllCoroutines();
         dm.StartCoroutine(dm.TypeSentence(sentence));
     }
+
+    public void ClearSentence()
+    {
+        sentence = "";
+    }
 }
