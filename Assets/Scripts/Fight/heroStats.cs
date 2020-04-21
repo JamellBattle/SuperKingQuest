@@ -5,22 +5,125 @@ using UnityEngine.UI;
 
 public class heroStats : MonoBehaviour
 {
+    public string heroName;
+    public Sprite Appearance;
+    public Sprite DefendingAppearance;
     int str = 5;
     int spl = 15;
-    int health = 30;
-    int special = 10;
+    int health;
+    public int maxHealth;
+    int special;
+    public int maxSpecial;
     int burnEffect = 1;
     int poisonEffect = 1;
     string status = "OK";
+    public string move1Name;
+    public int move1Damage;
+    public string move2Name;
+    public int move2Damage;
+    public string move3Name;
+    public int move3Damage;
+    public string move4Name;
+    public int move4Damage;
+    public string special1Name;
+    public int special1Damage;
+    public int special1Cost;
+    public string special2Name;
+    public int special2Damage;
+    public int special2Cost;
+    public string special3Name;
+    public int special3Damage;
+    public int special3Cost;
+    public string special4Name;
+    public int special4Damage;
+    public int special4Cost;
+    public string item1Name;
+    public string item2Name;
+    public string item3Name;
+    public string item4Name;
+    public string item5Name;
+    public string item6Name;
+    public string item7Name;
+    public string item8Name;
+    public Text Name;
     public Text Health;
     public Text Special;
     public Text Status;
-    public Sprite mainSprite;
-    public Sprite defendSprite;
+    public move move1;
+    public move move2;
+    public move move3;
+    public move move4;
+    public item item1;
+    public item item2;
+    public item item3;
+    public item item4;
+    public item item5;
+    public item item6;
+    public item item7;
+    public item item8;
+    public special special1;
+    public special special2;
+    public special special3;
+    public special special4;
+    move[] moves;
+    item[] items;
+    special[] specials;
 
     public void Start()
     {
+        health = maxHealth;
+        special = maxSpecial;
+        Name.text = heroName;
+        Health.text = "HP: " + health + "/" + maxHealth;
+        Special.text = "SP: " + special + "/" + maxSpecial;
         Status.text = status;
+        move1.moveName = move1Name;
+        move1.damage = move1Damage;
+        move2.moveName = move2Name;
+        move2.damage = move2Damage;
+        move3.moveName = move3Name;
+        move3.damage = move3Damage;
+        move4.moveName = move4Name;
+        move4.damage = move4Damage;
+        item1.itemName = item1Name;
+        item2.itemName = item2Name;
+        item3.itemName = item3Name;
+        item4.itemName = item4Name;
+        item5.itemName = item5Name;
+        item6.itemName = item6Name;
+        item7.itemName = item7Name;
+        item8.itemName = item8Name;
+        special1.specialName = special1Name;
+        special1.damage = special1Damage;
+        special1.cost = special1Cost;
+        special2.specialName = special2Name;
+        special2.damage = special2Damage;
+        special2.cost = special2Cost;
+        special3.specialName = special3Name;
+        special3.damage = special3Damage;
+        special3.cost = special3Cost;
+        special4.specialName = special4Name;
+        special4.damage = special4Damage;
+        special4.cost = special4Cost;
+        moves = new move[4];
+        moves[0] = move1;
+        moves[1] = move2;
+        moves[2] = move3;
+        moves[3] = move4;
+        items = new item[8];
+        items[0] = item1;
+        items[1] = item2;
+        items[2] = item3;
+        items[3] = item4;
+        items[4] = item5;
+        items[5] = item6;
+        items[6] = item7;
+        items[7] = item8;
+        specials = new special[4];
+        specials[0] = special1;
+        specials[1] = special2;
+        specials[2] = special3;
+        specials[3] = special4;
     }
 
     public void move(float speed)
@@ -43,58 +146,73 @@ public class heroStats : MonoBehaviour
         {
             health = 0;
         }
-        Health.text = "HP: " + health + "/30";
+        Health.text = "HP: " + health + "/" + maxHealth;
         Status.text = status;
     }
     public void item(string item)
     {
-        if (item == "Soda")
+        int x = 0;
+        for (int i = 0; i < items.Length; i++)
         {
-            health = health + 10;
+            if (item == items[i].itemName)
+            {
+                x = i;
+                if (items[i].itemEffect() != "")
+                {
+                    if (items[i].itemEffect().Substring(0, items[i].itemEffect().IndexOf(' ')) == "HP")
+                    {
+                        health = health + int.Parse(items[i].itemEffect().Substring(items[i].itemEffect().IndexOf(' ') + 1));
+                    }
+                    if (items[i].itemEffect().Substring(0, items[i].itemEffect().IndexOf(' ')) == "SP")
+                    {
+                        special = special + int.Parse(items[i].itemEffect().Substring(items[i].itemEffect().IndexOf(' ') + 1));
+                    }
+                    if (items[i].itemEffect().Substring(0, items[i].itemEffect().IndexOf(' ')) == "STATUS")
+                    {
+                        status = items[i].itemEffect().Substring(items[i].itemEffect().IndexOf(' ') + 1);
+                    }
+                }
+            }
         }
-        if (item == "Large Soda")
+        for (int i = x; i < items.Length - 1; i++)
         {
-            health = health + 20;
-        }
-        if (item == "Honey Jar")
-        {
-            special = special + 5;
-        }
-        if (item == "Medicine")
-        {
-            status = "OK";
-        }
-        if (item == "Revival Herb")
-        {
-            health = health + 30;
+            items[i].setItem(items[i + 1].getItem());
         }
 
-        if (health > 30)
+
+
+
+        if (health > maxHealth)
         {
-            health = 30;
+            health = maxHealth;
         }
-        if (special > 10)
+        if (special > maxSpecial)
         {
-            special = 10;
+            special = maxSpecial;
         }
-        Health.text = "HP: " + health + "/30";
-        Special.text = "SP: " + special + "/10";
+        Health.text = "HP: " + health + "/" + maxHealth;
+        Special.text = "SP: " + special + "/" + maxSpecial;
         Status.text = status;
     }
     public void defend(int defence)
     {
         if (defence == 1)
         {
-            this.GetComponent<SpriteRenderer>().sprite = defendSprite;
+            this.GetComponent<SpriteRenderer>().sprite = DefendingAppearance;
         }
         if (defence == 0)
         {
-            this.GetComponent<SpriteRenderer>().sprite = mainSprite;
+            this.GetComponent<SpriteRenderer>().sprite = Appearance;
         }
     }
     public int getMaxHealth()
     {
-        return 30;
+        return maxHealth;
+    }
+
+    public int getMaxSpecial()
+    {
+        return maxSpecial;
     }
     public int getSTR()
     {
@@ -114,29 +232,16 @@ public class heroStats : MonoBehaviour
         {
             burnEffect = 1;
         }
-
-        if (move == "punch")
+        for (int i = 0; i < moves.Length; i++)
         {
-            return 7 / burnEffect;
-        }
-
-        if (move == "jump")
-        {
-            return 11 / burnEffect;
-        }
-
-        if (move == "hammer")
-        {
-            return 16 / burnEffect;
-        }
-
-        if (move == "bfg")
-        {
-            return 9999 / burnEffect;
+            if (move == moves[i].moveName)
+            {
+                return moves[i].damage / burnEffect;
+            }
         }
         return str;
     }
-    public int getSPL(string move)
+    public int getSPL(string special)
     {
         if (status == "Poison")
         {
@@ -146,15 +251,12 @@ public class heroStats : MonoBehaviour
         {
             poisonEffect = 1;
         }
-
-        if (move == "fireball")
+        for (int i = 0; i < specials.Length; i++)
         {
-            return 21 / poisonEffect;
-        }
-
-        if (move == "superjump")
-        {
-            return 36 / poisonEffect;
+            if (special == specials[i].specialName)
+            {
+                return specials[i].damage / poisonEffect;
+            }
         }
         return spl;
     }
@@ -164,29 +266,33 @@ public class heroStats : MonoBehaviour
         return status;
     }
 
-    public bool checkSpecial(string move)
+    public move getMove(int index)
     {
-        if (move == "fireball" && special >= 2)
-        {
-            return true;
-        }
-        if (move == "superjump" && special >= 5)
+        return moves[index];
+    }
+
+    public item getItem(int index)
+    {
+        return items[index];
+    }
+
+    public special getSpecial(int index)
+    {
+        return specials[index];
+    }
+
+    public bool checkSpecial(int specialIndex)
+    {
+        if (special >= specials[specialIndex].cost)
         {
             return true;
         }
         return false;
     }
 
-    public void setSP(string move)
+    public void setSP(int specialIndex)
     {
-        if (move == "fireball")
-        {
-            special -= 2;
-        }
-        if (move == "superjump")
-        {
-            special -= 5;
-        }
+        special -= specials[specialIndex].cost;
         Special.text = "SP: " + special + "/10";
     }
 

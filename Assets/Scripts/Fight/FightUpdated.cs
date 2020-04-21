@@ -17,12 +17,13 @@ public class FightUpdated : MonoBehaviour
     int enemyStatAfflict = 0;
     int enemyStatAfflict2 = 0;
     string move = "";
+    string enemyMove = "";
     string item = "";
     int itemIndex = 0;
-    itemButton[] itemButt;
     string currAction = "";
     string startBox = "";
     string endBox = "";
+    string display = "";
     float attMove = 0.01f;
     float damMove = 0.23f;
     float initialPlayerSpot = 0;
@@ -40,27 +41,10 @@ public class FightUpdated : MonoBehaviour
     public ChooseMove chooseMove;
     public ChooseItem chooseItem;
     public ChooseSpecial chooseSpecial;
+    public MoveDisplay moveDisplay;
     public CameraMove mainCamera;
-    public itemButton itemButton0;
-    public itemButton itemButton1;
-    public itemButton itemButton2;
-    public itemButton itemButton3;
-    public itemButton itemButton4;
-    public itemButton itemButton5;
-    public itemButton itemButton6;
-    public itemButton itemButton7;
     void Start()
     {
-        itemButt = new itemButton[8];
-        itemButt[0] = itemButton0;
-        itemButt[1] = itemButton1;
-        itemButt[2] = itemButton2;
-        itemButt[3] = itemButton3;
-        itemButt[4] = itemButton4;
-        itemButt[5] = itemButton5;
-        itemButt[6] = itemButton6;
-        itemButt[7] = itemButton7;
-
         initialPlayerSpot = hero.getX();
         initialEnemySpot = enemy.getX();
     }
@@ -89,6 +73,32 @@ public class FightUpdated : MonoBehaviour
                 enemyStatAfflict = 1;
                 enemyStatAfflict2 = 0;
                 statTimeIncrease = 1;
+            }
+
+            //Player move display box goes down
+            if (moveDisplay.getY() > 4.25 && currAction != "" && timer < 0.7 && currAction != "defend")
+            {
+                moveDisplay.move(-0.075f);
+                moveDisplay.setDisplay(display);
+            }
+
+            //Player move display box goes up
+            if (moveDisplay.getY() < 6.34 && timer >= 0.7 && timer < 1 && currAction != "defend")
+            {
+                moveDisplay.move(0.075f);
+            }
+
+            //Enemy move display box goes down
+            if (moveDisplay.getY() > 4.25 && currAction != "" && timer >= 2 && timer < 2.7)
+            {
+                moveDisplay.move(-0.075f);
+                moveDisplay.setDisplay(display);
+            }
+
+            //Enemy move display box goes up
+            if (moveDisplay.getY() < 6.34 && timer > 2.7)
+            {
+                moveDisplay.move(0.075f);
             }
 
             //Moves box goes down
@@ -242,6 +252,7 @@ public class FightUpdated : MonoBehaviour
             if (timer < 0.15 && attMove < 0.23f)
             {
                 Move.Play();
+                display = move;
                 hero.move(attMove);
                 attMove += 0.01f;
              //   Debug.Log("PlayerTurn attMove right: " + attMove);
@@ -288,18 +299,19 @@ public class FightUpdated : MonoBehaviour
         if (action == "item")
         {
             //Player Item
+            if (timer < 0.15)
+            {
+                display = item;
+            }
             if (timer > 0.6 && timer < 0.75)
             {
                 if (enemyDamage == 1)
                 {
+                    Debug.Log("WHAAT");
                     hero.item(item);
                     if (hero.getStatus() == "OK")
                     {
                         maxTime = 2.9f;
-                    }
-                    for (int i = itemIndex; i < itemButt.Length - 1; i++)
-                    {
-                        itemButt[i].setItem(itemButt[i + 1].getItem());
                     }
                     enemyDamage = 0;
                 }
@@ -357,25 +369,24 @@ public class FightUpdated : MonoBehaviour
         //Enemy Deal Damage
         if (timer > 2.09 && timer < 2.1)
         {
-            Debug.Log(timer);
+            enemyMove = enemy.getRandomMove();
+            display = enemyMove;
             Move.Play();
         }
         if (timer > 2 && timer < 2.15 && attMove < 0.23)
         {
             enemy.move(-attMove);
             attMove += 0.01f;
-           // Debug.Log("EnemyTurn attMove left: " + attMove);
         }
         if (timer >= 2.15 && timer < 2.3 && attMove > 0 && enemy.getX() < initialEnemySpot)
         {
             enemy.move(attMove);
             attMove -= 0.01f;
-            //Debug.Log("EnemyTurn attMove right: " + attMove);
         }
         if (action != "defend")
         {
             //Player Take Damage
-            enemyStatusAfflict(enemy.getAttackStatus(), enemy.getStatusChance(), heroDamage); //Random Status Affliction
+            enemyStatusAfflict(enemy.getAttackStatus(enemyMove), enemy.getAttackStatusChance(enemyMove), heroDamage); //Random Status Affliction
             if (timer >= 2.6 && timer < 2.63) //Screen shake
             {
                 Hit.Play();
@@ -386,16 +397,14 @@ public class FightUpdated : MonoBehaviour
             {
                 hero.move(-damMove);
                 damMove -= 0.01f;
-                //Debug.Log("EnemyTurn damMove left: " + damMove);
             }
             if (timer >= 2.75 && timer < 2.9 && damMove < 0.23f && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
                 damMove += 0.01f;
-                //Debug.Log("EnemyTurn damMove right: " + damMove);
                 if (heroDamage == 1)
                 {
-                    hero.TakeDamage(enemy.getSTR());
+                    hero.TakeDamage(enemy.getSTR(enemyMove));
                     heroDamage = 0;
                 }
             }
@@ -413,28 +422,26 @@ public class FightUpdated : MonoBehaviour
             {
                 hero.move(-damMove);
                 damMove -= 0.01f;
-               // Debug.Log("damMove: " + damMove);
             }
             if (timer >= 2.75 && timer < 2.9 && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
                 damMove += 0.01f;
-              //  Debug.Log("damMove: " + damMove);
                 if (heroDamage == 1)
                 {
-                    hero.TakeDamage(enemy.getSTR() / 2);
+                    hero.TakeDamage(enemy.getSTR(enemyMove) / 2);
                     heroDamage = 0;
                 }
             }
         }
     }
 
-    public void fight(string newMove)
+    public void fight(int moveIndex)
     {
         Menu.Play();
-        if (timer <= 0 && hero.getStatus() != "Curse")
+        if (timer <= 0 && hero.getStatus() != "Curse" && hero.getMove(moveIndex).moveName != "")
         {
-            move = newMove;
+            move = hero.getMove(moveIndex).moveName;
             timerOn = 1;
             currAction = "fight";
         }
@@ -443,10 +450,10 @@ public class FightUpdated : MonoBehaviour
     public void useItem(int newItemIndex)
     {
         Menu.Play();
-        if (timer <= 0 && itemButt[newItemIndex].getItem() != "")
+        if (timer <= 0 && hero.getItem(newItemIndex).itemName != "")
         {
             itemIndex = newItemIndex;
-            item = itemButt[itemIndex].getItem();
+            item = hero.getItem(newItemIndex).itemName;
             timerOn = 1;
             currAction = "item";
         }
@@ -462,13 +469,13 @@ public class FightUpdated : MonoBehaviour
         }
     }
 
-    public void special(string newMove)
+    public void special(int specialIndex)
     {
         Menu.Play();
-        if (timer <= 0 && hero.getStatus() != "Silence" && hero.checkSpecial(newMove))
+        if (timer <= 0 && hero.getStatus() != "Silence" && hero.checkSpecial(specialIndex) && hero.getSpecial(specialIndex).specialName != "")
         {
-            hero.setSP(newMove);
-            move = newMove;
+            hero.setSP(specialIndex);
+            move = hero.getSpecial(specialIndex).specialName;
             timerOn = 1;
             currAction = "special";
         }
@@ -547,11 +554,11 @@ public class FightUpdated : MonoBehaviour
 
     public void enemyStatusAfflict(string status, int chance, int heroDamage2)
     {
-        if (timer > 2.6 && timer < 2.75)
+        if (timer > 2.6 && timer < 2.75 && status != "")
         {
             if (enemyStatAfflict == 1)
             {
-                if (Random.Range(0, chance) == 0)
+                if (Random.Range(0, 1) == 0)
                 {
                     maxTime = 4.9f;
                     enemyStatAfflict2 = 1;
@@ -559,7 +566,7 @@ public class FightUpdated : MonoBehaviour
                 enemyStatAfflict = 0;
             }
         }
-        if (timer >= 2.75 && timer < 2.9)
+        if (timer >= 2.75 && timer < 2.9 && status != "")
         {
             if (heroDamage2 == 1)
             {

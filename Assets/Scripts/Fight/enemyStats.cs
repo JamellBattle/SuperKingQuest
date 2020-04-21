@@ -6,10 +6,15 @@ using UnityEngine.UI;
 public class enemyStats : MonoBehaviour
 {
     int str = 10;
-    int health = 60;
-    string attackStatus = "Burn";
-    int statusChance = 5;
+    int health;
+    public int maxHealth;
     public Text Health;
+
+    public void Start()
+    {
+        health = maxHealth;
+        Health.text = "HP: " + health + "/" + maxHealth;
+    }
     public void move(float speed)
     {
         //Debug.Log("COCK");
@@ -32,9 +37,49 @@ public class enemyStats : MonoBehaviour
         }
         Health.text = "HP: " + health + "/60";
     }
-    public int getSTR()
+    public int getSTR(string move)
     {
+        if (move == "Smash")
+        {
+            return 10;
+        }
+        if (move == "Vortex")
+        {
+            return 7;
+        }
         return str;
+    }
+
+    public string getAttackStatus(string move)
+    {
+        if (move == "Vortex")
+        {
+            return "Burn";
+        }
+        return "";
+    }
+
+    public int getAttackStatusChance(string move)
+    {
+        if (move == "Vortex")
+        {
+            return 3;
+        }
+        return 0;
+    }
+
+    public string getRandomMove()
+    {
+        int x = Random.Range(0, 2);
+        if (x == 0)
+        {
+            return "Smash";
+        }
+        if (x == 1)
+        {
+            return "Vortex";
+        }
+        return "";
     }
 
     public bool dead()
@@ -47,15 +92,6 @@ public class enemyStats : MonoBehaviour
         {
             return false;
         }
-    }
-
-    public string getAttackStatus()
-    {
-        return attackStatus;
-    }
-    public int getStatusChance()
-    {
-        return statusChance;
     }
 
     public void kill()
