@@ -7,12 +7,61 @@ public class enemyStats : MonoBehaviour
 {
     int str = 10;
     int health;
+    public string enemyName;
+    public Sprite Appearance;
+    public Sprite AttackingAppearance;
+    public Sprite HurtingAppearance;
     public int maxHealth;
+    public string move1Name;
+    public int move1Damage;
+    public string move1Status;
+    public int move1StatusChance;
+    public string move2Name;
+    public int move2Damage;
+    public string move2Status;
+    public int move2StatusChance;
+    public string move3Name;
+    public int move3Damage;
+    public string move3Status;
+    public int move3StatusChance;
+    public string move4Name;
+    public int move4Damage;
+    public string move4Status;
+    public int move4StatusChance;
+    public enemymove move1;
+    public enemymove move2;
+    public enemymove move3;
+    public enemymove move4;
+    enemymove[] moves;
+    public Text Name;
     public Text Health;
 
     public void Start()
     {
+        move1.moveName = move1Name;
+        move1.damage = move1Damage;
+        move1.status = move1Status;
+        move1.statuschance = move1StatusChance;
+        move2.moveName = move2Name;
+        move2.damage = move2Damage;
+        move2.status = move2Status;
+        move2.statuschance = move2StatusChance;
+        move3.moveName = move3Name;
+        move3.damage = move3Damage;
+        move3.status = move3Status;
+        move3.statuschance = move3StatusChance;
+        move4.moveName = move4Name;
+        move4.damage = move4Damage;
+        move4.status = move4Status;
+        move4.statuschance = move4StatusChance;
+        moves = new enemymove[4];
+        moves[0] = move1;
+        moves[1] = move2;
+        moves[2] = move3;
+        moves[3] = move4;
+        Name.text = enemyName;
         health = maxHealth;
+        this.GetComponent<SpriteRenderer>().sprite = Appearance;
         Health.text = "HP: " + health + "/" + maxHealth;
     }
     public void move(float speed)
@@ -35,53 +84,87 @@ public class enemyStats : MonoBehaviour
         {
             health = 0;
         }
-        Health.text = "HP: " + health + "/60";
+        Health.text = "HP: " + health + "/" + maxHealth;
+    }
+    public void attack(int attack)
+    {
+        if (attack == 1)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = AttackingAppearance;
+        }
+        if (attack == 0)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = Appearance;
+        }
+    }
+    public void hurt(int hurting)
+    {
+        if (hurting == 1)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = HurtingAppearance;
+        }
+        if (hurting == 0)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = Appearance;
+        }
     }
     public int getSTR(string move)
     {
-        if (move == "Smash")
+        for (int i = 0; i < moves.Length; i++)
         {
-            return 10;
-        }
-        if (move == "Vortex")
-        {
-            return 7;
+            if (move == moves[i].moveName)
+            {
+                return moves[i].damage;
+            }
         }
         return str;
     }
 
     public string getAttackStatus(string move)
     {
-        if (move == "Vortex")
+        for (int i = 0; i < moves.Length; i++)
         {
-            return "Burn";
+            if (move == moves[i].moveName)
+            {
+                return moves[i].status;
+            }
         }
         return "";
     }
 
     public int getAttackStatusChance(string move)
     {
-        if (move == "Vortex")
+        for (int i = 0; i < moves.Length; i++)
         {
-            return 3;
+            if (move == moves[i].moveName)
+            {
+                return moves[i].statuschance;
+            }
         }
         return 0;
     }
 
     public string getRandomMove()
     {
-        int x = Random.Range(0, 2);
-        if (x == 0)
+        int x = Random.Range(0, 4);
+        while (x != 5)
         {
-            return "Smash";
-        }
-        if (x == 1)
-        {
-            return "Vortex";
+            if (moves[x].moveName != "")
+            {
+                return moves[x].moveName;
+            }
+            else
+            {
+                x = Random.Range(0, 4);
+            }
         }
         return "";
     }
-
+    public int getHealth()
+    {
+        return health;
+    }
+    
     public bool dead()
     {
         if (health == 0)
@@ -109,5 +192,12 @@ public class enemyStats : MonoBehaviour
     {
         Vector3 movePosition = new Vector3(x, 1.07f, 0);
         transform.position = movePosition;
+    }
+
+    public void setOpacity(float x)
+    {
+        Color tmp = this.GetComponent<SpriteRenderer>().color;
+        tmp.a = x;
+        this.GetComponent<SpriteRenderer>().color = tmp;
     }
 }

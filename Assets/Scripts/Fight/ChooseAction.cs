@@ -22,4 +22,10 @@ public class ChooseAction : MonoBehaviour
     {
         return this.transform.position.y;
     }
+
+    public void setY(float newY)
+    {
+        Vector3 movePosition = new Vector3(0.1160625f, newY, 174.1797f);
+        transform.position = movePosition;
+    }
 }

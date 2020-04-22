@@ -8,6 +8,8 @@ public class heroStats : MonoBehaviour
     public string heroName;
     public Sprite Appearance;
     public Sprite DefendingAppearance;
+    public Sprite AttackingAppearance;
+    public Sprite HurtingAppearance;
     int str = 5;
     int spl = 15;
     int health;
@@ -194,6 +196,17 @@ public class heroStats : MonoBehaviour
         Special.text = "SP: " + special + "/" + maxSpecial;
         Status.text = status;
     }
+    public void attack(int attack)
+    {
+        if (attack == 1)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = AttackingAppearance;
+        }
+        if (attack == 0)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = Appearance;
+        }
+    }
     public void defend(int defence)
     {
         if (defence == 1)
@@ -205,9 +218,25 @@ public class heroStats : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = Appearance;
         }
     }
+    public void hurt(int hurting)
+    {
+        if (hurting == 1)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = HurtingAppearance;
+        }
+        if (hurting == 0)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = Appearance;
+        }
+    }
     public int getMaxHealth()
     {
         return maxHealth;
+    }
+
+    public int getHealth()
+    {
+        return health;
     }
 
     public int getMaxSpecial()

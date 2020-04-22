@@ -22,4 +22,10 @@ public class MoveDisplay : MonoBehaviour
     {
         return this.transform.position.y;
     }
+
+    public void setY(float newY)
+    {
+        Vector3 movePosition = new Vector3(0, newY, 90f);
+        transform.position = movePosition;
+    }
 }
