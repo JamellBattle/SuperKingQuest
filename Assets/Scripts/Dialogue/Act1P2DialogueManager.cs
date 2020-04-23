@@ -144,6 +144,7 @@ public class Act1P2DialogueManager : DialogueManager
         {
             clickingAllowed = false;
             mainText = dialogueText;
+            changeEmotion(KingSprite, KMad);
             StartCoroutine(Introduction());
         }
 
@@ -163,7 +164,7 @@ public class Act1P2DialogueManager : DialogueManager
         if (sentences.Count == 24)
         {
             clickingAllowed = false;
-            changeEmotion(KingSprite, KSurprise);
+            changeEmotion(KingSprite, KMad);
             StartCoroutine(BrosToKing());
         }
 
@@ -176,10 +177,11 @@ public class Act1P2DialogueManager : DialogueManager
         if (sentences.Count == 22)
         {
             SetBox(KingBox);
+            changeEmotion(KingSprite, KReg);
             SetName("King");
         }
 
-        if (sentences.Count == 22)
+        if (sentences.Count == 21)
         {
             clickingAllowed = false;
             changeEmotion(KhanSprite, KhHappy);
@@ -187,7 +189,7 @@ public class Act1P2DialogueManager : DialogueManager
             StartCoroutine(KingToBros());
         }
 
-        if (sentences.Count == 21)
+        if (sentences.Count == 20)
         {
             clickingAllowed = false;
             mainText = thoughtText;
@@ -197,14 +199,18 @@ public class Act1P2DialogueManager : DialogueManager
 
         if (sentences.Count == 19)
         {
-            clickingAllowed = false;
-            mainText = dialogueText;
-            StartCoroutine(AlarmSounds());
+            
+            //
+            //thoughtAnim.SetBool("Thinking", false);
+            //textAnim.SetBool("IsOpen", true);
+            
         }
 
         if (sentences.Count == 18)
         {
-
+            clickingAllowed = false;
+            mainText = dialogueText;
+            StartCoroutine(AlarmSounds());
         }
 
     }
@@ -306,7 +312,7 @@ public class Act1P2DialogueManager : DialogueManager
         SetName("King");
         controller.ShowCoco();
         controller.ShowKing();
-        if (sentences.Count == 21)
+        if (sentences.Count == 20)
         {
             thoughtAnim.SetBool("Thinking", true);
         }
@@ -341,11 +347,12 @@ public class Act1P2DialogueManager : DialogueManager
         //start the next song
         yield return new WaitForSeconds(1f);
         changeEmotion(KingSprite, KShock);
-        changeEmotion(CocoSprite, CReg);
+        changeEmotion(CocoSprite, CMad);
         SetBox(KingBox);
         SetName("King");
         
         textAnim.SetBool("IsOpen", true);
+        clickingAllowed = true;
     }
 
     public IEnumerator SveriAppears()
