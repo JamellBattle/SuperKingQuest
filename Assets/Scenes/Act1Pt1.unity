@@ -872,6 +872,10 @@ MonoBehaviour:
   CocoAnim: {fileID: 0}
   Sveri: {fileID: 1012628716}
   SveriAnim: {fileID: 0}
+  Paul: {fileID: 0}
+  PaulAnim: {fileID: 0}
+  Khan: {fileID: 0}
+  KhanAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
@@ -882,7 +886,7 @@ MonoBehaviour:
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}
   SkyAnim: {fileID: 0}
-  dialoguetrigger: {fileID: 1996157535}
+  dialogueTrigger: {fileID: 0}
 --- !u!4 &1113436837
 Transform:
   m_ObjectHideFlags: 0
@@ -1170,7 +1174,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 947259624}
   controller: {fileID: 1113436836}
   loadlevel: {fileID: 234661039}
-  nextScene: Act1Pt1
+  nextScene: Act1Pt2
   clickingAllowed: 0
   sentence: 
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
