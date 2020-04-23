@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    private readonly List<char> punctuationCharacters = new List<char>
+    {
+        '.',
+        ',',
+        '?',
+        '!'
+
+    };
 
     public Queue<string> sentences;
     public Text nameText;
@@ -18,8 +26,8 @@ public class DialogueManager : MonoBehaviour
     public LevelLoader loadlevel;
     public string nextScene;
     public bool clickingAllowed = false;
-   
-    
+    public string sentence;
+
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -28,6 +36,7 @@ public class DialogueManager : MonoBehaviour
         mainText = dialogueText;
         controller = (AnimationController)FindObjectOfType(typeof(AnimationController));
         loadlevel = (LevelLoader)FindObjectOfType(typeof(LevelLoader));
+        
     }
 
     public virtual void Update()
@@ -47,7 +56,7 @@ public class DialogueManager : MonoBehaviour
         clickingAllowed = true;
         sentences.Clear();
         nameText.text = dialogue.name;
-
+        
         foreach (string sentence in dialogue.sentences)
         {
 
@@ -65,11 +74,25 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        sentence = sentences.Dequeue();
+
+        
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        
-        
+
+
+    }
+
+    private bool CheckPunctuation(char c)
+    {
+        if (punctuationCharacters.Contains(c))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public virtual IEnumerator TypeSentence(string sentence)
@@ -77,8 +100,13 @@ public class DialogueManager : MonoBehaviour
         mainText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            mainText.text += letter;
             yield return 1f;
+            mainText.text += letter;
+            
+            if (CheckPunctuation(letter))
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 

@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 425751192}
   - component: {fileID: 425751194}
   - component: {fileID: 425751193}
+  - component: {fileID: 425751195}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -412,6 +413,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &425751195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425751191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 840934780}
+  sentence: 
 --- !u!1 &531584024
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +644,7 @@ MonoBehaviour:
     - "Guess I\u2019ll call it for today. No point in trying to find my way forward
       in the dark."
     - "Hm\u2026"
-    - ' The S.U.S. fragment. '
+    - 'The S.U.S. fragment. '
     - "This thing caused a lot of problems for Babbo and Quetzy\u2026 "
     - And that guy, what was his name? Georgy-Boy? He was obsessed with this thing.
     - 'It was his fault DIO got freed in the first place. '
@@ -637,7 +652,7 @@ MonoBehaviour:
       Babbo wouldn\u2019t have thought to free me. "
     - "It was glowing when I first found it, but it\u2019s been dark like this ever
       since I used it to bring Quetzy back to life\u2026"
-    - ' Quetzy, huh...'
+    - Quetzy, huh...
     - King, why are you so mean to everyone?
     - "Huh? Where\u2019d that come from?"
     - "You said you\u2019re going to explore the world on your own after we get back,
@@ -727,6 +742,7 @@ MonoBehaviour:
   loadlevel: {fileID: 1442883447}
   nextScene: ProloguePt3
   clickingAllowed: 1
+  sentence: 
   EnemyBox: {fileID: 8891365757875848732, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   QuetzyBox: {fileID: -2720986750490905054, guid: 76818e6471a9c4805901c11b15a591d2,
@@ -865,10 +881,14 @@ MonoBehaviour:
   Fade: {fileID: 1442883446}
   firstChar: {fileID: 1250715225}
   firstCharAnim: {fileID: 0}
+  firstChar2: {fileID: 0}
+  firstChar2Anim: {fileID: 0}
   King: {fileID: 1250715225}
   KingAnim: {fileID: 0}
   Coco: {fileID: 0}
   CocoAnim: {fileID: 0}
+  Sveri: {fileID: 0}
+  SveriAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 1275223678}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 1479271729}
@@ -905,6 +925,7 @@ GameObject:
   - component: {fileID: 925847715}
   - component: {fileID: 925847717}
   - component: {fileID: 925847716}
+  - component: {fileID: 925847718}
   m_Layer: 0
   m_Name: ThoughtBox
   m_TagString: Untagged
@@ -1003,6 +1024,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &925847718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925847714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 840934780}
+  sentence: 
 --- !u!1 &990820664
 GameObject:
   m_ObjectHideFlags: 0

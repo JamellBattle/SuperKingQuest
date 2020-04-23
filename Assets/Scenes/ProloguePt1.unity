@@ -154,7 +154,7 @@ MonoBehaviour:
     name: King
     sentences:
     - ...
-    - " It\u2019s been 4 days since I left Babbo\u2019s lab. "
+    - "It\u2019s been 4 days since I left Babbo\u2019s lab. "
     - "The world is a lot less exciting than I expected\u2026 This is what we stopped
       DIO from destroying? "
     - "By the way it looks, there wasn\u2019t much at stake."
@@ -163,7 +163,7 @@ MonoBehaviour:
       so inclined to keep it safe?
     - 'Ah, whatever. '
     - No use getting stuck on it, just gonna have to keep it moving.
-    - ' ...'
+    - ...
 --- !u!4 &182232838
 Transform:
   m_ObjectHideFlags: 0
@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 866372162}
   - component: {fileID: 866372164}
   - component: {fileID: 866372163}
+  - component: {fileID: 866372165}
   m_Layer: 0
   m_Name: ThoughtBox
   m_TagString: Untagged
@@ -638,6 +639,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &866372165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866372161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 1686141294}
+  sentence: 
 --- !u!1 &1358023024
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +745,7 @@ GameObject:
   - component: {fileID: 1398068232}
   - component: {fileID: 1398068231}
   - component: {fileID: 1398068233}
+  - component: {fileID: 1398068234}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -828,6 +844,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1398068234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398068230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 1686141294}
+  sentence: 
 --- !u!1001 &1404895065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,12 +1090,24 @@ MonoBehaviour:
   Fade: {fileID: 1404895066}
   firstChar: {fileID: 369635430}
   firstCharAnim: {fileID: 0}
+  firstChar2: {fileID: 0}
+  firstChar2Anim: {fileID: 0}
   King: {fileID: 369635430}
   KingAnim: {fileID: 0}
   Coco: {fileID: 602788067}
   CocoAnim: {fileID: 0}
+  Sveri: {fileID: 0}
+  SveriAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
+  Flash: {fileID: 0}
+  FlashAnim: {fileID: 0}
+  Enemy: {fileID: 0}
+  EnemyAnim: {fileID: 0}
+  Wipe: {fileID: 0}
+  WipeAnim: {fileID: 0}
+  Sky: {fileID: 0}
+  SkyAnim: {fileID: 0}
   dialoguetrigger: {fileID: 182232837}
 --- !u!1 &1686141292
 GameObject:
@@ -1121,6 +1163,9 @@ MonoBehaviour:
   loadlevel: {fileID: 0}
   nextScene: ProloguePt2
   clickingAllowed: 1
+  sentence: 
+  wordWriter: {fileID: 1398068234}
+  thoughtWriter: {fileID: 866372165}
   strangerTextSprite: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
 --- !u!1 &1900093607

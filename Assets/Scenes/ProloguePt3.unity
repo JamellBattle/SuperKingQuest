@@ -619,6 +619,7 @@ MonoBehaviour:
   loadlevel: {fileID: 1808015789}
   nextScene: PrologueEnd
   clickingAllowed: 1
+  sentence: 
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   KingBox: {fileID: -999324308146694106, guid: 76818e6471a9c4805901c11b15a591d2, type: 3}
@@ -658,6 +659,7 @@ GameObject:
   - component: {fileID: 1100409622}
   - component: {fileID: 1100409624}
   - component: {fileID: 1100409623}
+  - component: {fileID: 1100409625}
   m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -756,6 +758,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1100409625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100409621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 974206586}
+  sentence: 
 --- !u!1 &1166432484
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,34 +817,34 @@ MonoBehaviour:
     - "How\u2019d you even get here?!"
     - I have been following you for the past 48 hours. I did not want to approach
       you because you seemed very distraught.
-    - ' What the heck is going on?'
+    - What the heck is going on?
     - "First it was a bear, now it\u2019s some girl who looks like something out
       of one of Babbo\u2019s sims?"
     - "And she\u2019s been following me for the past TWO DAYS!?"
     - 'What am I supposed to do now? '
     - 'For all I know, this girl might try to kill me! '
-    - " \u2026Excuse me. I would like to request permission to move closer to the
+    - "\u2026Excuse me. I would like to request permission to move closer to the
       fire. My body temperature has lowered below suitable levels."
-    - " I can hear Quetzy\u2019s words in my head..."
+    - "I can hear Quetzy\u2019s words in my head..."
     - "\u201CI\u2019m just saying that you should try being nice to more people like
       you are to me.\u201D"
     - "\u2026You gotta be kidding me. Out of all people, why did it have to be someone
       like this..?"
-    - " \u2026"
+    - "\u2026"
     - I am awaiting your response.
     - Fine.
     - Yay. Thank you.
     - "\u2026"
     - "\u2026"
     - "\u2026"
-    - " A few minutes have already passed. She\u2019s just sitting there, staring
+    - "A few minutes have already passed. She\u2019s just sitting there, staring
       at the fire."
     - "I don\u2019t even think I\u2019ve seen her blink once. "
     - 'Is she always like this? '
     - "Why\u2019d she have to end up here? "
     - 'Either way, this silence is killing me. '
     - "Should I say something\u2026? "
-    - " \u2026Ah."
+    - "\u2026Ah."
     - Huh?
     - Body temperature has returned to normal. Cozy.
     - I apologize for being so silent. Body temperature optimization is a process
@@ -841,11 +857,11 @@ MonoBehaviour:
     - "It\u2019s none of your business."
     - I will not talk to you unless I know your name.
     - 'Are you serious? '
-    - ' Why is she so persistent all of a sudden? '
+    - 'Why is she so persistent all of a sudden? '
     - "I can\u2019t read her at all\u2026"
     - "Either way, it doesn\u2019t look like she\u2019s messing with me. "
     - "She\u2019s dead serious\u2026 Guess I don\u2019t have a choice, then."
-    - " \u2026King."
+    - "\u2026King."
     - "King\u2026 Understood. I will make sure to commit it to memory. I am Coco."
     - Why have you been following me for the past 2 days?
     - 'I am lost. '
@@ -856,20 +872,20 @@ MonoBehaviour:
     - "Sorry to break it to you, but you\u2019re outta luck. I\u2019m just as lost
       as you are. "
     - "I see\u2026 I was incorrect. Unfortunate."
-    - " \u201CYou looked like you knew where you were going\u201D? "
+    - "\u201CYou looked like you knew where you were going\u201D? "
     - That sounds like something Quetzy would say.
     - What kind of reasoning is that? She didn't even try to ask me first!
-    - ' King, I would like to make another request.'
+    - King, I would like to make another request.
     - "\u2026What?"
     - I would like to remain by the fire for the remainder of the night. It feels
       very nice and warm.
     - "\u2026"
-    - ' No.'
+    - No.
     - No. No. No.
     - "This is the one thing I was praying she wouldn\u2019t ask. "
     - Is this where being nice gets you?
     - How is Quetzy able to do this all the time?
-    - ' No way. Go somewhere else.'
+    - No way. Go somewhere else.
     - "Oh\u2026"
     - "Don\u2019t look at me like that."
     - "\u2026"
@@ -882,11 +898,11 @@ MonoBehaviour:
     - What are you-
     - Huh? What was that sound!?
     - "\u2026"
-    - " Her eyes are still wide open\u2026 Is she really sleeping!?"
-    - ' Hey!'
+    - "Her eyes are still wide open\u2026 Is she really sleeping!?"
+    - Hey!
     - "\u2026"
     - "Sheesh\u2026 She doesn\u2019t waste any time."
-    - ' This night has been a little too much for me.'
+    - This night has been a little too much for me.
     - I got attacked by a bear, first of all.
     - "Then this girl comes out of nowhere, and now she\u2019s staying here with
       me?"
@@ -941,10 +957,14 @@ MonoBehaviour:
   Fade: {fileID: 1808015788}
   firstChar: {fileID: 518226181}
   firstCharAnim: {fileID: 0}
+  firstChar2: {fileID: 0}
+  firstChar2Anim: {fileID: 0}
   King: {fileID: 518226181}
   KingAnim: {fileID: 0}
   Coco: {fileID: 1763614339}
   CocoAnim: {fileID: 0}
+  Sveri: {fileID: 0}
+  SveriAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
@@ -981,6 +1001,7 @@ GameObject:
   - component: {fileID: 1404365539}
   - component: {fileID: 1404365541}
   - component: {fileID: 1404365540}
+  - component: {fileID: 1404365542}
   m_Layer: 0
   m_Name: ThoughtBox
   m_TagString: Untagged
@@ -1079,6 +1100,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1404365542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404365538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063fdcfd0920249c6813287730881f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 974206586}
+  sentence: 
 --- !u!1 &1491205071
 GameObject:
   m_ObjectHideFlags: 0

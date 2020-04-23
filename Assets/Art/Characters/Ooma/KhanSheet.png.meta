@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: f882c637b94584c7aad2340db7558ec1
+guid: 58ec38075f4724b26ab1958e1a313b24
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2442551811445898697
-    second: Coco_Reg
+      213: 8796205961679382766
+    second: Khan_Happy
   - first:
-      213: 1483639831080119530
-    second: Coco_Angry
+      213: -6846598852593779405
+    second: Khan_Mad
   - first:
-      213: -2114482855705324807
-    second: Coco_Happy
+      213: -418928706739387744
+    second: Khan_Pout
   - first:
-      213: 3719031444187157369
-    second: Coco_Mad
+      213: 9074669388163251983
+    second: Khan_Regular
   - first:
-      213: 2277879381130351237
-    second: Coco_Sad
-  - first:
-      213: 9111684736457727126
-    second: Coco_Smile
-  - first:
-      213: 6133900904795612702
-    second: Coco_Smug
-  - first:
-      213: 7604668930456618713
-    second: Coco_Hidden
+      213: -7574762384086955116
+    second: Khan_Sad
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -87,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -99,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,169 +113,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coco_Reg
+      name: Khan_Happy
       rect:
         serializedVersion: 2
         x: 0
-        y: 1869
+        y: 1318
         width: 1024
-        height: 621
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 732c74591105a1ed0800000000000000
-      internalID: -2442551811445898697
+      spriteID: ee8a215c7b6621a70800000000000000
+      internalID: 8796205961679382766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coco_Angry
+      name: Khan_Mad
       rect:
         serializedVersion: 2
         x: 1024
-        y: 1869
+        y: 1318
         width: 1024
-        height: 621
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeca622d092f69410800000000000000
-      internalID: 1483639831080119530
+      spriteID: 33dfc8f4e9efbf0a0800000000000000
+      internalID: -6846598852593779405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coco_Happy
+      name: Khan_Pout
       rect:
         serializedVersion: 2
         x: 0
-        y: 1246
+        y: 659
         width: 1024
-        height: 621
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2d706bb09d7a2e0800000000000000
-      internalID: -2114482855705324807
+      spriteID: 0a2c5909f8aaf2af0800000000000000
+      internalID: -418928706739387744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coco_Mad
+      name: Khan_Regular
       rect:
         serializedVersion: 2
         x: 1024
-        y: 1246
+        y: 659
         width: 1024
-        height: 621
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973984be467ac9330800000000000000
-      internalID: 3719031444187157369
+      spriteID: f0ff4979ab3bfed70800000000000000
+      internalID: 9074669388163251983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coco_Sad
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 622
-        width: 1024
-        height: 621
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58216797a37ac9f10800000000000000
-      internalID: 2277879381130351237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Coco_Smile
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 623
-        width: 1024
-        height: 621
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69c59e5fdf4337e70800000000000000
-      internalID: 9111684736457727126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Coco_Smug
+      name: Khan_Sad
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
-        height: 621
+        height: 659
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e162ac5cf5eff1550800000000000000
-      internalID: 6133900904795612702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Coco_Hidden
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 1024
-        height: 621
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d6015ad916398960800000000000000
-      internalID: 7604668930456618713
+      spriteID: 49b81869eb901e690800000000000000
+      internalID: -7574762384086955116
       vertices: []
       indices: 
       edges: []
