@@ -22,6 +22,22 @@ public class item : MonoBehaviour
         return itemName;
     }
 
+    /* Adding New Items:
+     * 
+     * 
+     * 
+     * Format: 
+     * if (itemName == "<Name of Item>")
+     * {
+     *     return "<Effect Type> <Effect Number or STATUS Type>";
+     * }
+     * 
+     * 
+     * 
+     * Effect Types: HP, SP, and STATUS
+     * STATUS Types: OK, Burn, Poison, Curse, and Silence
+     */
+
     public string itemEffect()
     {
         if (itemName == "Soda")
