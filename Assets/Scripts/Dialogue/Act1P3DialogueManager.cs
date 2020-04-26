@@ -21,6 +21,7 @@ public class Act1P3DialogueManager : DialogueManager
     public Sprite KMad;
     public Sprite KShock;
     public Sprite KSurprise;
+    public Sprite KSmile;
     SpriteRenderer SveriSprite;
     public Sprite SMad;
     public Sprite SSmile;
@@ -261,10 +262,60 @@ public class Act1P3DialogueManager : DialogueManager
 
         }
 
-        if (sentences.Count == 0)
-        {           
-            changeEmotion(KingSprite, KMad);           
+        if (sentences.Count == 6)
+        {
+
+            clickingAllowed = false;
+            StartCoroutine(SadFace());
+
         }
+
+        if (sentences.Count == 5)
+        {
+
+            SetName("Camile");
+            SetBox(NPCBox);
+
+        }
+
+        if (sentences.Count == 4)
+        {
+
+            SetName("Sveri");
+            SetBox(NPCBox);
+
+        }
+
+        if (sentences.Count == 3)
+        {
+            clickingAllowed = false;
+            StartCoroutine(AnnoyKing());
+
+        }
+
+        if (sentences.Count == 2)
+        {
+            SetName("Coco");
+            SetBox(CocoBox);
+
+        }
+
+        if (sentences.Count == 1)
+        {
+            changeEmotion(KingSprite, KSmile);
+            SetName("King");
+            SetBox(KingBox);
+
+        }
+
+        if (sentences.Count == 0)
+        {
+            changeEmotion(CocoSprite, CSmug);
+            SetName("Coco");
+            SetBox(CocoBox);
+
+        }
+
 
     }
 
@@ -383,7 +434,7 @@ public class Act1P3DialogueManager : DialogueManager
         yield return new WaitForSeconds(1f);
         if (sentences.Count == 13)
         {
-            Vector3 newpos = new Vector3(0, -0.47f, 0);
+            Vector3 newpos = new Vector3(0, -0.47f, 0.04f);
             Coco.transform.position = newpos;
             changeEmotion(CocoSprite, CSad);
             controller.ShowCoco();
@@ -409,6 +460,16 @@ public class Act1P3DialogueManager : DialogueManager
             yield return new WaitForSeconds(1f);
             SetName("Everyone");
             SetBox(NPCBox);
+        } else if (sentences.Count == 6)
+        {
+            changeEmotion(CocoSprite, CSmile);
+            changeEmotion(CamileSprite, CaHappy);
+            changeEmotion(SveriSprite, SHappy);
+            controller.ShowCoco();
+            controller.ShowCamile();
+            controller.ShowSveri();
+            SetName("Coco");
+            SetBox(CocoBox);
         }
         
         textAnim.SetBool("IsOpen", true);
@@ -422,10 +483,26 @@ public class Act1P3DialogueManager : DialogueManager
         controller.HideCamile();
         controller.HideSveri();
         yield return new WaitForSeconds(1f);
-        Vector3 newpos = new Vector3(0, -0.47f, 0);
-        King.transform.position = newpos;
-        controller.ShowKing();
-        yield return new WaitForSeconds(1f);
+        if (sentences.Count == 3)
+        {
+            Vector3 newpos = new Vector3(-4.85f, -0.47f, 0);
+            King.transform.position = newpos;
+            changeEmotion(KingSprite, KMad);
+            controller.ShowKing();
+            Vector3 newpos2 = new Vector3(4.32f, -0.47f, 0);
+            Coco.transform.position = newpos2;
+            changeEmotion(CocoSprite, CReg);
+            controller.ShowCoco();
+            yield return new WaitForSeconds(1f);
+
+        } else
+        {
+            Vector3 newpos = new Vector3(0, -0.47f, 0);
+            King.transform.position = newpos;
+            controller.ShowKing();
+            yield return new WaitForSeconds(1f);
+        }
+        
         SetName("King");
         SetBox(KingBox);
         textAnim.SetBool("IsOpen", true);

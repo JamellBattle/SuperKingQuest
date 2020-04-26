@@ -541,6 +541,7 @@ MonoBehaviour:
   KShock: {fileID: 21300000, guid: fc08ded3400f04800b5f0f860fbaf29b, type: 3}
   KSurprise: {fileID: 5491449222564550954, guid: 715de919604ef4c18898238db55a6e7f,
     type: 3}
+  KSmile: {fileID: 8617031663130293287, guid: 715de919604ef4c18898238db55a6e7f, type: 3}
   SMad: {fileID: -5951983647913580196, guid: 7925fe13b2a374148bb7404037b02c36, type: 3}
   SSmile: {fileID: -4029803889523849294, guid: 7925fe13b2a374148bb7404037b02c36, type: 3}
   SSad: {fileID: -5593309355815104090, guid: 7925fe13b2a374148bb7404037b02c36, type: 3}
@@ -740,11 +741,11 @@ MonoBehaviour:
     - "Okay, we\u2019ll go get the doctor! Can you just cut that out?!"
     - Yay.
     - Yay!!!
-    - Thank you so much, stranger!! You have our gratitude!
+    - Thank you so much, King! You have our gratitude!
     - Yeah, yeah, yeah.
     - King, we must hurry. We do not know how far they have gotten since they left.
-    - "That\u2019s probably the smartest thing you\u2019ve said since we met. C\u2019mon,
-      let\u2019s go."
+    - "Heh. That\u2019s probably the smartest thing you\u2019ve said since we met.
+      Let\u2019s go."
     - Understood. I will try to say more smart things.
 --- !u!4 &361485937
 Transform:
