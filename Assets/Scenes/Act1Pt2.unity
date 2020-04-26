@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &647893974
 Animator:
   serializedVersion: 3
@@ -1919,6 +1919,8 @@ MonoBehaviour:
   KhanAnim: {fileID: 0}
   Camile: {fileID: 0}
   CamileAnim: {fileID: 0}
+  Oswald: {fileID: 0}
+  OswaldAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 647893973}

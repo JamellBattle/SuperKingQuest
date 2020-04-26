@@ -25,6 +25,8 @@ public class AnimationController : MonoBehaviour
     public Animator KhanAnim;
     public GameObject Camile;
     public Animator CamileAnim;
+    public GameObject Oswald;
+    public Animator OswaldAnim;
 
     //Animators for Miscellaneous things
     public GameObject ObjectOfInterest;
@@ -95,6 +97,11 @@ public class AnimationController : MonoBehaviour
         if (Camile)
         {
             CamileAnim = Camile.GetComponent<Animator>();
+        }
+
+        if (Oswald)
+        {
+            OswaldAnim = Oswald.GetComponent<Animator>();
         }
 
 
@@ -241,6 +248,17 @@ public class AnimationController : MonoBehaviour
     public void HideCamile()
     {
         CamileAnim.SetBool("Present", false);
+    }
+
+    //Oswald
+    public void ShowOswald()
+    {
+        OswaldAnim.SetBool("Present", true);
+    }
+
+    public void HideOswald()
+    {
+        OswaldAnim.SetBool("Present", false);
     }
 
     //Functions for a enemy (who doesn't have any unique animation)
