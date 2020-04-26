@@ -8,6 +8,7 @@ public class Act1P2DialogueManager : DialogueManager
     public Sprite CocoBox;
     public Sprite KingBox;
     public Sprite NPCBox;
+    public Sprite EnemyBox;
     SpriteRenderer CocoSprite;
     //Animator CocoAnim;
     public Sprite CSmile;
@@ -21,17 +22,14 @@ public class Act1P2DialogueManager : DialogueManager
     public Sprite KMad;
     public Sprite KShock;
     public Sprite KSurprise;
-    //Animator SveriAnim;
     SpriteRenderer SveriSprite;
     public Sprite SMad;
     public Sprite SAngry;
-    //Animator PaulAnim;
     SpriteRenderer PaulSprite;
     public Sprite PReg;
     public Sprite PHappy;
     public Sprite PMad;
     public Sprite PSad;
-    //Animator KhanAnim;
     SpriteRenderer KhanSprite;
     public Sprite KhReg;
     public Sprite KhPout;
@@ -197,21 +195,124 @@ public class Act1P2DialogueManager : DialogueManager
             StartCoroutine(BrosToKing());
         }
 
-        if (sentences.Count == 19)
-        {
-            
-            //
-            //thoughtAnim.SetBool("Thinking", false);
-            //textAnim.SetBool("IsOpen", true);
-            
-        }
-
         if (sentences.Count == 18)
         {
             clickingAllowed = false;
             mainText = dialogueText;
             StartCoroutine(AlarmSounds());
         }
+
+        if (sentences.Count == 17)
+        {
+            clickingAllowed = false;
+            StartCoroutine(SveriAppears());
+        }
+
+        if (sentences.Count == 16)
+        {
+            mainText = thoughtText;
+            textAnim.SetBool("IsOpen", false);
+            thoughtAnim.SetBool("Thinking", true);
+        }
+
+        if (sentences.Count == 14)
+        {
+            mainText = dialogueText;
+            changeEmotion(SveriSprite, SMad);
+            textAnim.SetBool("IsOpen", true);
+            thoughtAnim.SetBool("Thinking", false);
+        }
+
+        if (sentences.Count == 13)
+        {
+            clickingAllowed = false;
+            StartCoroutine(SveriToBros());
+        }
+
+        if (sentences.Count == 12)
+        {
+            clickingAllowed = false;
+            StartCoroutine(ByeBros());
+        }
+
+        if (sentences.Count == 11)
+        {
+            SetName("Coco");
+            SetBox(CocoBox);
+        }
+
+        if (sentences.Count == 10)
+        {
+            clickingAllowed = false;
+            StartCoroutine(PaulLeaves());
+        }
+
+        if (sentences.Count == 9)
+        {
+            SetName("King");
+            SetBox(KingBox);
+        }
+
+        if (sentences.Count == 8)
+        {
+            SetName("Coco");
+            SetBox(CocoBox);
+        }
+
+        if (sentences.Count == 7)
+        {
+            changeEmotion(KingSprite, KShock);
+            SetName("King");
+            SetBox(KingBox);
+        }
+
+        if (sentences.Count == 6)
+        {
+            clickingAllowed = false;
+            StartCoroutine(UnderAttack());
+        }
+
+        if (sentences.Count == 5)
+        {
+            SetName("King");
+            SetBox(KingBox);
+        }
+
+        if (sentences.Count == 4)
+        {
+            Vector3 newpos2 = new Vector3(-2.83f, -0.47f, 0.04f);
+            Coco.transform.position = newpos2;
+            controller.ShowCoco();
+            SetName("Coco");
+            SetBox(KingBox);
+        }
+
+        if (sentences.Count == 3)
+        {
+            changeEmotion(KingSprite, KMad);
+            SetName("King");
+            SetBox(KingBox);
+        }
+
+        if (sentences.Count == 2)
+        {
+            
+            SetName("Gorgon Grunts");
+            SetBox(EnemyBox);
+        }
+
+        if (sentences.Count == 1)
+        {           
+            SetName("King");
+            SetBox(KingBox);
+        }
+
+        if (sentences.Count == 0)
+        {
+            changeEmotion(KingSprite, KAngry);
+            
+        }
+
 
     }
 
@@ -357,7 +458,7 @@ public class Act1P2DialogueManager : DialogueManager
 
     public IEnumerator SveriAppears()
     {
-
+        textAnim.SetBool("IsOpen", false);
         controller.HideCoco();
         changeEmotion(SveriSprite, SAngry);
         yield return new WaitForSeconds(1f);
@@ -368,6 +469,76 @@ public class Act1P2DialogueManager : DialogueManager
         SetBox(NPCBox);
         SetName("Sveri");
         yield return new WaitForSeconds(1f);
+        textAnim.SetBool("IsOpen", true);
+        clickingAllowed = true;
+    }
+
+    public IEnumerator SveriToBros()
+    {
+        textAnim.SetBool("IsOpen", false);
+        controller.HideCoco();
+        controller.HideSveri();
+        controller.HideKing();
+        changeEmotion(PaulSprite, PMad);
+        changeEmotion(KhanSprite, KhMad);
+        yield return new WaitForSeconds(1f);
+        controller.ShowKhan();
+        controller.ShowPaul();
+        SetName("Paul & Khan");
+        textAnim.SetBool("IsOpen", true);
+        clickingAllowed = true;
+
+    }
+
+    public IEnumerator ByeBros()
+    {
+        textAnim.SetBool("IsOpen", false);
+        controller.HideKhan();
+        controller.HidePaul();
+        changeEmotion(KingSprite, KMad);
+        yield return new WaitForSeconds(1f);
+        controller.ShowKing();
+        controller.ShowCoco();
+        changeEmotion(PaulSprite, PSad);
+        yield return new WaitForSeconds(1f);
+        controller.ShowPaul();
+        SetName("Paul");
+        yield return new WaitForSeconds(0.5f);       
+        textAnim.SetBool("IsOpen", true);
+        clickingAllowed = true;
+
+    }
+
+    public IEnumerator PaulLeaves()
+    {
+        textAnim.SetBool("IsOpen", false);
+        controller.HidePaul();
+        controller.HideCoco();
+        yield return new WaitForSeconds(1f);
+        Vector3 newpos = new Vector3(4.32f, -0.47f, 0.04f);
+        Coco.transform.position = newpos;
+        controller.ShowCoco();
+        textAnim.SetBool("IsOpen", true);
+        clickingAllowed = true;
+
+
+    }
+
+    public IEnumerator UnderAttack()
+    {
+        textAnim.SetBool("IsOpen", false);
+        controller.HideKing();
+        controller.HideCoco();
+        controller.FlashAnim.speed = 1.5f;
+        controller.FlashStart();
+        yield return new WaitForSeconds(0.5f);
+        controller.FlashEnd();
+        yield return new WaitForSeconds(1f);
+        controller.ShowEnemy();
+        controller.ShowKing();
+        SetBox(EnemyBox);
+        SetName("???");
+        yield return new WaitForSeconds(1.5f);
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
     }

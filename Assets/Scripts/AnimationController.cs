@@ -23,6 +23,8 @@ public class AnimationController : MonoBehaviour
     public Animator PaulAnim;
     public GameObject Khan;
     public Animator KhanAnim;
+    public GameObject Camile;
+    public Animator CamileAnim;
 
     //Animators for Miscellaneous things
     public GameObject ObjectOfInterest;
@@ -90,6 +92,11 @@ public class AnimationController : MonoBehaviour
             KhanAnim = Khan.GetComponent<Animator>();
         }
 
+        if (Camile)
+        {
+            CamileAnim = Camile.GetComponent<Animator>();
+        }
+
 
         //Checking for Miscellaneous things
         if (ObjectOfInterest) {
@@ -147,6 +154,10 @@ public class AnimationController : MonoBehaviour
                 else if (firstChar2.name == "Paul")
                 {
                     ShowPaul();
+                }
+                else if(firstChar2.name == "Minions")
+                {
+                    ShowEnemy();
                 }
             }
             yield return new WaitForSeconds(wait);
@@ -219,6 +230,17 @@ public class AnimationController : MonoBehaviour
     public void HideKhan()
     {
         KhanAnim.SetBool("Present", false);
+    }
+
+    //Camile
+    public void ShowCamile()
+    {
+        CamileAnim.SetBool("Present", true);
+    }
+
+    public void HideCamile()
+    {
+        CamileAnim.SetBool("Present", false);
     }
 
     //Functions for a enemy (who doesn't have any unique animation)
