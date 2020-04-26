@@ -242,6 +242,12 @@ MonoBehaviour:
   CocoAnim: {fileID: 0}
   Sveri: {fileID: 0}
   SveriAnim: {fileID: 0}
+  Paul: {fileID: 0}
+  PaulAnim: {fileID: 0}
+  Khan: {fileID: 0}
+  KhanAnim: {fileID: 0}
+  Camile: {fileID: 0}
+  CamileAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
@@ -252,7 +258,7 @@ MonoBehaviour:
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}
   SkyAnim: {fileID: 0}
-  dialoguetrigger: {fileID: 648775831}
+  dialogueTrigger: {fileID: 648775831}
 --- !u!4 &221683490
 Transform:
   m_ObjectHideFlags: 0

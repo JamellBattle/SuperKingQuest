@@ -788,8 +788,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.4003906, y: 1.1226196}
-  m_SizeDelta: {x: 141.1, y: 24.6}
+  m_AnchoredPosition: {x: -4.3558, y: 1.1186}
+  m_SizeDelta: {x: 146.3983, y: 25.0817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &419002159
 CanvasRenderer:
@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &647893974
 Animator:
   serializedVersion: 3
@@ -1917,6 +1917,8 @@ MonoBehaviour:
   PaulAnim: {fileID: 0}
   Khan: {fileID: 2108377200}
   KhanAnim: {fileID: 0}
+  Camile: {fileID: 0}
+  CamileAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 647893973}

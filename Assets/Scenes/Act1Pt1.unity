@@ -876,6 +876,8 @@ MonoBehaviour:
   PaulAnim: {fileID: 0}
   Khan: {fileID: 0}
   KhanAnim: {fileID: 0}
+  Camile: {fileID: 0}
+  CamileAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
@@ -886,7 +888,7 @@ MonoBehaviour:
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}
   SkyAnim: {fileID: 0}
-  dialogueTrigger: {fileID: 0}
+  dialogueTrigger: {fileID: 1996157535}
 --- !u!4 &1113436837
 Transform:
   m_ObjectHideFlags: 0

@@ -22,17 +22,14 @@ public class Act1P2DialogueManager : DialogueManager
     public Sprite KMad;
     public Sprite KShock;
     public Sprite KSurprise;
-    //Animator SveriAnim;
     SpriteRenderer SveriSprite;
     public Sprite SMad;
     public Sprite SAngry;
-    //Animator PaulAnim;
     SpriteRenderer PaulSprite;
     public Sprite PReg;
     public Sprite PHappy;
     public Sprite PMad;
     public Sprite PSad;
-    //Animator KhanAnim;
     SpriteRenderer KhanSprite;
     public Sprite KhReg;
     public Sprite KhPout;
