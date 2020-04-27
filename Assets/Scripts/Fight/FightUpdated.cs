@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FightUpdated : MonoBehaviour
 {
-    int turn = 1;
     float entranceTimer = 0;
     float victoryTimer = 0;
     float darkTimer = 0;
@@ -12,15 +12,17 @@ public class FightUpdated : MonoBehaviour
     float maxTime = 2.9f;
     int timerOn = 0;
     bool fightOver = false;
+    bool moveActionBox = false;
     int heroDamage = 0;
     int enemyDamage = 0;
     int heroStatDamage = 0;
-    int enemyStatDamage = 0;
     int statTimeIncrease = 0;
     int enemyStatAfflict = 0;
     int enemyStatAfflict2 = 0;
     float enemyOpacity = 1;
     float darkenOpacity = 0;
+    float effectOpacity = 0;
+    float retryOpacity = 0;
     string move = "";
     string enemyMove = "";
     string item = "";
@@ -37,6 +39,7 @@ public class FightUpdated : MonoBehaviour
     float initialDefeatedVictorySpot = 0;
     float initialGameOverGameSpot = 0;
     float initialGameOverOverSpot = 0;
+    float initialRetrySpot = 0;
     float heroEntrance = 0.4f;
     float enemyEntrance = 0.4f;
     float EnemyVictoryEntrance = 0.5f;
@@ -44,6 +47,8 @@ public class FightUpdated : MonoBehaviour
     bool heroArrived = false;
     bool enemyArrived = false;
     bool startupComplete = false;
+    bool rewindTime = false;
+    float rewindTimer = 0;
     float a = 0;
     int b = 0;
     float c = 0;
@@ -73,6 +78,9 @@ public class FightUpdated : MonoBehaviour
     public Victory DefeatedVictory;
     public Victory GameOverGame;
     public Victory GameOverOver;
+    public Victory Retry;
+    public Turn turn;
+    public NextScene nextScene;
     void Start()
     {
         Music.Play();
@@ -80,15 +88,17 @@ public class FightUpdated : MonoBehaviour
         initialEnemySpot = enemy.getX();
         hero.setX(initialPlayerSpot - 8);
         enemy.setX(initialEnemySpot + 8);
+        openingCurtain.setOpacity(1);
         initialEnemyVictorySpot = EnemyVictory.getX();
         initialDefeatedVictorySpot = DefeatedVictory.getX();
         initialGameOverGameSpot = GameOverGame.getX();
         initialGameOverOverSpot = GameOverOver.getX();
+        initialRetrySpot = Retry.getX();
         EnemyVictory.setX(initialEnemyVictorySpot - 10, 1.9f);
         DefeatedVictory.setX(initialDefeatedVictorySpot + 10, 0.31f);
         GameOverGame.setX(initialGameOverGameSpot - 10, 1.9f);
         GameOverOver.setX(initialGameOverOverSpot + 10, 0.31f);
-
+        Retry.setX(initialRetrySpot + 10, -1);
     }
 
 
@@ -113,7 +123,6 @@ public class FightUpdated : MonoBehaviour
                 heroDamage = 1;
                 enemyDamage = 1;
                 heroStatDamage = 0;
-                enemyStatDamage = 0;
                 enemyStatAfflict = 1;
                 enemyStatAfflict2 = 0;
                 statTimeIncrease = 1;
@@ -165,11 +174,7 @@ public class FightUpdated : MonoBehaviour
             {
                 chooseSpecial.move(-0.075f);
             }
-            //Action box comes up at the end of both turns
-            if (chooseAction.getY() < -2.537844 && timer > maxTime - 0.4f)
-            {
-                chooseAction.move(0.075f);
-            }
+
             playerTurn(currAction); //Player's Turn
             
             //attMove = 0.01f;
@@ -181,18 +186,32 @@ public class FightUpdated : MonoBehaviour
             //Both Turns Over
             if (timer >= maxTime)
             {
-                Debug.Log("Timer Off");
+                //Debug.Log("Timer Off");
                 hero.defend(0);
                 hero.hurt(0);
                 attMove = 0.01f;
                 damMove = 0.23f;
                 hero.setX(initialPlayerSpot);
                 enemy.setX(initialEnemySpot);
+                turn.nextTurn();
+                moveActionBox = true;
                 timer = 0;
                 timerOn = 0;
                 maxTime = 2.9f;
                 currAction = "";
             }
+        }
+
+
+        //Action box comes up at the end of both turns
+        if (chooseAction.getY() < -2.537844 && moveActionBox == true)
+        {
+            chooseAction.move(0.075f);
+        }
+        if (chooseAction.getY() >= -2.537844 && moveActionBox == true)
+        {
+            chooseAction.setY(-2.537844f);
+            moveActionBox = false;
         }
 
         //Switch from Actions to Moves
@@ -267,9 +286,9 @@ public class FightUpdated : MonoBehaviour
                 chooseAction.move(0.075f); //Actions box moves up
             }
         }
-        if (startBox != "" && endBox != "" && timer >= 0.7)
+        if (startBox != "" && endBox != "" && timer >= 0.85)
         {
-            Debug.Log("Timer Off");
+            //Debug.Log("Timer Off");
             timer = 0;
             timerOn = 0;
             startBox = "";
@@ -306,6 +325,24 @@ public class FightUpdated : MonoBehaviour
                 enemy.move(0.075f);
             }
         }
+
+        if (rewindTime)
+        {
+            rewindTimer += Time.deltaTime;
+            
+            if (openingCurtain.getY() > -12.36)
+            {
+                openingCurtain.move(-0.15f);
+            }
+            if (DefeatMusic.volume != 0 && rewindTimer > 1.5f)
+            {
+                DefeatMusic.volume -= 0.005f;
+            }
+        }
+        if (rewindTimer > 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void playerTurn(string action)
@@ -341,11 +378,18 @@ public class FightUpdated : MonoBehaviour
                 enemy.move(damMove);
                 damMove -= 0.01f;
             }
-            if (timer >= 0.75 && timer < 0.9 && damMove < 0.22f && enemy.getX() > initialEnemySpot)
+            if (timer >= 0.75 && timer < 1 && enemy.getX() > initialEnemySpot)
             {
-                enemy.hurt(0);
                 enemy.move(-damMove);
                 damMove += 0.01f;
+                if (enemy.getX() < initialEnemySpot)
+                {
+                    enemy.setX(initialEnemySpot);
+                }
+            }
+            if (timer >= 0.75 && timer < 0.9)
+            {
+                enemy.hurt(0);
             }
         }
         if (action == "fight")
@@ -448,6 +492,28 @@ public class FightUpdated : MonoBehaviour
             }
             heroStatDamage = 0;
         }
+        if (timer >= 3.75 && timer < 4 && hero.getStatus() == "Burn")
+        {
+            hero.setFire(effectOpacity);
+            effectOpacity += 0.05f;
+        }
+        if (timer >= 4 && timer < 4.25 && hero.getStatus() == "Burn")
+        {
+            hero.setFire(effectOpacity);
+            effectOpacity -= 0.05f;
+        }
+        if (timer >= 3.75 && timer < 4 && hero.getStatus() == "Poison")
+        {
+            hero.setPoison(effectOpacity);
+            effectOpacity += 0.05f;
+        }
+        if (timer >= 4 && timer < 4.25 && hero.getStatus() == "Poison")
+        {
+            hero.setPoison(effectOpacity);
+            effectOpacity -= 0.05f;
+        }
+
+
         if (timer > 4 && timer < 4.2)
         {
             hero.hurt(0);
@@ -473,6 +539,10 @@ public class FightUpdated : MonoBehaviour
         {
             enemy.move(attMove);
             attMove -= 0.01f;
+            if (enemy.getX() > initialEnemySpot)
+            {
+                enemy.setX(initialEnemySpot);
+            }
         }
         if (action != "defend")
         {
@@ -491,10 +561,17 @@ public class FightUpdated : MonoBehaviour
                 hero.move(-damMove);
                 damMove -= 0.01f;
             }
-            if (timer >= 2.75 && timer < 2.9 && damMove < 0.23f && hero.getX() < initialPlayerSpot)
+            if (timer >= 2.75 && timer < 3 && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
                 damMove += 0.01f;
+                if (hero.getX() > initialPlayerSpot)
+                {
+                    hero.setX(initialPlayerSpot);
+                }
+            }
+            if (timer >= 2.75 && timer < 2.9)
+            {
                 hero.hurt(0);
                 if (heroDamage == 1)
                 {
@@ -522,10 +599,17 @@ public class FightUpdated : MonoBehaviour
                 hero.move(-damMove);
                 damMove -= 0.01f;
             }
-            if (timer >= 2.75 && timer < 2.9 && hero.getX() < initialPlayerSpot)
+            if (timer >= 2.75 && timer < 3 && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
                 damMove += 0.01f;
+                if (hero.getX() > initialPlayerSpot)
+                {
+                    hero.setX(initialPlayerSpot);
+                }
+            }
+            if (timer >= 2.75 && timer < 2.9)
+            {
                 if (heroDamage == 1)
                 {
                     hero.TakeDamage(enemy.getSTR(enemyMove) / 2);
@@ -541,7 +625,7 @@ public class FightUpdated : MonoBehaviour
 
     public void fight(int moveIndex)
     {
-        if (timer <= 0 && hero.getStatus() != "Curse" && hero.getMove(moveIndex).moveName != "")
+        if (timer <= 0 && hero.getStatus() != "Curse" && hero.checkMove(moveIndex) && hero.getMove(moveIndex).moveName != "")
         {
             Menu.Play();
             move = hero.getMove(moveIndex).moveName;
@@ -700,7 +784,7 @@ public class FightUpdated : MonoBehaviour
         if (startupComplete == false)
         {
             entranceTimer++;
-            Debug.Log(entranceTimer);
+            //Debug.Log(entranceTimer);
         }
         if (entranceTimer >= 50)
         {
@@ -746,7 +830,6 @@ public class FightUpdated : MonoBehaviour
         if (darkTimer < 50)
         {
             darkenOpacity += 0.01f;
-            Debug.Log("wiudwjnxsnk");
             screenDarken.setOpacity(darkenOpacity);
         }
     }
@@ -790,11 +873,14 @@ public class FightUpdated : MonoBehaviour
         if (openingCurtain.getY() > -12.36 && victoryTimer > 1000)
         {
             openingCurtain.move(-0.3f);
-            // Debug.Log(openingCurtain.getY());
         }
         if (victoryTimer > 1050 && VictoryMusic.volume != 0)
         {
             VictoryMusic.volume -= 0.01f;
+        }
+        if (victoryTimer >= 1300)
+        {
+            SceneManager.LoadScene(nextScene.nextScene);
         }
     }
 
@@ -831,16 +917,18 @@ public class FightUpdated : MonoBehaviour
         }
         if (GameOverOver.getX() <= initialGameOverOverSpot)
         {
+            Retry.setX(initialRetrySpot, -1);
             done = true;
         }
-        if (openingCurtain.getY() > -12.36 && victoryTimer > 1000)
+        if (retryOpacity < 1 && done == true && victoryTimer > 500)
         {
-            openingCurtain.move(-0.3f);
-            // Debug.Log(openingCurtain.getY());
+            Retry.setOpacity(retryOpacity);
+            retryOpacity += 0.015f;
         }
-        if (victoryTimer > 1050 && DefeatMusic.volume != 0)
-        {
-            DefeatMusic.volume -= 0.01f;
-        }
+    }
+
+    public void reset()
+    {
+        rewindTime = true;
     }
 }

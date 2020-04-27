@@ -21,12 +21,16 @@ public class heroStats : MonoBehaviour
     string status = "OK";
     public string move1Name;
     public int move1Damage;
+    public int move1Cost;
     public string move2Name;
     public int move2Damage;
+    public int move2Cost;
     public string move3Name;
     public int move3Damage;
+    public int move3Cost;
     public string move4Name;
     public int move4Damage;
+    public int move4Cost;
     public string special1Name;
     public int special1Damage;
     public int special1Cost;
@@ -81,12 +85,16 @@ public class heroStats : MonoBehaviour
         Status.text = status;
         move1.moveName = move1Name;
         move1.damage = move1Damage;
+        move1.cost = move1Cost;
         move2.moveName = move2Name;
         move2.damage = move2Damage;
+        move2.cost = move2Cost;
         move3.moveName = move3Name;
         move3.damage = move3Damage;
+        move3.cost = move3Cost;
         move4.moveName = move4Name;
         move4.damage = move4Damage;
+        move4.cost = move4Cost;
         item1.itemName = item1Name;
         item2.itemName = item2Name;
         item3.itemName = item3Name;
@@ -265,6 +273,8 @@ public class heroStats : MonoBehaviour
         {
             if (move == moves[i].moveName)
             {
+                health -= moves[i].cost;
+                Health.text = "HP: " + health + "/" + maxHealth;
                 return moves[i].damage / burnEffect;
             }
         }
@@ -309,7 +319,14 @@ public class heroStats : MonoBehaviour
     {
         return specials[index];
     }
-
+    public bool checkMove(int moveIndex)
+    {
+        if (health - moves[moveIndex].cost > 0)
+        {
+            return true;
+        }
+        return false;
+    }
     public bool checkSpecial(int specialIndex)
     {
         if (special >= specials[specialIndex].cost)
@@ -358,5 +375,20 @@ public class heroStats : MonoBehaviour
     {
         Vector3 movePosition = new Vector3(x, 0.71f, 0);
         transform.position = movePosition;
+    }
+
+    public void setFire(float x)
+    {
+        Color tmp = this.GetComponent<SpriteRenderer>().color;
+        tmp.g = 1 - x;
+        tmp.b = 1 - x;
+        this.GetComponent<SpriteRenderer>().color = tmp;
+    }
+
+    public void setPoison(float x)
+    {
+        Color tmp = this.GetComponent<SpriteRenderer>().color;
+        tmp.g = 1 - x;
+        this.GetComponent<SpriteRenderer>().color = tmp;
     }
 }

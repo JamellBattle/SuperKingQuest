@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ProloguePt2.unity
     guid: 597c7691d9e4247c89134f7cccf4ffc9
   - enabled: 1
-    path: Assets/Scenes/FightSceneEarly.unity
+    path: Assets/Scenes/FightTemplate.unity
     guid: 8d244352b9f16db4c97a639cb8307373
   - enabled: 1
     path: Assets/Scenes/ProloguePt3.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Act1Pt2.unity
     guid: 7c97041f8f7224fc3878c6bf4735276d
+  - enabled: 1
+    path: Assets/Scenes/Fight1.unity
+    guid: 76de15cc463a335478bbefae677d4141
   m_configObjects: {}
