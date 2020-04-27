@@ -1,7 +1,175 @@
 fileFormatVersion: 2
 guid: 0c044d2a835ce4f57962ff04a5d5baad
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1585787521581782105
+    second: Oswald_Angry
+  - first:
+      213: -3922067196995166134
+    second: Oswald_Happy
+  - first:
+      213: -1636444038042283685
+    second: Oswald_Regular
+  - first:
+      213: -1586366160080489217
+    second: Oswald_Smile
+  - first:
+      213: 9000072925846329664
+    second: OswaldSheet_4
+  - first:
+      213: -1855440587566510562
+    second: OswaldSheet_5
+  - first:
+      213: 8312227185478381599
+    second: OswaldSheet_6
+  - first:
+      213: 8295311417972296133
+    second: OswaldSheet_7
+  - first:
+      213: 3360017575362417358
+    second: OswaldSheet_8
+  - first:
+      213: 6689478696142922976
+    second: OswaldSheet_9
+  - first:
+      213: -948973217520267239
+    second: OswaldSheet_10
+  - first:
+      213: 8036151489320318791
+    second: OswaldSheet_11
+  - first:
+      213: -3369091852720985694
+    second: OswaldSheet_12
+  - first:
+      213: 2704385664205321990
+    second: OswaldSheet_13
+  - first:
+      213: 1025115207301231800
+    second: OswaldSheet_14
+  - first:
+      213: -1885198573509799777
+    second: OswaldSheet_15
+  - first:
+      213: -6267641065056743566
+    second: OswaldSheet_16
+  - first:
+      213: 2247887258735755094
+    second: OswaldSheet_17
+  - first:
+      213: -1067922028487493480
+    second: OswaldSheet_18
+  - first:
+      213: -351111905241888154
+    second: OswaldSheet_19
+  - first:
+      213: -8104914114684385011
+    second: OswaldSheet_20
+  - first:
+      213: 6133892247631319475
+    second: OswaldSheet_21
+  - first:
+      213: -5031024285021887892
+    second: OswaldSheet_22
+  - first:
+      213: 2219755962083038639
+    second: OswaldSheet_23
+  - first:
+      213: -1059403671722888187
+    second: OswaldSheet_24
+  - first:
+      213: 8894309064082075499
+    second: OswaldSheet_25
+  - first:
+      213: -332178719208563458
+    second: OswaldSheet_26
+  - first:
+      213: 1286128690953912785
+    second: OswaldSheet_27
+  - first:
+      213: 8646757452853077549
+    second: OswaldSheet_28
+  - first:
+      213: 328972153634032253
+    second: OswaldSheet_29
+  - first:
+      213: 2870231035305274792
+    second: OswaldSheet_30
+  - first:
+      213: 111282760891122968
+    second: OswaldSheet_31
+  - first:
+      213: 6969335534317582294
+    second: OswaldSheet_32
+  - first:
+      213: -8702720275828428351
+    second: OswaldSheet_33
+  - first:
+      213: -3762663107188480614
+    second: OswaldSheet_34
+  - first:
+      213: -6904938499124361974
+    second: OswaldSheet_35
+  - first:
+      213: -2633952918598357262
+    second: OswaldSheet_36
+  - first:
+      213: -3702809769866042432
+    second: OswaldSheet_37
+  - first:
+      213: 5519951618847755316
+    second: OswaldSheet_38
+  - first:
+      213: -671796607205800959
+    second: OswaldSheet_39
+  - first:
+      213: -8912906372181000874
+    second: OswaldSheet_40
+  - first:
+      213: 349763178154666719
+    second: OswaldSheet_41
+  - first:
+      213: -7337008626994958460
+    second: OswaldSheet_42
+  - first:
+      213: -3949191204413888403
+    second: OswaldSheet_43
+  - first:
+      213: -8517288134927263924
+    second: OswaldSheet_44
+  - first:
+      213: -8763926680638828499
+    second: OswaldSheet_45
+  - first:
+      213: -7762517417493098922
+    second: OswaldSheet_46
+  - first:
+      213: 4059135639614650755
+    second: OswaldSheet_47
+  - first:
+      213: 4640984724980391670
+    second: OswaldSheet_48
+  - first:
+      213: -5959391500466923692
+    second: OswaldSheet_49
+  - first:
+      213: -465265910801742131
+    second: OswaldSheet_50
+  - first:
+      213: -6597299522497260528
+    second: OswaldSheet_51
+  - first:
+      213: 2984909823802395010
+    second: OswaldSheet_52
+  - first:
+      213: -1576869401670654867
+    second: OswaldSheet_53
+  - first:
+      213: -3378041888688684376
+    second: OswaldSheet_54
+  - first:
+      213: 8814051220365576774
+    second: OswaldSheet_55
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +208,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +238,117 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Oswald_Angry
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 1024
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95411295959d10610800000000000000
+      internalID: 1585787521581782105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oswald_Happy
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 628
+        width: 1024
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4024e11aa40299c0800000000000000
+      internalID: -3922067196995166134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oswald_Regular
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b511fa151de2a49e0800000000000000
+      internalID: -1636444038042283685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oswald_Smile
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4b3b0e1681cf9e0800000000000000
+      internalID: -1586366160080489217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
