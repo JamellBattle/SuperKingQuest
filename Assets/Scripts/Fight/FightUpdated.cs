@@ -118,7 +118,8 @@ public class FightUpdated : MonoBehaviour
                 enemyStatAfflict2 = 0;
                 statTimeIncrease = 1;
             }
-
+            
+            //////////////////////////////////////////////////LOOK HERE
             //Player move display box goes down
             if (moveDisplay.getY() > 4.25 && currAction != "" && timer < 0.7 && currAction != "defend")
             {
@@ -170,6 +171,7 @@ public class FightUpdated : MonoBehaviour
             {
                 chooseAction.move(0.075f);
             }
+            ///////////////////////////////////////////////////////////////////
             playerTurn(currAction); //Player's Turn
             
             //attMove = 0.01f;

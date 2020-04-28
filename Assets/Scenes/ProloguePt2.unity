@@ -740,7 +740,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 925847716}
   controller: {fileID: 920161287}
   loadlevel: {fileID: 1442883447}
-  nextScene: ProloguePt3
+  nextScene: Fight1
   clickingAllowed: 1
   sentence: 
   EnemyBox: {fileID: 8891365757875848732, guid: 76818e6471a9c4805901c11b15a591d2,
@@ -895,6 +895,8 @@ MonoBehaviour:
   KhanAnim: {fileID: 0}
   Camile: {fileID: 0}
   CamileAnim: {fileID: 0}
+  Oswald: {fileID: 0}
+  OswaldAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 1275223678}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 1479271729}
