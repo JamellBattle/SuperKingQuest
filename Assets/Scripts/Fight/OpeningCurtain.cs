@@ -7,7 +7,7 @@ public class OpeningCurtain : MonoBehaviour
     public void move(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(0, transform.position.y + speed, 0);
+        Vector3 movePosition = new Vector3(0, transform.position.y + (speed * Time.deltaTime), 0);
         transform.position = movePosition;
     }
     public float getY()

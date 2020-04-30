@@ -67,14 +67,14 @@ public class enemyStats : MonoBehaviour
     public void move(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(transform.position.x + speed, 1.07f, 0);
+        Vector3 movePosition = new Vector3(transform.position.x + (speed * Time.deltaTime), 1.07f, 0);
         transform.position = movePosition;
     }
 
     public void damMove(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(transform.position.x + speed, 1.07f, 0);
+        Vector3 movePosition = new Vector3(transform.position.x + (speed * Time.deltaTime), 1.07f, 0);
         transform.position = movePosition;
     }
     public void TakeDamage(int dam)

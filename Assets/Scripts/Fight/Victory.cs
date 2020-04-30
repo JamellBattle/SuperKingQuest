@@ -9,7 +9,7 @@ public class Victory : MonoBehaviour
     public void move(float speed, float y)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(transform.position.x + speed, y, 0);
+        Vector3 movePosition = new Vector3(transform.position.x + (speed * Time.deltaTime), y, 0);
         transform.position = movePosition;
     }
     public float getX()

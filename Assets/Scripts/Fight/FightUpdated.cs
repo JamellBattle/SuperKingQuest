@@ -32,7 +32,7 @@ public class FightUpdated : MonoBehaviour
     string endBox = "";
     string display = "";
     float attMove = 0.01f;
-    float damMove = 0.23f;
+    float damMove = 16.23f;
     float initialPlayerSpot = 0;
     float initialEnemySpot = 0;
     float initialEnemyVictorySpot = 0;
@@ -40,10 +40,10 @@ public class FightUpdated : MonoBehaviour
     float initialGameOverGameSpot = 0;
     float initialGameOverOverSpot = 0;
     float initialRetrySpot = 0;
-    float heroEntrance = 0.4f;
-    float enemyEntrance = 0.4f;
-    float EnemyVictoryEntrance = 0.5f;
-    float DefeatedVictoryEntrance = 0.5f;
+    float heroEntrance = 30.0f;
+    float enemyEntrance = 30.0f;
+    float EnemyVictoryEntrance = 40.5f;
+    float DefeatedVictoryEntrance = 40.5f;
     bool heroArrived = false;
     bool enemyArrived = false;
     bool startupComplete = false;
@@ -131,48 +131,48 @@ public class FightUpdated : MonoBehaviour
             //Player move display box goes down
             if (moveDisplay.getY() > 4.25 && currAction != "" && timer < 0.7 && currAction != "defend")
             {
-                moveDisplay.move(-0.075f);
+                moveDisplay.move(-16.075f);
                 moveDisplay.setDisplay(display);
             }
 
             //Player move display box goes up
             if (moveDisplay.getY() < 6.34 && timer >= 0.7 && timer < 1 && currAction != "defend")
             {
-                moveDisplay.move(0.075f);
+                moveDisplay.move(16.075f);
             }
 
             //Enemy move display box goes down
             if (moveDisplay.getY() > 4.25 && currAction != "" && timer >= 2 && timer < 2.7)
             {
-                moveDisplay.move(-0.075f);
+                moveDisplay.move(-16.075f);
                 moveDisplay.setDisplay(display);
             }
 
             //Enemy move display box goes up
             if (moveDisplay.getY() < 6.34 && timer > 2.7)
             {
-                moveDisplay.move(0.075f);
+                moveDisplay.move(16.075f);
             }
 
             //Moves box goes down
             if (chooseMove.getY() > -5.69 && currAction == "fight")
             {
-                chooseMove.move(-0.075f);
+                chooseMove.move(-16.075f);
             }
             //Items box goes down
             if (chooseItem.getY() > -5.69 && currAction == "item")
             {
-                chooseItem.move(-0.075f);
+                chooseItem.move(-16.075f);
             }
             //Defend box goes down
             if (chooseAction.getY() > -5.69 && timer <= 2.6 && currAction == "defend")
             {
-                chooseAction.move(-0.075f);
+                chooseAction.move(-16.075f);
             }
             //Special box goes down
             if (chooseSpecial.getY() > -5.69 && currAction == "special")
             {
-                chooseSpecial.move(-0.075f);
+                chooseSpecial.move(-16.075f);
             }
 
             playerTurn(currAction); //Player's Turn
@@ -190,7 +190,7 @@ public class FightUpdated : MonoBehaviour
                 hero.defend(0);
                 hero.hurt(0);
                 attMove = 0.01f;
-                damMove = 0.23f;
+                damMove = 16.23f;
                 hero.setX(initialPlayerSpot);
                 enemy.setX(initialEnemySpot);
                 turn.nextTurn();
@@ -206,7 +206,7 @@ public class FightUpdated : MonoBehaviour
         //Action box comes up at the end of both turns
         if (chooseAction.getY() < -2.537844 && moveActionBox == true)
         {
-            chooseAction.move(0.075f);
+            chooseAction.move(16.075f);
         }
         if (chooseAction.getY() >= -2.537844 && moveActionBox == true)
         {
@@ -219,11 +219,11 @@ public class FightUpdated : MonoBehaviour
         {
             if (chooseAction.getY() > -6.63)
             {
-                chooseAction.move(-0.075f); //Actions box moves down
+                chooseAction.move(-16.075f); //Actions box moves down
             }
             if (chooseMove.getY() < -2.32 && timer > 0.3)
             {
-                chooseMove.move(0.075f); //Moves box moves up
+                chooseMove.move(16.075f); //Moves box moves up
             }
         }
         //Switch from Moves to Actions
@@ -231,11 +231,11 @@ public class FightUpdated : MonoBehaviour
         {
             if (chooseMove.getY() > -6.63)
             {
-                chooseMove.move(-0.075f); //Moves box moves down
+                chooseMove.move(-16.075f); //Moves box moves down
             }
             if (chooseAction.getY() < -2.537844 && timer > 0.3)
             {
-                chooseAction.move(0.075f); //Actions box moves up
+                chooseAction.move(16.075f); //Actions box moves up
             }
         }
         //Switch from Actions to Items
@@ -243,11 +243,11 @@ public class FightUpdated : MonoBehaviour
         {
             if (chooseAction.getY() > -6.63)
             {
-                chooseAction.move(-0.075f); //Actions box moves down
+                chooseAction.move(-16.075f); //Actions box moves down
             }
             if (chooseItem.getY() < -2.33 && timer > 0.3)
             {
-                chooseItem.move(0.075f); //Items box moves up
+                chooseItem.move(16.075f); //Items box moves up
             }
         }
         //Switch from Items to Actions
@@ -255,11 +255,11 @@ public class FightUpdated : MonoBehaviour
         {
             if (chooseItem.getY() > -6.63)
             {
-                chooseItem.move(-0.075f); //Items box moves down
+                chooseItem.move(-16.075f); //Items box moves down
             }
             if (chooseAction.getY() < -2.537844 && timer > 0.3)
             {
-                chooseAction.move(0.075f); //Actions box moves up
+                chooseAction.move(16.075f); //Actions box moves up
             }
         }
         //Switch from Actions to Specials
@@ -267,11 +267,11 @@ public class FightUpdated : MonoBehaviour
         {
             if (chooseAction.getY() > -6.63)
             {
-                chooseAction.move(-0.075f); //Actions box moves down
+                chooseAction.move(-16.075f); //Actions box moves down
             }
             if (chooseSpecial.getY() < -2.33 && timer > 0.3)
             {
-                chooseSpecial.move(0.075f); //Specials box moves up
+                chooseSpecial.move(16.075f); //Specials box moves up
             }
         }
         //Switch from Specials to Actions
@@ -279,11 +279,11 @@ public class FightUpdated : MonoBehaviour
         {
             if (chooseSpecial.getY() > -6.63)
             {
-                chooseSpecial.move(-0.075f); //Specials box moves down
+                chooseSpecial.move(-16.075f); //Specials box moves down
             }
             if (chooseAction.getY() < -2.537844 && timer > 0.3)
             {
-                chooseAction.move(0.075f); //Actions box moves up
+                chooseAction.move(16.075f); //Actions box moves up
             }
         }
         if (startBox != "" && endBox != "" && timer >= 0.85)
@@ -304,7 +304,7 @@ public class FightUpdated : MonoBehaviour
             moveDisplay.setY(6.34f);
             if (hero.getX() > initialPlayerSpot - 8)
             {
-                hero.move(-0.075f);
+                hero.move(-16.075f);
             }
             defeat();
         }
@@ -322,7 +322,7 @@ public class FightUpdated : MonoBehaviour
             victory();
             if (enemy.getX() > initialEnemySpot + 8)
             {
-                enemy.move(0.075f);
+                enemy.move(16.075f);
             }
         }
 
@@ -332,7 +332,7 @@ public class FightUpdated : MonoBehaviour
             
             if (openingCurtain.getY() > -12.36)
             {
-                openingCurtain.move(-0.15f);
+                openingCurtain.move(-24.15f);
             }
             if (DefeatMusic.volume != 0 && rewindTimer > 1.5f)
             {
@@ -350,18 +350,18 @@ public class FightUpdated : MonoBehaviour
         if (action == "fight" || action == "special")
         {
             //Player Deal Damage
-            if (timer < 0.15 && attMove < 0.23f)
+            if (timer < 0.15 && attMove < 16.23f)
             {
                 Move.Play();
                 display = move;
                 hero.move(attMove);
-                attMove += 0.01f;
+                attMove += 0.25f;
             }
             if (timer >= 0.15 && timer < 0.3 && attMove > 0 && hero.getX() > initialPlayerSpot)
             {
                 hero.attack(1);
                 hero.move(-attMove);
-                attMove -= 0.01f;
+                attMove -= 0.25f;
             }
             //Enemy Take Damage
 
@@ -376,12 +376,12 @@ public class FightUpdated : MonoBehaviour
             if (timer > 0.6 && timer < 0.75 && damMove > 0)
             {
                 enemy.move(damMove);
-                damMove -= 0.01f;
+                damMove -= 0.25f;
             }
             if (timer >= 0.75 && timer < 1 && enemy.getX() > initialEnemySpot)
             {
                 enemy.move(-damMove);
-                damMove += 0.01f;
+                damMove += 0.25f;
                 if (enemy.getX() < initialEnemySpot)
                 {
                     enemy.setX(initialEnemySpot);
@@ -529,16 +529,16 @@ public class FightUpdated : MonoBehaviour
             display = enemyMove;
             Move.Play();
         }
-        if (timer > 2 && timer < 2.15 && attMove < 0.23)
+        if (timer > 2 && timer < 2.15 && attMove < 16.23)
         {
             enemy.attack(1);
             enemy.move(-attMove);
-            attMove += 0.01f;
+            attMove += 0.25f;
         }
         if (timer >= 2.15 && timer < 2.3 && attMove > 0 && enemy.getX() < initialEnemySpot)
         {
             enemy.move(attMove);
-            attMove -= 0.01f;
+            attMove -= 0.25f;
             if (enemy.getX() > initialEnemySpot)
             {
                 enemy.setX(initialEnemySpot);
@@ -559,12 +559,12 @@ public class FightUpdated : MonoBehaviour
             if (timer > 2.6 && timer < 2.75 && damMove > 0)
             {
                 hero.move(-damMove);
-                damMove -= 0.01f;
+                damMove -= 0.25f;
             }
             if (timer >= 2.75 && timer < 3 && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
-                damMove += 0.01f;
+                damMove += 0.25f;
                 if (hero.getX() > initialPlayerSpot)
                 {
                     hero.setX(initialPlayerSpot);
@@ -597,12 +597,12 @@ public class FightUpdated : MonoBehaviour
             if (timer > 2.6 && timer < 2.75)
             {
                 hero.move(-damMove);
-                damMove -= 0.01f;
+                damMove -= 0.25f;
             }
             if (timer >= 2.75 && timer < 3 && hero.getX() < initialPlayerSpot)
             {
                 hero.move(damMove);
-                damMove += 0.01f;
+                damMove += 0.25f;
                 if (hero.getX() > initialPlayerSpot)
                 {
                     hero.setX(initialPlayerSpot);
@@ -696,7 +696,7 @@ public class FightUpdated : MonoBehaviour
 
         if (mainCamera.getX() < c && d == 0 && c > 0)
         {
-            mainCamera.moveX(0.3f);
+            mainCamera.moveX(48.3f);
         }
         if (mainCamera.getX() >= c && d == 0 && c > 0)
         {
@@ -706,7 +706,7 @@ public class FightUpdated : MonoBehaviour
         }
         if (mainCamera.getX() > c && d == 1 && c < 0)
         {
-            mainCamera.moveX(-0.3f);
+            mainCamera.moveX(-48.3f);
         }
         if (mainCamera.getX() <= c && d == 1 && c < 0)
         {
@@ -726,7 +726,7 @@ public class FightUpdated : MonoBehaviour
         
             if (mainCamera.getY() < a && b == 0 && a > 0)
             {
-                mainCamera.moveY(0.3f);
+                mainCamera.moveY(48.3f);
             }
             if (mainCamera.getY() >= a && b == 0 && a > 0)
             {
@@ -736,7 +736,7 @@ public class FightUpdated : MonoBehaviour
             }
             if (mainCamera.getY() > a && b == 1 && a < 0)
             {
-                mainCamera.moveY(-0.3f);
+                mainCamera.moveY(-48.3f);
             }
             if (mainCamera.getY() <= a && b == 1 && a < 0)
             {
@@ -783,15 +783,15 @@ public class FightUpdated : MonoBehaviour
     {
         if (startupComplete == false)
         {
-            entranceTimer++;
+            entranceTimer += Time.deltaTime;
             //Debug.Log(entranceTimer);
         }
-        if (entranceTimer >= 50)
+        if (entranceTimer >= 0.50)
         {
             if (hero.getX() < initialPlayerSpot && heroArrived == false && enemyArrived == true && startupComplete == false)
             {
                 hero.move(heroEntrance);
-                heroEntrance -= 0.01f;
+                heroEntrance -= 0.25f;
             }
             if (hero.getX() >= initialPlayerSpot)
             {
@@ -801,7 +801,7 @@ public class FightUpdated : MonoBehaviour
             if (enemy.getX() > initialEnemySpot && enemyArrived == false && startupComplete == false)
             {
                 enemy.move(-enemyEntrance);
-                enemyEntrance -= 0.01f;
+                enemyEntrance -= 0.25f;
             }
             if (enemy.getX() <= initialEnemySpot)
             {
@@ -809,7 +809,7 @@ public class FightUpdated : MonoBehaviour
             }
             if (chooseAction.getY() < -2.537844 && enemyArrived == true && heroArrived == true && startupComplete == false)
             {
-                chooseAction.move(0.075f);
+                chooseAction.move(16.075f);
             }
             if (chooseAction.getY() >= -2.537844 && startupComplete == false)
             {
@@ -819,7 +819,7 @@ public class FightUpdated : MonoBehaviour
 
         if (openingCurtain.getY() < 25 && startupComplete == false)
         {
-            openingCurtain.move(0.3f);
+            openingCurtain.move(24.3f);
             // Debug.Log(openingCurtain.getY());
         }
     }
@@ -840,45 +840,45 @@ public class FightUpdated : MonoBehaviour
         bool done = false;
         if (done == false)
         {
-            victoryTimer++;
+            victoryTimer += Time.deltaTime;
             //Debug.Log(victoryTimer);
         }
-        if (victoryTimer > 180 && victoryTimer < 280)
+        if (victoryTimer > 1.8 && victoryTimer < 2.8)
         {
             darkenScreen();
         }
-        if (victoryTimer > 180 && victoryTimer < 183)
+        if (victoryTimer > 1.80 && victoryTimer < 1.83)
         {
             Music.Stop();
             VictoryMusic.Play();
         }
-        if (EnemyVictory.getX() < initialEnemyVictorySpot && victoryTimer > 260 && done == false)
+        if (EnemyVictory.getX() < initialEnemyVictorySpot && victoryTimer > 2.60 && done == false)
         {
             EnemyVictory.move(EnemyVictoryEntrance, 1.9f);
-            EnemyVictoryEntrance -= 0.01f;
+            EnemyVictoryEntrance -= 0.25f;
         }
         if (EnemyVictory.getX() >= initialEnemyVictorySpot)
         {
             EnemyVictoryDone = true;
         }
-        if (DefeatedVictory.getX() > initialDefeatedVictorySpot && EnemyVictoryDone == true && victoryTimer > 360 && done == false)
+        if (DefeatedVictory.getX() > initialDefeatedVictorySpot && EnemyVictoryDone == true && victoryTimer > 3.60 && done == false)
         {
             DefeatedVictory.move(-DefeatedVictoryEntrance, 0.31f);
-            DefeatedVictoryEntrance -= 0.01f;
+            DefeatedVictoryEntrance -= 0.25f;
         }
         if (DefeatedVictory.getX() <= initialDefeatedVictorySpot)
         {
             done = true;
         }
-        if (openingCurtain.getY() > -12.36 && victoryTimer > 1000)
+        if (openingCurtain.getY() > -12.36 && victoryTimer > 7.00)
         {
-            openingCurtain.move(-0.3f);
+            openingCurtain.move(-24.3f);
         }
-        if (victoryTimer > 1050 && VictoryMusic.volume != 0)
+        if (victoryTimer > 7.50 && VictoryMusic.volume != 0)
         {
             VictoryMusic.volume -= 0.01f;
         }
-        if (victoryTimer >= 1300)
+        if (victoryTimer >= 10.00)
         {
             SceneManager.LoadScene(nextScene.nextScene);
         }
@@ -890,37 +890,37 @@ public class FightUpdated : MonoBehaviour
         bool done = false;
         if (done == false)
         {
-            victoryTimer++;
+            victoryTimer += Time.deltaTime;
         }
-        if (victoryTimer > 180 && victoryTimer < 280)
+        if (victoryTimer > 1.8 && victoryTimer < 2.8)
         {
             darkenScreen();
         }
-        if (victoryTimer > 180 && victoryTimer < 183)
+        if (victoryTimer > 1.80 && victoryTimer < 1.83)
         {
             Music.Stop();
             DefeatMusic.Play();
         }
-        if (GameOverGame.getX() < initialGameOverOverSpot && victoryTimer > 260 && done == false)
+        if (GameOverGame.getX() < initialGameOverOverSpot && victoryTimer > 2.60 && done == false)
         {
             GameOverGame.move(EnemyVictoryEntrance, 1.9f);
-            EnemyVictoryEntrance -= 0.01f;
+            EnemyVictoryEntrance -= 0.25f;
         }
         if (GameOverGame.getX() >= initialGameOverGameSpot)
         {
             GameoverGameDone = true;
         }
-        if (GameOverOver.getX() > initialGameOverOverSpot && GameoverGameDone == true && victoryTimer > 360 && done == false)
+        if (GameOverOver.getX() > initialGameOverOverSpot && GameoverGameDone == true && victoryTimer > 3.60 && done == false)
         {
             GameOverOver.move(-DefeatedVictoryEntrance, 0.31f);
-            DefeatedVictoryEntrance -= 0.01f;
+            DefeatedVictoryEntrance -= 0.25f;
         }
         if (GameOverOver.getX() <= initialGameOverOverSpot)
         {
             Retry.setX(initialRetrySpot, -1);
             done = true;
         }
-        if (retryOpacity < 1 && done == true && victoryTimer > 500)
+        if (retryOpacity < 1 && done == true && victoryTimer > 5.00)
         {
             Retry.setOpacity(retryOpacity);
             retryOpacity += 0.015f;

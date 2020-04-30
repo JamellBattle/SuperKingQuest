@@ -15,7 +15,7 @@ public class ChooseMove : MonoBehaviour
     public void move(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(0.1160625f, transform.position.y + speed, 174.1797f);
+        Vector3 movePosition = new Vector3(0.1160625f, transform.position.y + (speed * Time.deltaTime), 174.1797f);
         transform.position = movePosition;
     }
     public float getY()
