@@ -644,7 +644,7 @@ MonoBehaviour:
     - "Guess I\u2019ll call it for today. No point in trying to find my way forward
       in the dark."
     - "Hm\u2026"
-    - 'The S.U.S. fragment. '
+    - 'The SUS fragment. '
     - "This thing caused a lot of problems for Babbo and Quetzy\u2026 "
     - And that guy, what was his name? Georgy-Boy? He was obsessed with this thing.
     - 'It was his fault DIO got freed in the first place. '
@@ -740,7 +740,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 925847716}
   controller: {fileID: 920161287}
   loadlevel: {fileID: 1442883447}
-  nextScene: ProloguePt3
+  nextScene: BearBattle
   clickingAllowed: 1
   sentence: 
   EnemyBox: {fileID: 8891365757875848732, guid: 76818e6471a9c4805901c11b15a591d2,

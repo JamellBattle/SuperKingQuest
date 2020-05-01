@@ -40,19 +40,20 @@ public class item : MonoBehaviour
 
     public string itemEffect()
     {
-        if (itemName == "Soda")
+
+        if (itemName == "Quetzy's Snack Pack")
         {
             return "HP 10";
         }
-        if (itemName == "Large Soda")
+        if (itemName == "Quetzy's Meal Pack")
         {
             return "HP 20";
         }
-        if (itemName == "Honey Jar")
+        if (itemName == "SUS Fragment")
         {
             return "SP 5";
         }
-        if (itemName == "Medicine")
+        if (itemName == "Ooma Antidote")
         {
             return "STATUS OK";
         }

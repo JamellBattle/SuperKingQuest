@@ -107,6 +107,7 @@ public class Act1P2DialogueManager : DialogueManager
 
         if (sentences.Count == 33)
         {
+            dialogueText.fontSize = 36;
             SetBox(KingBox);
             SetName("King");            
         }
@@ -114,6 +115,7 @@ public class Act1P2DialogueManager : DialogueManager
         if (sentences.Count == 32)
         {
             clickingAllowed = false;
+            dialogueText.fontSize = 24;
             StartCoroutine(KingsHere());
         }
 

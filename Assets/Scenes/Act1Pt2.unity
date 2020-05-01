@@ -511,7 +511,7 @@ MonoBehaviour:
   loadlevel: {fileID: 0}
   nextScene: Act1Pt3
   clickingAllowed: 0
-  sentence: 
+  sentence: GruntBattle
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
     type: 3}
   KingBox: {fileID: -999324308146694106, guid: 76818e6471a9c4805901c11b15a591d2, type: 3}
@@ -733,8 +733,7 @@ MonoBehaviour:
     - Huh?
     - Ooga ooga ooga ooga!!
     - What the heck are those things?!
-    - Given the current circumstances, they must be affiliated with the Gorgons that
-      Sveri mentioned.
+    - Given the current circumstances, they must be the Gorgons that Sveri mentioned.
     - Annoying.
     - Ooga ooga ooga ooga!!
     - "If you hadn\u2019t come at me, I would\u2019ve ignored you. But just looking
