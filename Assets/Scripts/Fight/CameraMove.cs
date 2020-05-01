@@ -19,14 +19,14 @@ public class CameraMove : MonoBehaviour
     public void moveX(float speedx)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(transform.position.x + speedx, 0, -10);
+        Vector3 movePosition = new Vector3(transform.position.x + (speedx * Time.deltaTime), 0, -10);
         transform.position = movePosition;
     }
 
     public void moveY(float speedy)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(0, transform.position.y + speedy, -10);
+        Vector3 movePosition = new Vector3(0, transform.position.y + (speedy * Time.deltaTime), -10);
         transform.position = movePosition;
     }
 

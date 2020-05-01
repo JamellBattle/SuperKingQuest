@@ -139,14 +139,14 @@ public class heroStats : MonoBehaviour
     public void move(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(transform.position.x + speed, 0.71f, 0);
+        Vector3 movePosition = new Vector3(transform.position.x + (speed * Time.deltaTime), 0.71f, 0);
         transform.position = movePosition;
     }
 
     public void attMove(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(transform.position.x + speed, 0.71f, 0);
+        Vector3 movePosition = new Vector3(transform.position.x + (speed * Time.deltaTime), 0.71f, 0);
         transform.position = movePosition;
     }
     public void TakeDamage(int dam)

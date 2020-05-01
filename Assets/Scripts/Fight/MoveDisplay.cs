@@ -10,7 +10,7 @@ public class MoveDisplay : MonoBehaviour
     public void move(float speed)
     {
         //Debug.Log("COCK");
-        Vector3 movePosition = new Vector3(0, transform.position.y + speed, 90f);
+        Vector3 movePosition = new Vector3(0, transform.position.y + (speed * Time.deltaTime), 90f);
         transform.position = movePosition;
     }
 
