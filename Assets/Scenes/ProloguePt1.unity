@@ -159,7 +159,7 @@ MonoBehaviour:
       DIO from destroying? "
     - "By the way it looks, there wasn\u2019t much at stake."
     - "But still\u2026 "
-    - There has to be something important. Why else would Quetzy and the other feel
+    - There has to be something important. Why else would Quetzy and the others feel
       so inclined to keep it safe?
     - 'Ah, whatever. '
     - No use getting stuck on it, just gonna have to keep it moving.
@@ -1104,6 +1104,8 @@ MonoBehaviour:
   KhanAnim: {fileID: 0}
   Camile: {fileID: 0}
   CamileAnim: {fileID: 0}
+  Oswald: {fileID: 0}
+  OswaldAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}

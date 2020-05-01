@@ -609,7 +609,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 249556155}
   controller: {fileID: 1868149973}
   loadlevel: {fileID: 1417531391}
-  nextScene: 
+  nextScene: Act1Pt5
   clickingAllowed: 0
   sentence: 
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,

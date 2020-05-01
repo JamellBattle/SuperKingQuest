@@ -521,7 +521,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 249556155}
   controller: {fileID: 1868149973}
   loadlevel: {fileID: 2337752}
-  nextScene: 
+  nextScene: Act1Pt4
   clickingAllowed: 0
   sentence: 
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
@@ -1825,6 +1825,8 @@ MonoBehaviour:
   KhanAnim: {fileID: 0}
   Camile: {fileID: 1381207883}
   CamileAnim: {fileID: 0}
+  Oswald: {fileID: 0}
+  OswaldAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
