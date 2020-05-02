@@ -41,11 +41,11 @@ public class item : MonoBehaviour
     public string itemEffect()
     {
 
-        if (itemName == "Quetzy's Snack Pack")
+        if (itemName == "Quetzy's Snack")
         {
             return "HP 10";
         }
-        if (itemName == "Quetzy's Meal Pack")
+        if (itemName == "Quetzy's Meal")
         {
             return "HP 20";
         }
