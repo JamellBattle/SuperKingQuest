@@ -20,6 +20,11 @@ public class PP2DialogueManager : DialogueManager
     public Sprite KShock;
     GameObject King;
     Vector3 currpos;
+    public Animator fireAnim;
+    public AudioSource fireSFX;
+    public AudioSource bushSFX;
+    public AudioSource FBStart;
+    public AudioSource FBEnd;
 
 
     public override void Start()
@@ -27,6 +32,8 @@ public class PP2DialogueManager : DialogueManager
         base.Start();
         King = controller.King;
         currpos = King.transform.position;
+        fireAnim.SetTrigger("FadeIn");
+        StartCoroutine(FireFades());
 
     }
 
@@ -39,7 +46,9 @@ public class PP2DialogueManager : DialogueManager
     {
         textAnim.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
+        
         base.StartDialogue(dialogue);
+        
     }
 
     public override void DisplayNextSentence()
@@ -67,6 +76,7 @@ public class PP2DialogueManager : DialogueManager
         if (sentences.Count == 30)
         {
             textAnim.SetBool("IsOpen", false);
+            FBStart.Play();
             StartCoroutine(FlashbackStart());
             clickingAllowed = false;
 
@@ -258,6 +268,7 @@ public class PP2DialogueManager : DialogueManager
         if (sentences.Count == 7)
         {
             textAnim.SetBool("IsOpen", false);
+            FBEnd.Play();
             StartCoroutine(FlashbackEnd());
             clickingAllowed = false;
 
@@ -266,6 +277,7 @@ public class PP2DialogueManager : DialogueManager
 
         if (sentences.Count == 5)
         {
+            bushSFX.Play();
             KingSprite.sprite = KShock;
 
 
@@ -322,6 +334,12 @@ public class PP2DialogueManager : DialogueManager
     {
         base.EndDialogue();
 
+    }
+
+    public IEnumerator FireFades()
+    {
+        yield return new WaitForSeconds(1f);
+        fireAnim.SetTrigger("FadeOut");
     }
 
     //Additonal Coroutines Exclusive to this Dialogue Manager

@@ -7,11 +7,16 @@ public class PP1DialogueManager : DialogueManager
 
 
     public Sprite strangerTextSprite;
+    public Animator windAnim;
+    public AudioSource windSFX;
+    public AudioSource footsteps;
+    bool kingLeft = false;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        windAnim.SetTrigger("FadeIn");
         
 
     }
@@ -25,7 +30,9 @@ public class PP1DialogueManager : DialogueManager
     {
         textAnim.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
+        windAnim.SetTrigger("FadeOut");
         base.StartDialogue(dialogue);
+        
     }
 
     public override void DisplayNextSentence()
@@ -42,6 +49,7 @@ public class PP1DialogueManager : DialogueManager
 
         if (sentences.Count == 0)
         {
+            
             textbox.sprite = strangerTextSprite;
             mainText = dialogueText;
             nameText.text = "???";
@@ -70,16 +78,21 @@ public class PP1DialogueManager : DialogueManager
     //Additional Coroutines exclusive to this Dialogue manager
     public IEnumerator KingLeaving(float wait)
     {
+        if (kingLeft == false)
+        {
+            footsteps.Play();
+        }
+        
         controller.KingAnim.speed = 0.1f;
         controller.HideKing();
         yield return new WaitForSeconds(wait);
+        kingLeft = true;
         StartCoroutine(StrangerAppears(0.5f));
 
     }
 
     public IEnumerator StrangerAppears(float wait)
     {
-
         controller.ShowCoco();
         yield return new WaitForSeconds(wait);
         textAnim.SetBool("IsOpen", true);

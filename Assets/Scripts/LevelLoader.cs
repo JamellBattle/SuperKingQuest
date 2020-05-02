@@ -9,12 +9,17 @@ public class LevelLoader : MonoBehaviour
     public Animator firstCharacter;
     public Animator musicAnim;
     AnimationController controller;
+    public float charAppearTime;
 
     public float transitionTime = 1f;
 
     void Start() {
+        if (musicAnim)
+        {
+            musicAnim.SetTrigger("FadeIn");
+        }
         controller = (AnimationController)FindObjectOfType(typeof(AnimationController));
-        StartCoroutine(firstFade(2f));
+        StartCoroutine(firstFade(charAppearTime));
     }
 
     IEnumerator firstFade(float time) {
