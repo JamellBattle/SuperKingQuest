@@ -10,17 +10,20 @@ public class move : MonoBehaviour
     public int damage = 0;
     public int cost = 0;
     public TextMeshProUGUI displayName;
+    public TextMeshProUGUI displayDamage;
     public TextMeshProUGUI displayCost;
 
     void Start()
     {
         displayName.text = moveName;
+        displayDamage.text = "(" + damage.ToString() + " DMG)";
         displayCost.text = "(" + cost.ToString() + " HP)";
     }
 
     void Update()
     {
         displayName.text = moveName;
+        displayDamage.text = "(" + damage.ToString() + " DMG)";
         displayCost.text = "(" + cost.ToString() + " HP)";
     }
 }
