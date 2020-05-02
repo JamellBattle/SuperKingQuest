@@ -7,6 +7,7 @@ public class FightUpdated : MonoBehaviour
 {
     float entranceTimer = 0;
     float victoryTimer = 0;
+    float dmgTextTimer = 0;
     float darkTimer = 0;
     float timer = 0;
     float maxTime = 2.9f;
@@ -21,11 +22,13 @@ public class FightUpdated : MonoBehaviour
     int enemyStatAfflict2 = 0;
     float enemyOpacity = 1;
     float darkenOpacity = 0;
+    float dmgTextOpacity = 1;
     float effectOpacity = 0;
     float retryOpacity = 0;
     string move = "";
     string enemyMove = "";
     string item = "";
+    string itemHealAmount = "";
     int itemIndex = 0;
     string currAction = "";
     string startBox = "";
@@ -80,6 +83,7 @@ public class FightUpdated : MonoBehaviour
     public Victory GameOverOver;
     public Victory Retry;
     public Turn turn;
+    public DamageText dmgText;
     public NextScene nextScene;
     void Start()
     {
@@ -400,6 +404,7 @@ public class FightUpdated : MonoBehaviour
                 if (enemyDamage == 1)
                 {
                     enemy.TakeDamage(hero.getSTR(move));
+                    dmgTextOn("hero", hero.getSTR(move).ToString());
                     if (enemy.getHealth() == 0)
                     {
                         EnemyDeath.Play();
@@ -420,7 +425,9 @@ public class FightUpdated : MonoBehaviour
                 if (enemyDamage == 1)
                 {
                     Item.Play();
+                    itemHealAmount = hero.getItem(itemIndex).itemEffect().Substring(hero.getItem(itemIndex).itemEffect().IndexOf(' ') + 1);
                     hero.item(item);
+                    dmgTextOn("item", itemHealAmount);
                     if (hero.getStatus() == "OK")
                     {
                         maxTime = 2.9f;
@@ -450,6 +457,7 @@ public class FightUpdated : MonoBehaviour
                 if (enemyDamage == 1)
                 {
                     enemy.TakeDamage(hero.getSPL(move));
+                    dmgTextOn("hero", hero.getSPL(move).ToString());
                     if (enemy.getHealth() == 0)
                     {
                         EnemyDeath.Play();
@@ -457,6 +465,22 @@ public class FightUpdated : MonoBehaviour
                     enemyDamage = 0;
                 }
             }
+        }
+        if (timer >= 0.9 && timer < 1.1 && action != "item" && action != "defend")
+        {
+            damageTextDecrease("hero");
+        }
+        if (timer >= 1.1 && timer < 1.3)
+        {
+            dmgTextOpacity = 1;
+        }
+        if (timer >= 0.9 && timer < 1.1 && action == "item")
+        {
+            damageTextDecrease("enemy");
+        }
+        if (timer >= 1.1 && timer < 1.3)
+        {
+            dmgTextOpacity = 1;
         }
 
         //Status
@@ -473,6 +497,7 @@ public class FightUpdated : MonoBehaviour
             c = 0.7f;
             d = 0;
             hero.TakeDamage(hero.getMaxHealth() / 16);
+            dmgTextOn("burn", (hero.getMaxHealth() / 16).ToString());
             if (hero.getHealth() == 0)
             {
                 PlayerDeath.Play();
@@ -486,6 +511,7 @@ public class FightUpdated : MonoBehaviour
             c = 0.7f;
             d = 0;
             hero.TakeDamage(hero.getMaxHealth() / 16);
+            dmgTextOn("poison", (hero.getMaxHealth() / 16).ToString());
             if (hero.getHealth() == 0)
             {
                 PlayerDeath.Play();
@@ -516,7 +542,12 @@ public class FightUpdated : MonoBehaviour
 
         if (timer > 4 && timer < 4.2)
         {
+            damageTextDecrease("enemy");
             hero.hurt(0);
+        }
+        if (timer >= 4.2 && timer < 4.4)
+        {
+            dmgTextOpacity = 1;
         }
     }
 
@@ -525,6 +556,8 @@ public class FightUpdated : MonoBehaviour
         //Enemy Deal Damage
         if (timer > 2.09 && timer < 2.1)
         {
+            dmgTextOff("hero");
+            dmgTextOff("enemy");
             enemyMove = enemy.getRandomMove();
             display = enemyMove;
             Move.Play();
@@ -572,10 +605,15 @@ public class FightUpdated : MonoBehaviour
             }
             if (timer >= 2.75 && timer < 2.9)
             {
+                if (hero.getStatus() != "Burn" && hero.getStatus() != "Poison")
+                {
+                    maxTime = 3.1f;
+                }
                 hero.hurt(0);
                 if (heroDamage == 1)
                 {
                     hero.TakeDamage(enemy.getSTR(enemyMove));
+                    dmgTextOn("enemy", enemy.getSTR(enemyMove).ToString());
                     if (hero.getHealth() == 0)
                     {
                         PlayerDeath.Play();
@@ -610,9 +648,14 @@ public class FightUpdated : MonoBehaviour
             }
             if (timer >= 2.75 && timer < 2.9)
             {
+                if (hero.getStatus() != "Burn" && hero.getStatus() != "Poison")
+                {
+                    maxTime = 3.1f;
+                }
                 if (heroDamage == 1)
                 {
                     hero.TakeDamage(enemy.getSTR(enemyMove) / 2);
+                    dmgTextOn("enemy", (enemy.getSTR(enemyMove) / 2).ToString());
                     if (hero.getHealth() == 0)
                     {
                         PlayerDeath.Play();
@@ -620,6 +663,14 @@ public class FightUpdated : MonoBehaviour
                     heroDamage = 0;
                 }
             }
+        }
+        if (timer >= 2.9 && timer < 3.1)
+        {
+            damageTextDecrease("enemy");
+        }
+        if (timer >= 3.1 && timer < 3.3)
+        {
+            dmgTextOpacity = 1;
         }
     }
 
@@ -833,6 +884,43 @@ public class FightUpdated : MonoBehaviour
             screenDarken.setOpacity(darkenOpacity);
         }
     }
+    public void damageTextDecrease(string who)
+    {
+        dmgTextTimer++;
+        if (dmgTextTimer > 0)
+        {
+            dmgTextOpacity -= 0.05f;
+            dmgText.setOpacity(who, dmgTextOpacity);
+            if (who == "hero")
+            {
+                //Debug.Log(dmgText.getY("hero"));
+                dmgText.move("hero", 3.075f);
+            }
+            if (who == "enemy")
+            {
+                dmgText.move("enemy", 3.075f);
+            }
+            if (who == "item")
+            {
+                dmgText.move("item", 3.075f);
+            }
+        }
+        if (dmgTextOpacity <= 0)
+        {
+            if (who == "hero")
+            {
+                dmgText.setY("hero", 2.565104f, 3.398438f);
+            }
+            if (who == "enemy")
+            {
+                dmgText.setY("enemy", 2.565104f, -3.567708f);
+            }
+            if (who == "item")
+            {
+                dmgText.setY("item", 2.565104f, -3.567708f);
+            }
+        }
+    }
 
     public void victory()
     {
@@ -927,6 +1015,17 @@ public class FightUpdated : MonoBehaviour
         }
     }
 
+    public void dmgTextOn(string who, string dmg)
+    {
+        dmgText.dmgText(who, dmg);
+        dmgText.setOpacity(who, 1);
+    }
+
+    public void dmgTextOff(string who)
+    {
+        dmgText.dmgText(who, "");
+        dmgText.setOpacity(who, 0);
+    }
     public void reset()
     {
         rewindTime = true;
