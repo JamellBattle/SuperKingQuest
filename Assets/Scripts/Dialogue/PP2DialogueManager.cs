@@ -25,6 +25,7 @@ public class PP2DialogueManager : DialogueManager
     public AudioSource bushSFX;
     public AudioSource FBStart;
     public AudioSource FBEnd;
+    public AudioSource RelaxedBGM;
 
 
     public override void Start()
@@ -46,7 +47,7 @@ public class PP2DialogueManager : DialogueManager
     {
         textAnim.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
-        
+        RelaxedBGM.Play();
         base.StartDialogue(dialogue);
         
     }
@@ -277,6 +278,7 @@ public class PP2DialogueManager : DialogueManager
 
         if (sentences.Count == 5)
         {
+            RelaxedBGM.Stop();
             bushSFX.Play();
             KingSprite.sprite = KShock;
 

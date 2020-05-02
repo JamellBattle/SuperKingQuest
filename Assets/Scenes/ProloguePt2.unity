@@ -910,6 +910,7 @@ MonoBehaviour:
   bushSFX: {fileID: 1067171712}
   FBStart: {fileID: 1949474935}
   FBEnd: {fileID: 1860519923}
+  RelaxedBGM: {fileID: 1105307057}
 --- !u!4 &840934781
 Transform:
   m_ObjectHideFlags: 0

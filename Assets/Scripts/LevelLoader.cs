@@ -14,10 +14,10 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1f;
 
     void Start() {
-        if (musicAnim)
-        {
-            musicAnim.SetTrigger("FadeIn");
-        }
+        //if (musicAnim)
+        //{
+        //    musicAnim.SetTrigger("FadeIn");
+        //}
         controller = (AnimationController)FindObjectOfType(typeof(AnimationController));
         StartCoroutine(firstFade(charAppearTime));
     }
@@ -40,7 +40,7 @@ public class LevelLoader : MonoBehaviour
                 yield return new WaitForSeconds(time);
             }
 
-            controller.StartCoroutine(controller.FirstFade(0.5f));
+            controller.StartCoroutine(controller.FirstFade(1f));
         }
 
     }
