@@ -32,6 +32,12 @@ public class Act1P3DialogueManager : DialogueManager
     public Sprite CaSad;
     public Sprite CaMad;
     public Sprite CaHappy;
+    public Animator panicAnim;
+    public AudioSource runningSFX;
+    public AudioSource worryBGM;
+    public Animator worryAnim;
+    public AudioSource goodBGM;
+    public Animator goodAnim;
     GameObject King;
     GameObject Coco;
     GameObject Sveri;
@@ -131,6 +137,7 @@ public class Act1P3DialogueManager : DialogueManager
 
         if (sentences.Count == 26)
         {
+            worryBGM.Play();
             SetName("Camile");           
         }
 
@@ -197,6 +204,8 @@ public class Act1P3DialogueManager : DialogueManager
 
         if (sentences.Count == 16)
         {
+            worryAnim.speed = 2f;
+            worryAnim.SetTrigger("FadeOut");
             SetName("King");
             SetBox(KingBox);
             changeEmotion(KingSprite, KMad);
@@ -337,6 +346,9 @@ public class Act1P3DialogueManager : DialogueManager
     //Additional Coroutines exclusive to this Dialogue manager
     public IEnumerator EnemiesRetreat()
     {
+        panicAnim.speed = 2f;
+        panicAnim.SetTrigger("FadeOut");
+        runningSFX.Play();
         textAnim.SetBool("IsOpen", false);
         controller.HideEnemy();
         yield return new WaitForSeconds(2f);
@@ -462,6 +474,7 @@ public class Act1P3DialogueManager : DialogueManager
             SetBox(NPCBox);
         } else if (sentences.Count == 6)
         {
+            goodBGM.Play();
             changeEmotion(CocoSprite, CSmile);
             changeEmotion(CamileSprite, CaHappy);
             changeEmotion(SveriSprite, SHappy);

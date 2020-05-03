@@ -21,6 +21,11 @@ public class Act1P4DialogueManager : DialogueManager
     public Sprite KMad;
     public Sprite KShock;
     public Sprite KSurprise;
+    public Animator woodsAnim;
+    public AudioSource woodsSFX;
+    public AudioSource hitSFX;
+    public AudioSource blackBGM;
+    public AudioSource cloakSFX;
     GameObject King;
     GameObject Coco;
 
@@ -32,6 +37,7 @@ public class Act1P4DialogueManager : DialogueManager
         Coco = controller.Coco;
         KingSprite = King.GetComponent<SpriteRenderer>();
         CocoSprite = Coco.GetComponent<SpriteRenderer>();
+        StartCoroutine(WoodsQuiet());
 
     }
 
@@ -131,6 +137,7 @@ public class Act1P4DialogueManager : DialogueManager
 
         if (sentences.Count == 31)
         {
+            blackBGM.Play();
             mainText = dialogueText;
             SetName("???");
             SetBox(EnemyBox);
@@ -289,6 +296,14 @@ public class Act1P4DialogueManager : DialogueManager
 
 
     //Additional Coroutines exclusive to this Dialogue manager
+
+    public IEnumerator WoodsQuiet()
+    {
+        yield return new WaitForSeconds(1f);
+        Debug.Log("sound should be fading now");
+        woodsAnim.SetTrigger("FadeOut");
+    }
+
     public IEnumerator SneakTime()
     {
         textAnim.SetBool("IsOpen", false);
@@ -333,10 +348,20 @@ public class Act1P4DialogueManager : DialogueManager
 
     public IEnumerator KingToBlack()
     {
+        controller.EnemyAnim.speed = 1f;
         textAnim.SetBool("IsOpen", false);
         controller.HideKing();
         controller.HideCoco();
         yield return new WaitForSeconds(1f);
+        if (sentences.Count == 10)
+        {
+            cloakSFX.Play();
+            controller.EnemyAnim.speed = 0.3f;
+            SetName("???");
+            SetBox(EnemyBox);
+            controller.ShowEnemy();
+            yield return new WaitForSeconds(1f);
+        }
         SetName("???");
         SetBox(EnemyBox);
         controller.ShowEnemy();
@@ -346,6 +371,7 @@ public class Act1P4DialogueManager : DialogueManager
 
     public IEnumerator BlackToKing()
     {
+        controller.EnemyAnim.speed = 1f;
         textAnim.SetBool("IsOpen", false);
         thoughtAnim.SetBool("Thinking", false);
         controller.HideEnemy();
@@ -379,6 +405,7 @@ public class Act1P4DialogueManager : DialogueManager
     {
         textAnim.SetBool("IsOpen", false);
         controller.EnemyAnim.speed = 0.3f;
+        cloakSFX.Play();
         controller.HideEnemy();
         yield return new WaitForSeconds(2f);
         Vector3 newpos = new Vector3(4.32f, -0.47f, 0.04f);
@@ -395,6 +422,7 @@ public class Act1P4DialogueManager : DialogueManager
     public IEnumerator BlackAttacks()
     {
         thoughtAnim.SetBool("Thinking", false);
+        hitSFX.Play();
         controller.FlashAnim.speed = 1.5f;
         controller.FlashStart();
         controller.HideKing();
