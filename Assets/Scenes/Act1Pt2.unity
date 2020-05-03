@@ -836,7 +836,7 @@ MonoBehaviour:
   thoughtAnim: {fileID: 249556155}
   controller: {fileID: 0}
   loadlevel: {fileID: 0}
-  nextScene: Act1Pt3
+  nextScene: GruntBattle
   clickingAllowed: 0
   sentence: GruntBattle
   CocoBox: {fileID: -3046666788060387089, guid: 76818e6471a9c4805901c11b15a591d2,
