@@ -26,6 +26,10 @@ public class Act1P5DialogueManager : DialogueManager
     public Sprite OHappy;
     public Sprite OReg;
     public Sprite OSmile;
+    public AudioSource cloakSFX;
+    public Animator enemyBgmAnim;
+    public AudioSource metalSFX;
+    public AudioSource victoryBGM;
     GameObject King;
     GameObject Coco;
     GameObject Oswald;
@@ -269,6 +273,7 @@ public class Act1P5DialogueManager : DialogueManager
         controller.ShowOswald();
         SetName("Oswald");
         yield return new WaitForSeconds(3f);
+        victoryBGM.Play();
         controller.OswaldAnim.speed = 1f;
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
@@ -279,7 +284,8 @@ public class Act1P5DialogueManager : DialogueManager
         textAnim.SetBool("IsOpen", false);
         controller.HideCoco();
         controller.HideKing();
-        yield return new WaitForSeconds(1.5f);
+        metalSFX.Play();
+        yield return new WaitForSeconds(2.5f);
         SetName("???");
         SetBox(OswaldBox);
         textAnim.SetBool("IsOpen", true);
@@ -303,10 +309,14 @@ public class Act1P5DialogueManager : DialogueManager
 
     public IEnumerator BlackToKing()
     {
+        controller.EnemyAnim.speed = 0.3f;
+        cloakSFX.Play();
         textAnim.SetBool("IsOpen", false);
         thoughtAnim.SetBool("Thinking", false);
         controller.HideEnemy();
         yield return new WaitForSeconds(2f);
+        enemyBgmAnim.speed = 2f;
+        enemyBgmAnim.SetTrigger("FadeOut");
         Vector3 newpos = new Vector3(-4.85f, -0.47f, 0f);
         King.transform.position = newpos;
         changeEmotion(CocoSprite, CSad);
