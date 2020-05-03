@@ -441,7 +441,7 @@ Animator:
   m_GameObject: {fileID: 315672399}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fa046806342674bc39397587229838fe, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4b7e1dc1f99fb4458b1bb4aa0cd56c2f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -832,7 +832,7 @@ MonoBehaviour:
     - Huh?
     - ...
     - Oh, come on. Go somewhere else!
-    - '!!!!!!'
+    - '!!!'
     - Tch.
     - "Fine. If you\u2019re not gonna go away, I\u2019m just gonna have to make you."
 --- !u!4 &807337228
@@ -1562,6 +1562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105307058}
   - component: {fileID: 1105307057}
+  - component: {fileID: 1105307059}
   m_Layer: 0
   m_Name: RelaxedMusic
   m_TagString: Untagged
@@ -1679,6 +1680,25 @@ Transform:
   m_Father: {fileID: 1648399936}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1105307059
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105307056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b7e1dc1f99fb4458b1bb4aa0cd56c2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1159410917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2124,11 @@ PrefabInstance:
       propertyPath: charAppearTime
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3330666992868908483, guid: 233f4ad984d5b49a995c565acd4019c4,
+        type: 3}
+      propertyPath: musicAnim
+      value: 
+      objectReference: {fileID: 973398336}
     - target: {fileID: 4283060575466969552, guid: 233f4ad984d5b49a995c565acd4019c4,
         type: 3}
       propertyPath: m_IsActive

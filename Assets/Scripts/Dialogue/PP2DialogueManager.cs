@@ -36,7 +36,6 @@ public class PP2DialogueManager : DialogueManager
         base.Start();
         King = controller.King;
         currpos = King.transform.position;
-        fireAnim.SetTrigger("FadeIn");
         StartCoroutine(FireFades());
 
     }
@@ -274,6 +273,8 @@ public class PP2DialogueManager : DialogueManager
             textAnim.SetBool("IsOpen", false);
             FBEnd.Play();
             StartCoroutine(FlashbackEnd());
+            musicAnim.speed = 3f;
+            musicAnim.SetTrigger("FadeOut");
             clickingAllowed = false;
 
 
@@ -338,7 +339,7 @@ public class PP2DialogueManager : DialogueManager
     public override void EndDialogue()
     {
         base.EndDialogue();
-        musicAnim.SetTrigger("FadeOut");
+        
 
     }
 

@@ -28,6 +28,14 @@ public class PEndDialogueManager : DialogueManager
     public GameObject Trees;
     public GameObject morningWoods;
     public GameObject noonWoods;
+    public Animator birdAnim;
+    public AudioSource birdSFX;
+    public Animator spookAnim;
+    public AudioSource spookSFX;
+    public AudioSource cocoBGM;
+    public Animator cocoBGMAnim;
+    public AudioSource cocoBGM2;
+
 
     // Start is called before the first frame update
     public override void Start()
@@ -36,6 +44,7 @@ public class PEndDialogueManager : DialogueManager
         base.Start();
         King = controller.King;
         Coco = controller.Coco;
+        StartCoroutine(BirdsFade());
 
 
     }
@@ -262,6 +271,11 @@ public class PEndDialogueManager : DialogueManager
 
 
     //Additional Coroutines exclusive to this Dialogue manager
+    public IEnumerator BirdsFade()
+    {
+        yield return new WaitForSeconds(1f);
+        birdAnim.SetTrigger("FadeOut");
+    }
     public IEnumerator KingtoCoco()
     {
         if (mainText == thoughtText)
@@ -312,7 +326,10 @@ public class PEndDialogueManager : DialogueManager
     {
         
         yield return new WaitForSeconds(1f);
-        BigCocoAnim.speed = 0.3f;
+        spookSFX.Play();
+        spookAnim.speed = 1.5f;
+        spookAnim.SetTrigger("FadeOut");
+        BigCocoAnim.speed = 0.2f;
         BigCocoAnim.SetBool("Present", true);
         yield return new WaitForSeconds(1.5f);
         textAnim.SetBool("IsOpen", true);
@@ -340,6 +357,7 @@ public class PEndDialogueManager : DialogueManager
         controller.ShowCoco();
         controller.ShowKing();
         yield return new WaitForSeconds(1f);
+        cocoBGM.Play();
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
 
@@ -348,13 +366,15 @@ public class PEndDialogueManager : DialogueManager
 
     public IEnumerator TransitionToWoods()
     {
+        cocoBGMAnim.speed = 2.5f;
+        cocoBGMAnim.SetTrigger("FadeOut");
         controller.WipeStart();
         yield return new WaitForSeconds(1f);
         controller.HideKing();
         controller.HideCoco();
         changeEmotion(CocoSprite, CSmile);
         changeEmotion(KingSprite, KReg);
-        Vector3 newpos = new Vector3(-4.18f, -0.47f, 0);
+        Vector3 newpos = new Vector3(0, -0.47f, 0);
         King.transform.position = newpos;
         Vector3 newpos2 = new Vector3(4.18f, -0.47f, 0);
         Coco.transform.position = newpos2;
@@ -374,13 +394,18 @@ public class PEndDialogueManager : DialogueManager
 
     public IEnumerator CocoReturns()
     {
+        controller.HideKing();
         changeEmotion(CocoSprite, CReg);
         yield return new WaitForSeconds(1f);
+        Vector3 newpos = new Vector3(-4.18f, -0.47f, 0);
+        King.transform.position = newpos;
         SetName("King");
         SetBox(KingBox);
+        controller.ShowKing();
         controller.ShowCoco();
         changeEmotion(KingSprite, KShock);
         yield return new WaitForSeconds(1f);
+        cocoBGM2.Play();
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
 

@@ -16,8 +16,8 @@ public class PP1DialogueManager : DialogueManager
     public override void Start()
     {
         base.Start();
-        windAnim.SetTrigger("FadeIn");
-        
+        StartCoroutine(WindFades());
+
 
     }
 
@@ -30,7 +30,6 @@ public class PP1DialogueManager : DialogueManager
     {
         textAnim.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
-        windAnim.SetTrigger("FadeOut");
         base.StartDialogue(dialogue);
         
     }
@@ -76,6 +75,13 @@ public class PP1DialogueManager : DialogueManager
 
 
     //Additional Coroutines exclusive to this Dialogue manager
+
+    public IEnumerator WindFades()
+    {
+        yield return new WaitForSeconds(1f);
+        windAnim.SetTrigger("FadeOut");
+    }
+
     public IEnumerator KingLeaving(float wait)
     {
         if (kingLeft == false)
