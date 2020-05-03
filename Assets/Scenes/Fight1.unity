@@ -5661,7 +5661,7 @@ MonoBehaviour:
   maxSpecial: 10
   move1Name: Punch
   move1Damage: 7
-  move1Cost: 30
+  move1Cost: 0
   move2Name: Jump
   move2Damage: 11
   move2Cost: 3

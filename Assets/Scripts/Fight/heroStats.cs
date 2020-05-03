@@ -273,12 +273,22 @@ public class heroStats : MonoBehaviour
         {
             if (move == moves[i].moveName)
             {
-                health -= moves[i].cost;
-                Health.text = "HP: " + health + "/" + maxHealth;
                 return moves[i].damage / burnEffect;
             }
         }
         return str;
+    }
+
+    public void decHealth(string move)
+    {
+        for (int i = 0; i < moves.Length; i++)
+        {
+            if (move == moves[i].moveName)
+            {
+                health -= moves[i].cost;
+                Health.text = "HP: " + health + "/" + maxHealth;
+            }
+        }
     }
     public int getSPL(string special)
     {
