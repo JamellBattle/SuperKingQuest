@@ -943,6 +943,7 @@ MonoBehaviour:
   KShock: {fileID: 21300000, guid: fc08ded3400f04800b5f0f860fbaf29b, type: 3}
   bushSFX: {fileID: 1641607632}
   bonkSFX: {fileID: 2108996136}
+  dingSFX: {fileID: 1183003041}
   threatBGM: {fileID: 1498171400}
   relaxedBGM: {fileID: 664527998}
   cocoBGMAnim: {fileID: 1871573399}
@@ -1146,7 +1147,7 @@ MonoBehaviour:
       like this..?"
     - "\u2026"
     - I am awaiting your response.
-    - Fine.
+    - ...Fine.
     - Yay. Thank you.
     - "\u2026"
     - "\u2026"
@@ -1188,7 +1189,7 @@ MonoBehaviour:
     - "I see\u2026 I was incorrect. Unfortunate."
     - "\u201CYou looked like you knew where you were going\u201D? "
     - That sounds like something Quetzy would say.
-    - What kind of reasoning is that? She didn't even try to ask me first!
+    - What kind of reason is that? She didn't even try to ask me first!
     - King, I would like to make another request.
     - "\u2026What?"
     - I would like to remain by the fire for the remainder of the night. It feels
@@ -1239,6 +1240,133 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1183003039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183003040}
+  - component: {fileID: 1183003041}
+  m_Layer: 0
+  m_Name: Ding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183003040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183003039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2141007441}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1183003041
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183003039}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b1d356742d0f64b229d91aa8959162d2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1229051629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,12 +1415,18 @@ MonoBehaviour:
   CamileAnim: {fileID: 0}
   Oswald: {fileID: 0}
   OswaldAnim: {fileID: 0}
+  Special: {fileID: 0}
+  SpecialAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
   FlashAnim: {fileID: 0}
   Enemy: {fileID: 0}
   EnemyAnim: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy2Anim: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Enemy3Anim: {fileID: 0}
   Wipe: {fileID: 1530524774}
   WipeAnim: {fileID: 0}
   Sky: {fileID: 1926582199}
@@ -2799,6 +2933,7 @@ Transform:
   - {fileID: 1641607631}
   - {fileID: 2108996135}
   - {fileID: 672300332}
+  - {fileID: 1183003040}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

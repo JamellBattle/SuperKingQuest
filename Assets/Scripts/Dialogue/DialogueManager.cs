@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
+        clickingAllowed = false;
         sentences = new Queue<string>();
         mainText = dialogueText;
         controller = (AnimationController)FindObjectOfType(typeof(AnimationController));
@@ -53,7 +54,7 @@ public class DialogueManager : MonoBehaviour
 
     public virtual void StartDialogue(Dialogue dialogue)
     {
-        clickingAllowed = true;
+        
         sentences.Clear();
         if (nameText)
         {
@@ -68,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
+        clickingAllowed = true;
     }
 
     public virtual void DisplayNextSentence()

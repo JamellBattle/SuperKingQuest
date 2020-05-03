@@ -731,8 +731,8 @@ MonoBehaviour:
       we can find them! They couldn\u2019t have gotten that far!"
     - "Uh oh. He\u2019s looking at me."
     - "King, I hate to make such a request of you, but I\u2019m afraid I don\u2019t
-      have a choice. I need to make sure all the villagers are all right and help
-      them recover from damages sustained during the invasion."
+      have a choice. I need to make sure all the villagers are alright and help them
+      recover from damages sustained during the invasion."
     - "Please, can you go rescue Doctor Oswald? He\u2019s an irreplaceable part of
       our village!"
     - "No way. I don\u2019t even know where Kako Village is, why would I do that?"
@@ -2297,12 +2297,18 @@ MonoBehaviour:
   CamileAnim: {fileID: 0}
   Oswald: {fileID: 0}
   OswaldAnim: {fileID: 0}
+  Special: {fileID: 0}
+  SpecialAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
   FlashAnim: {fileID: 0}
   Enemy: {fileID: 342749103}
   EnemyAnim: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy2Anim: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Enemy3Anim: {fileID: 0}
   Wipe: {fileID: 0}
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}

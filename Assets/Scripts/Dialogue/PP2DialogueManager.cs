@@ -273,8 +273,6 @@ public class PP2DialogueManager : DialogueManager
             textAnim.SetBool("IsOpen", false);
             FBEnd.Play();
             StartCoroutine(FlashbackEnd());
-            musicAnim.speed = 3f;
-            musicAnim.SetTrigger("FadeOut");
             clickingAllowed = false;
 
 

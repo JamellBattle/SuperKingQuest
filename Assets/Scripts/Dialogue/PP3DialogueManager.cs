@@ -24,6 +24,7 @@ public class PP3DialogueManager : DialogueManager
     bool firstMeeting = false;
     public AudioSource bushSFX;
     public AudioSource bonkSFX;
+    public AudioSource dingSFX;
     public AudioSource threatBGM;
     public AudioSource relaxedBGM;
     public Animator cocoBGMAnim;
@@ -216,6 +217,9 @@ public class PP3DialogueManager : DialogueManager
             SetName("???");
             textAnim.SetBool("IsOpen", true);
             thoughtAnim.SetBool("Thinking", false);
+            KingSprite.sprite = KShock;
+            CocoSprite.sprite = CSmile;
+            dingSFX.Play();
             mainText = dialogueText;
 
 
@@ -225,7 +229,7 @@ public class PP3DialogueManager : DialogueManager
         {
             SetBox(KingBox);
             SetName("King");
-            KingSprite.sprite = KShock;
+            
             mainText = dialogueText;
 
 
@@ -235,7 +239,7 @@ public class PP3DialogueManager : DialogueManager
         {
             SetBox(CocoBox);
             SetName("???");
-            CocoSprite.sprite = CSmile;
+            
     
         }
 

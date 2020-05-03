@@ -11,7 +11,7 @@ public class EndingDialogueManager : DialogueManager
     {
         base.Start();
         
-
+        
 
     }
 
@@ -32,7 +32,36 @@ public class EndingDialogueManager : DialogueManager
     {
         base.DisplayNextSentence();
 
-       
+        if (sentences.Count == 5)
+        {
+            controller.ShowEnemy();
+        }
+
+        if (sentences.Count == 4)
+        {
+            controller.HideEnemy();
+            controller.ShowEnemy2();
+        }
+
+        if (sentences.Count == 3)
+        {
+            controller.ShowCoco();
+            controller.ShowEnemy3();
+        }
+
+        if (sentences.Count == 2)
+        {
+            controller.HideCoco();
+            controller.HideEnemy3();
+            controller.HideEnemy2();
+        }
+
+        if (sentences.Count == 0)
+        {
+            controller.ShowSpecial();
+        }
+
+
     }
 
    

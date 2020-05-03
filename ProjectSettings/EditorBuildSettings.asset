@@ -53,10 +53,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/BlackBattle.unity
-    guid: f44b99c0274c146b78b2689e6ddc24d7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 6e38f4fc3bd9c43629e8eaee03c833ff
+  - enabled: 1
+    path: Assets/Scenes/Title2.unity
+    guid: 073d7a121b8614702a8d2b445aefbeb9
+  - enabled: 1
+    path: Assets/Scenes/BearBattle.unity
+    guid: b308ce54e49a442cd918a6536fbff102
+  - enabled: 1
+    path: Assets/Scenes/GruntBattle.unity
+    guid: a67b58f16a77b4161ada57133384ae02
+  - enabled: 1
+    path: Assets/Scenes/BlackBattle.unity
+    guid: f44536e3149084e4f99c617c465f5769
   m_configObjects: {}

@@ -57,7 +57,7 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(string levelName)
     {
-        if (SceneManager.GetActiveScene().name == "Act1Pt5")
+        if (SceneManager.GetActiveScene().name == "Act1Pt5" || SceneManager.GetActiveScene().name == "Ending")
         {
             transition.speed = 0.5f;
         }

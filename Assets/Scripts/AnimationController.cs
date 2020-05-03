@@ -27,6 +27,8 @@ public class AnimationController : MonoBehaviour
     public Animator CamileAnim;
     public GameObject Oswald;
     public Animator OswaldAnim;
+    public GameObject Special;
+    public Animator SpecialAnim;
 
     //Animators for Miscellaneous things
     public GameObject ObjectOfInterest;
@@ -35,6 +37,10 @@ public class AnimationController : MonoBehaviour
     public Animator FlashAnim;
     public GameObject Enemy;
     public Animator EnemyAnim;
+    public GameObject Enemy2;
+    public Animator Enemy2Anim;
+    public GameObject Enemy3;
+    public Animator Enemy3Anim;
     public GameObject Wipe;
     public Animator WipeAnim;
     public GameObject Sky;
@@ -79,6 +85,16 @@ public class AnimationController : MonoBehaviour
             EnemyAnim = Enemy.GetComponent<Animator>();
         }
 
+        if (Enemy2)
+        {
+            Enemy2Anim = Enemy2.GetComponent<Animator>();
+        }
+
+        if (Enemy3)
+        {
+            Enemy3Anim = Enemy3.GetComponent<Animator>();
+        }
+
         if (Sveri)
         {
             SveriAnim = Sveri.GetComponent<Animator>();
@@ -102,6 +118,11 @@ public class AnimationController : MonoBehaviour
         if (Oswald)
         {
             OswaldAnim = Oswald.GetComponent<Animator>();
+        }
+
+        if (Special)
+        {
+            SpecialAnim = Special.GetComponent<Animator>();
         }
 
 
@@ -261,6 +282,17 @@ public class AnimationController : MonoBehaviour
         OswaldAnim.SetBool("Present", false);
     }
 
+    //Special
+    public void ShowSpecial()
+    {
+        SpecialAnim.SetBool("Present", true);
+    }
+
+    public void HideSpecial()
+    {
+        SpecialAnim.SetBool("Present", false);
+    }
+
     //Functions for a enemy (who doesn't have any unique animation)
     public void ShowEnemy()
     {
@@ -271,6 +303,30 @@ public class AnimationController : MonoBehaviour
     public void HideEnemy()
     {
         EnemyAnim.SetBool("Present", false);
+
+    }
+
+    public void ShowEnemy2()
+    {
+        Enemy2Anim.SetBool("Present", true);
+
+    }
+
+    public void HideEnemy2()
+    {
+        Enemy2Anim.SetBool("Present", false);
+
+    }
+
+    public void ShowEnemy3()
+    {
+        Enemy3Anim.SetBool("Present", true);
+
+    }
+
+    public void HideEnemy3()
+    {
+        Enemy3Anim.SetBool("Present", false);
 
     }
 

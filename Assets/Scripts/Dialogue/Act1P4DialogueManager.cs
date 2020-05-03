@@ -21,10 +21,13 @@ public class Act1P4DialogueManager : DialogueManager
     public Sprite KMad;
     public Sprite KShock;
     public Sprite KSurprise;
+    public Sprite KPissed;
     public Animator woodsAnim;
     public AudioSource woodsSFX;
     public AudioSource hitSFX;
     public AudioSource blackBGM;
+    public AudioSource spookyBGM;
+    public Animator spookyAnim;
     public AudioSource cloakSFX;
     GameObject King;
     GameObject Coco;
@@ -51,6 +54,7 @@ public class Act1P4DialogueManager : DialogueManager
         textAnim.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
         base.StartDialogue(dialogue);
+        spookyBGM.Play();
     }
 
     public override void DisplayNextSentence()
@@ -133,6 +137,12 @@ public class Act1P4DialogueManager : DialogueManager
             mainText = thoughtText;
             clickingAllowed = false;
             StartCoroutine(SneakTime());
+        }
+
+        if (sentences.Count == 32)
+        {
+            spookyAnim.speed = 3f;
+            spookyAnim.SetTrigger("FadeOut");
         }
 
         if (sentences.Count == 31)
@@ -275,7 +285,7 @@ public class Act1P4DialogueManager : DialogueManager
 
         if (sentences.Count == 0)
         {
-            changeEmotion(KingSprite, KAngry);
+            changeEmotion(KingSprite, KPissed);
         }
 
     }
@@ -324,7 +334,7 @@ public class Act1P4DialogueManager : DialogueManager
         yield return new WaitForSeconds(1f);
         controller.HideKing();
         controller.HideCoco();
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
         controller.WipeEnd();                
         yield return new WaitForSeconds(2f);
         thoughtAnim.SetBool("Thinking", true);
