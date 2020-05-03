@@ -5670,7 +5670,7 @@ MonoBehaviour:
   move3Cost: 5
   move4Name: 
   move4Damage: 0
-  move4Cost: 0
+  move4Cost: 10
   special1Name: Fireball
   special1Damage: 17
   special1Cost: 2

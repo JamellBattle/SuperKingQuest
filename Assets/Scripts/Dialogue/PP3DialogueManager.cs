@@ -21,6 +21,14 @@ public class PP3DialogueManager : DialogueManager
     public Sprite KShock;
     GameObject King;
     GameObject Coco;
+    bool firstMeeting = false;
+    public AudioSource bushSFX;
+    public AudioSource bonkSFX;
+    public AudioSource threatBGM;
+    public AudioSource relaxedBGM;
+    public Animator cocoBGMAnim;
+    public AudioSource cocoBGM;
+    public AudioSource cocoOff;
     
     
 
@@ -53,7 +61,7 @@ public class PP3DialogueManager : DialogueManager
 
         if (sentences.Count == 89)
         {
-            
+            bushSFX.Play();
             KingSprite.sprite = KShock;
         }
 
@@ -487,6 +495,8 @@ public class PP3DialogueManager : DialogueManager
 
         if (sentences.Count == 13)
         {
+            cocoBGMAnim.speed = 3f;
+            cocoBGMAnim.SetTrigger("FadeOut");
             SetBox(CocoBox);
             SetName("Coco");
             CocoSprite.sprite = CReg;
@@ -495,6 +505,7 @@ public class PP3DialogueManager : DialogueManager
 
         if (sentences.Count == 12)
         {
+            
             SetBox(KingBox);
             SetName("King");
             
@@ -505,6 +516,7 @@ public class PP3DialogueManager : DialogueManager
         {
             SetBox(KingBox);
             SetName("King");
+            cocoOff.Play();
             KingSprite.sprite = KShock;
 
         }
@@ -551,7 +563,7 @@ public class PP3DialogueManager : DialogueManager
         {
             SetBox(KingBox);
             SetName("King");
-            KingSprite.sprite = KReg;
+            KingSprite.sprite = KMad;
 
         }
 
@@ -591,6 +603,11 @@ public class PP3DialogueManager : DialogueManager
             mainText = dialogueText;
         }
 
+        if (firstMeeting == false)
+        {
+            cocoBGM.Play();
+        }
+
         textAnim.SetBool("IsOpen", false);
         controller.HideKing();
         yield return new WaitForSeconds(0.5f);
@@ -607,7 +624,7 @@ public class PP3DialogueManager : DialogueManager
         
         yield return new WaitForSeconds(0.2f);
         textAnim.SetBool("IsOpen", true);
-        
+        firstMeeting = true;
         clickingAllowed = true;
 
     }
@@ -638,6 +655,10 @@ public class PP3DialogueManager : DialogueManager
         
         textAnim.SetBool("IsOpen", false);
         yield return new WaitForSeconds(1f);
+        threatBGM.Stop();
+        bonkSFX.Play();
+        yield return new WaitForSeconds(1f);
+
         KingSprite.sprite = KShock;
         yield return new WaitForSeconds(0.5f);
         
@@ -663,6 +684,7 @@ public class PP3DialogueManager : DialogueManager
         controller.CocoAnim.speed = 1f;
         CocoAnim.SetBool("Present", false);
         textAnim.SetBool("IsOpen", true);
+    
         clickingAllowed = true;
 
     }
@@ -695,6 +717,7 @@ public class PP3DialogueManager : DialogueManager
         controller.HideCoco();
         controller.SkyFade();
         yield return new WaitForSeconds(3f);
+        relaxedBGM.Play();
         thoughtAnim.SetBool("Thinking", true);
         clickingAllowed = true;
 

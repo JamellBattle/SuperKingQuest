@@ -20,12 +20,15 @@ public class PP2DialogueManager : DialogueManager
     public Sprite KShock;
     GameObject King;
     Vector3 currpos;
+    bool bearSeen = false;
     public Animator fireAnim;
     public AudioSource fireSFX;
     public AudioSource bushSFX;
     public AudioSource FBStart;
     public AudioSource FBEnd;
     public AudioSource RelaxedBGM;
+    public AudioSource ThreatBGM;
+    public Animator musicAnim;
 
 
     public override void Start()
@@ -335,6 +338,7 @@ public class PP2DialogueManager : DialogueManager
     public override void EndDialogue()
     {
         base.EndDialogue();
+        musicAnim.SetTrigger("FadeOut");
 
     }
 
@@ -417,7 +421,13 @@ public class PP2DialogueManager : DialogueManager
         textbox.sprite = EnemyBox;
         nameText.text = "Wild Bear";
         yield return new WaitForSeconds(1f);
+        if (bearSeen == false)
+        {
+            ThreatBGM.Play();
+        }
+        
         textAnim.SetBool("IsOpen", true);
+        bearSeen = true;
         clickingAllowed = true;
 
     }
