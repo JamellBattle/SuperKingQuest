@@ -749,7 +749,7 @@ RectTransform:
   - {fileID: 425751192}
   - {fileID: 925847715}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -823,7 +823,7 @@ MonoBehaviour:
     - No way.
     - ...
     - Hey, don't make that face at me!
-    - "Then it\u2019s settled!"
+    - "Then it\u2019s settled! You'll try being nice to others from now on!"
     - "But I didn\u2019t-"
     - "Alright, let\u2019s get back to Babbo\u2019s lab as fast as we can!"
     - "Ugh\u2026"
@@ -847,7 +847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &840934779
 GameObject:
@@ -925,7 +925,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919030977
 GameObject:
@@ -1052,12 +1052,18 @@ MonoBehaviour:
   CamileAnim: {fileID: 0}
   Oswald: {fileID: 0}
   OswaldAnim: {fileID: 0}
+  Special: {fileID: 0}
+  SpecialAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 1275223678}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 1479271729}
   FlashAnim: {fileID: 0}
   Enemy: {fileID: 283584619}
   EnemyAnim: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy2Anim: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Enemy3Anim: {fileID: 0}
   Wipe: {fileID: 0}
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}
@@ -1075,7 +1081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &925847714
 GameObject:
@@ -1104,7 +1110,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925847714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4103.4}
+  m_LocalPosition: {x: 0, y: 0, z: -4562}
   m_LocalScale: {x: 48.92825, y: 48.92825, z: 48.92825}
   m_Children:
   - {fileID: 919030978}
@@ -1963,7 +1969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1275223678
 GameObject:
@@ -2323,7 +2329,7 @@ Transform:
   m_LocalScale: {x: 16.510044, y: 10.376737, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1523214160
 GameObject:
@@ -2350,8 +2356,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523214160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0153285675, y: -1.532857, z: -8.10574}
-  m_LocalScale: {x: 16.685577, y: 10.389347, z: 5.368371}
+  m_LocalPosition: {x: -0.015329, y: -1.5329, z: -8.10574}
+  m_LocalScale: {x: 18.52099, y: 13.982762, z: 5.958892}
   m_Children: []
   m_Father: {fileID: 925847715}
   m_RootOrder: 1

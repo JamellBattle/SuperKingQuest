@@ -202,7 +202,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159843423
 GameObject:
@@ -237,7 +237,7 @@ RectTransform:
   - {fileID: 1948722525}
   - {fileID: 947259626}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -613,8 +613,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872569488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0153285675, y: -1.532857, z: -13.6}
-  m_LocalScale: {x: 16.685577, y: 10.389347, z: 5.368371}
+  m_LocalPosition: {x: -0.015329, y: -1.5329, z: -8.10574}
+  m_LocalScale: {x: 18.52099, y: 13.982762, z: 5.958892}
   m_Children: []
   m_Father: {fileID: 947259626}
   m_RootOrder: 1
@@ -766,7 +766,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947259623}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4103.4}
+  m_LocalPosition: {x: 0, y: 0, z: -4562}
   m_LocalScale: {x: 48.92825, y: 48.92825, z: 48.92825}
   m_Children:
   - {fileID: 1484232933}
@@ -943,12 +943,18 @@ MonoBehaviour:
   CamileAnim: {fileID: 0}
   Oswald: {fileID: 0}
   OswaldAnim: {fileID: 0}
+  Special: {fileID: 0}
+  SpecialAnim: {fileID: 0}
   ObjectOfInterest: {fileID: 0}
   OOIAnim: {fileID: 0}
   Flash: {fileID: 0}
   FlashAnim: {fileID: 0}
   Enemy: {fileID: 0}
   EnemyAnim: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy2Anim: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Enemy3Anim: {fileID: 0}
   Wipe: {fileID: 1784541488}
   WipeAnim: {fileID: 0}
   Sky: {fileID: 0}
@@ -2104,7 +2110,7 @@ MonoBehaviour:
       pay him a visit sometime!"
     - "Oswald\u2026"
     - 'They even have a doctor here? '
-    - "Still, who would have thought all of this could exist in the middle of a forest\u2026?"
+    - "Who would have thought all of this could exist in the middle of a forest\u2026?"
     - "It\u2019s actually kind of impressive."
     - And here we are! This is our inn. Please, feel free to stay to make yourself
       at home.
@@ -2118,7 +2124,8 @@ MonoBehaviour:
     - "She\u2019s not here. "
     - 'Has she been gone the entire time? '
     - She was just behind me at the entrance!
-    - Where the heck could she have gone!?
+    - Where the heck could she have gone!? She's the one who wanted to come to the
+      inn in the first place!
     - "Oh, come on. I really can\u2019t catch a break, can I\u2026?"
 --- !u!4 &1996157536
 Transform:
