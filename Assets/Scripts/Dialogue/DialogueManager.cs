@@ -55,7 +55,11 @@ public class DialogueManager : MonoBehaviour
     {
         clickingAllowed = true;
         sentences.Clear();
-        nameText.text = dialogue.name;
+        if (nameText)
+        {
+            nameText.text = dialogue.name;
+        }
+        
         
         foreach (string sentence in dialogue.sentences)
         {
@@ -112,8 +116,11 @@ public class DialogueManager : MonoBehaviour
 
     public virtual void EndDialogue()
     {
-
-        textAnim.SetBool("IsOpen", false);
+        if (textAnim)
+        {
+            textAnim.SetBool("IsOpen", false);
+        }
+        
         thoughtAnim.SetBool("Thinking", false);
         loadlevel.LoadNextLevel(nextScene);
 
