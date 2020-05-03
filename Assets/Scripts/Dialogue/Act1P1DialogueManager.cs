@@ -26,6 +26,9 @@ public class Act1P1DialogueManager : DialogueManager
     public SpriteRenderer SveriSprite;
     public Sprite SHappy;
     public Sprite SSmile;
+    public AudioSource crowdSFX;
+    public Animator crowdAnim;
+    public AudioSource bootsSFX;
     GameObject King;
     GameObject Coco;
 
@@ -201,6 +204,8 @@ public class Act1P1DialogueManager : DialogueManager
 
         if (sentences.Count == 9)
         {
+            crowdAnim.speed = 3f;
+            crowdAnim.SetTrigger("FadeOut");
             mainText = dialogueText;
             SetName("???");
             SetBox(NPCBox);
@@ -290,6 +295,8 @@ public class Act1P1DialogueManager : DialogueManager
         Vector3 newpos2 = new Vector3(-2.83f, -0.47f, 0.04f);
         Coco.transform.position = newpos2;
         controller.ShowCoco();
+        bootsSFX.Play();
+        yield return new WaitForSeconds(1f);        
         controller.ShowSveri();
         SetBox(NPCBox);
         SetName("???");
@@ -308,12 +315,14 @@ public class Act1P1DialogueManager : DialogueManager
         yield return null;
         controller.WipeEnd();                
         yield return new WaitForSeconds(2f);
+        crowdSFX.Play();
         thoughtAnim.SetBool("Thinking", true);
         clickingAllowed = true;
     }
 
     public IEnumerator ByeSveri()
     {
+        bootsSFX.Play();
         textAnim.SetBool("IsOpen", false);
         controller.HideSveri();
         controller.HideKing();
