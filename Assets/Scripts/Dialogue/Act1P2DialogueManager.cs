@@ -36,6 +36,13 @@ public class Act1P2DialogueManager : DialogueManager
     public Sprite KhMad;
     public Sprite KhSad;
     public Sprite KhHappy;
+    public AudioSource oomaBGM;
+    public Animator oomaAnim;
+    public AudioSource hornSFX;
+    public Animator hornAnim;
+    public AudioSource panicBGM;
+    public AudioSource runningSFX;
+    public AudioSource clashSFX;
     GameObject King;
     GameObject Coco;
     GameObject Sveri;
@@ -197,6 +204,12 @@ public class Act1P2DialogueManager : DialogueManager
             StartCoroutine(BrosToKing());
         }
 
+        if(sentences.Count == 19)
+        {
+            oomaAnim.speed = 3f;
+            oomaAnim.SetTrigger("FadeOut");
+        }
+
         if (sentences.Count == 18)
         {
             clickingAllowed = false;
@@ -207,6 +220,8 @@ public class Act1P2DialogueManager : DialogueManager
         if (sentences.Count == 17)
         {
             clickingAllowed = false;
+            hornAnim.speed = 2f;
+            hornAnim.SetTrigger("FadeOut");
             StartCoroutine(SveriAppears());
         }
 
@@ -444,16 +459,14 @@ public class Act1P2DialogueManager : DialogueManager
     public IEnumerator AlarmSounds()
     {
         thoughtAnim.SetBool("Thinking", false);
-        yield return new WaitForSeconds(1f);
-        //stop the current song
-        //sound the alarm
-        //start the next song
-        yield return new WaitForSeconds(1f);
+        hornSFX.Play();
+        yield return new WaitForSeconds(3f);
         changeEmotion(KingSprite, KShock);
         changeEmotion(CocoSprite, CMad);
         SetBox(KingBox);
         SetName("King");
-        
+        yield return new WaitForSeconds(1f);
+        panicBGM.Play();
         textAnim.SetBool("IsOpen", true);
         clickingAllowed = true;
     }
@@ -515,6 +528,8 @@ public class Act1P2DialogueManager : DialogueManager
     {
         textAnim.SetBool("IsOpen", false);
         controller.HidePaul();
+        runningSFX.Play();
+        yield return new WaitForSeconds(2f);
         controller.HideCoco();
         yield return new WaitForSeconds(1f);
         Vector3 newpos = new Vector3(4.32f, -0.47f, 0.04f);
@@ -533,6 +548,7 @@ public class Act1P2DialogueManager : DialogueManager
         controller.HideCoco();
         controller.FlashAnim.speed = 1.5f;
         controller.FlashStart();
+        clashSFX.Play();
         yield return new WaitForSeconds(0.5f);
         controller.FlashEnd();
         yield return new WaitForSeconds(1f);
