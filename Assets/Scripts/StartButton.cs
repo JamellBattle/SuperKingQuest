@@ -5,6 +5,8 @@ using UnityEngine;
 public class StartButton : MonoBehaviour
 {
     LevelLoader loadlevel;
+    public GameObject mainPage;
+    public GameObject creditsPage;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,18 @@ public class StartButton : MonoBehaviour
         }
     }
 
-    
+    public void ShowCredits()
+    {
+        creditsPage.SetActive(true);
+        mainPage.SetActive(false);
+    }
+
+    public void ShowMain()
+    {
+        mainPage.SetActive(true);
+        creditsPage.SetActive(false);
+        
+    }
+
+
 }
