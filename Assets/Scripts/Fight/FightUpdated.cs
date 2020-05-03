@@ -404,6 +404,7 @@ public class FightUpdated : MonoBehaviour
                 if (enemyDamage == 1)
                 {
                     enemy.TakeDamage(hero.getSTR(move));
+                    hero.decHealth(move);
                     dmgTextOn("hero", hero.getSTR(move).ToString());
                     if (enemy.getHealth() == 0)
                     {
@@ -518,27 +519,26 @@ public class FightUpdated : MonoBehaviour
             }
             heroStatDamage = 0;
         }
-        if (timer >= 3.75 && timer < 4 && hero.getStatus() == "Burn")
+        if (timer >= 3.75 && timer < 4 && effectOpacity < 1 && hero.getStatus() == "Burn")
         {
             hero.setFire(effectOpacity);
             effectOpacity += 0.05f;
         }
-        if (timer >= 4 && timer < 4.25 && hero.getStatus() == "Burn")
+        if (timer >= 4 && timer < 4.25 && effectOpacity > 0 && hero.getStatus() == "Burn")
         {
             hero.setFire(effectOpacity);
             effectOpacity -= 0.05f;
         }
-        if (timer >= 3.75 && timer < 4 && hero.getStatus() == "Poison")
+        if (timer >= 3.75 && timer < 4 && effectOpacity < 1 && hero.getStatus() == "Poison")
         {
             hero.setPoison(effectOpacity);
             effectOpacity += 0.05f;
         }
-        if (timer >= 4 && timer < 4.25 && hero.getStatus() == "Poison")
+        if (timer >= 4 && timer < 4.25 && effectOpacity > 0 && hero.getStatus() == "Poison")
         {
             hero.setPoison(effectOpacity);
             effectOpacity -= 0.05f;
         }
-
 
         if (timer > 4 && timer < 4.2)
         {
