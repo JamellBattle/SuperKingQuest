@@ -297,7 +297,7 @@ public class Act1P2DialogueManager : DialogueManager
 
         if (sentences.Count == 4)
         {
-            Vector3 newpos2 = new Vector3(-2.83f, -0.47f, 0.04f);
+            Vector3 newpos2 = new Vector3(-2.16f, -0.47f, 0.04f);
             Coco.transform.position = newpos2;
             controller.ShowCoco();
             SetName("Coco");
@@ -368,7 +368,7 @@ public class Act1P2DialogueManager : DialogueManager
         controller.HidePaul();
         controller.HideKhan();
         changeEmotion(KingSprite, KMad);
-        Vector3 newpos = new Vector3(4.32f, -0.47f, 0.04f);
+        Vector3 newpos = new Vector3(4.18f, -0.47f, 0.04f);
         Coco.transform.position = newpos;
         yield return new WaitForSeconds(1f);
         SetBox(CocoBox);
@@ -477,7 +477,7 @@ public class Act1P2DialogueManager : DialogueManager
         controller.HideCoco();
         changeEmotion(SveriSprite, SAngry);
         yield return new WaitForSeconds(1f);
-        Vector3 newpos2 = new Vector3(-2.83f, -0.47f, 0.04f);
+        Vector3 newpos2 = new Vector3(-2.16f, -0.47f, 0.04f);
         Coco.transform.position = newpos2;
         controller.ShowCoco();
         controller.ShowSveri();
@@ -532,7 +532,7 @@ public class Act1P2DialogueManager : DialogueManager
         yield return new WaitForSeconds(2f);
         controller.HideCoco();
         yield return new WaitForSeconds(1f);
-        Vector3 newpos = new Vector3(4.32f, -0.47f, 0.04f);
+        Vector3 newpos = new Vector3(4.18f, -0.47f, 0.04f);
         Coco.transform.position = newpos;
         controller.ShowCoco();
         textAnim.SetBool("IsOpen", true);

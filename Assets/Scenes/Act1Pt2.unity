@@ -340,8 +340,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103545799}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.27, y: 0.16, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.68, y: 0.16, z: 0}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1034,7 +1034,7 @@ MonoBehaviour:
     - THERE YOU ARE!
     - Oh, King.
     - "As if it isn\u2019t already hard enough to keep track of you as is\u2026 What
-      are you doing here, anyways?"
+      are you doing over here, anyways?"
     - "I was talking to these two men about hunting animals. They are known as the
       \u201Chunting brothers\u201D by the people who live here."
     - 'No way. Brothers? '
@@ -1241,7 +1241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619212991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.38, y: -0.6, z: 0}
+  m_LocalPosition: {x: 4.5, y: -0.6, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1725,7 +1725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905449491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7, y: -0.47, z: 0.04}
+  m_LocalPosition: {x: -4.18, y: -0.47, z: 0.04}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2280,7 +2280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485205060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.85, y: -0.47, z: 0}
+  m_LocalPosition: {x: -4.18, y: -0.47, z: 0}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2754,7 +2754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108377200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.35, y: -0.09, z: 0.11}
+  m_LocalPosition: {x: -4.06, y: -0.09, z: 0.11}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}

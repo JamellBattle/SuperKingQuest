@@ -64,67 +64,62 @@ public class Act1P5DialogueManager : DialogueManager
     {
         base.DisplayNextSentence();
 
-        if (sentences.Count == 29)
+        if (sentences.Count == 28)
         {
             clickingAllowed = false;
             StartCoroutine(KingToBlack());
         }
 
-        if (sentences.Count == 28)
+        if (sentences.Count == 27)
         {
             clickingAllowed = false;
             StartCoroutine(BlackToKing());
         }
 
-        if (sentences.Count == 27)
+        if (sentences.Count == 26)
         {
             SetName("Coco");
             SetBox(CocoBox);
         }
 
-        if (sentences.Count == 26)
+        if (sentences.Count == 25)
         {
             SetName("King");
             SetBox(KingBox);
         }
 
-        if (sentences.Count == 25)
+        if (sentences.Count == 24)
         {
             SetName("Coco");
             SetBox(CocoBox);
         }
 
-        if (sentences.Count == 24)
+        if (sentences.Count == 23)
         {
             changeEmotion(KingSprite, KSurprise);
             SetName("King");
             SetBox(KingBox);
         }
 
-        if (sentences.Count == 23)
+        if (sentences.Count == 22)
         {
             changeEmotion(CocoSprite, CReg);
             SetName("Coco");
             SetBox(CocoBox);
         }
 
-        if (sentences.Count == 22)
+        if (sentences.Count == 21)
         {
             clickingAllowed = false;
             StartCoroutine(OswaldFreed());
         }
 
-        if (sentences.Count == 21)
+        if (sentences.Count == 20)
         {
             clickingAllowed = false;
             StartCoroutine(OswaldAppears());
         }
 
-        if (sentences.Count == 19)
-        {
-            SetName("King");
-            SetBox(KingBox);
-        }
 
         if (sentences.Count == 18)
         {
@@ -317,7 +312,7 @@ public class Act1P5DialogueManager : DialogueManager
         yield return new WaitForSeconds(2f);
         enemyBgmAnim.speed = 2f;
         enemyBgmAnim.SetTrigger("FadeOut");
-        Vector3 newpos = new Vector3(-4.85f, -0.47f, 0f);
+        Vector3 newpos = new Vector3(-4.18f, -0.47f, 0f);
         King.transform.position = newpos;
         changeEmotion(CocoSprite, CSad);
         SetName("King");
@@ -336,9 +331,9 @@ public class Act1P5DialogueManager : DialogueManager
         yield return new WaitForSeconds(1f);
         SetName("Coco");
         SetBox(CocoBox);
-        Vector3 newpos = new Vector3(-4.23f, -0.47f, 0.04f);
+        Vector3 newpos = new Vector3(-4.18f, -0.47f, 0.04f);
         Coco.transform.position = newpos;
-        Vector3 newpos2 = new Vector3(4.63f, -0.47f, 0.05f);
+        Vector3 newpos2 = new Vector3(4.18f, -0.47f, 0.05f);
         Oswald.transform.position = newpos2;
         controller.ShowCoco();
         controller.ShowOswald();

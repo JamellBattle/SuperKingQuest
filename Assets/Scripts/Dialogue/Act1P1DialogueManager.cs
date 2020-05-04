@@ -292,7 +292,7 @@ public class Act1P1DialogueManager : DialogueManager
         controller.HideCoco();
         yield return new WaitForSeconds(1f);
         changeEmotion(CocoSprite, CSad);
-        Vector3 newpos2 = new Vector3(-2.83f, -0.47f, 0.04f);
+        Vector3 newpos2 = new Vector3(-2.16f, -0.47f, 0.04f);
         Coco.transform.position = newpos2;
         controller.ShowCoco();
         bootsSFX.Play();
@@ -327,7 +327,7 @@ public class Act1P1DialogueManager : DialogueManager
         controller.HideSveri();
         controller.HideKing();
         yield return new WaitForSeconds(1f);
-        Vector3 newpos = new Vector3(0.21f, -0.47f, 0);
+        Vector3 newpos = new Vector3(0, -0.47f, 0);
         King.transform.position = newpos;
         controller.ShowKing();
         SetName("King");

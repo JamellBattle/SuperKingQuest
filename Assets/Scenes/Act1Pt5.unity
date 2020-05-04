@@ -698,7 +698,6 @@ MonoBehaviour:
       but you can just call me Oswald. '
     - "Judging by the fact that you\u2019ve been calling me \u201Cdoctor\u201D, I
       can assume you\u2019ve heard of me, yes?"
-    - "Yeah\u2026"
     - "So this is the doctor everyone loves\u2026 "
     - Well, he definitely stands out...
     - ...Do all doctors dress like that?
@@ -715,13 +714,14 @@ MonoBehaviour:
     - I see. They seem very reliable.
     - "They certainly are. When the village is in danger, those two will gladly put
       themselves in harm\u2019s way to keep the villagers safe. "
-    - "\u2026Ah! speaking of villagers, did you happen to meet someone by the name
+    - "\u2026Ah! Speaking of villagers, did you happen to meet someone by the name
       of Camile? "
     - "Camile\u2026 She was that girl who told us that the doctor went missing in
       the first place, wasn\u2019t she?"
     - Yes. She was the one who informed us of your kidnapping.
-    - "Poor thing, she must be worried sick! You see, she\u2019s my apprentice. Let\u2019s
-      make haste, shall we? I wouldn\u2019t want to keep her waiting any longer."
+    - "Poor thing, she must be worried sick! You see, she\u2019s my apprentice. I
+      wouldn\u2019t want to keep her waiting any longer. Let\u2019s make haste, shall
+      we? "
     - Understood.
     - "Yeah, the sun\u2019s starting to set. Let\u2019s hurry."
 --- !u!4 &361485937
@@ -912,7 +912,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1593,7 +1593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271502754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.36, z: 0}
+  m_LocalPosition: {x: 0, y: -0.36, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}

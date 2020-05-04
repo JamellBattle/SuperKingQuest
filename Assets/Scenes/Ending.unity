@@ -168,10 +168,10 @@ MonoBehaviour:
     - With Doctor Oswald saved, the group of three make their way back to Ooma village.
     - But still...
     - Who are the gorgons? What is their goal?
-    - Who was that man in black? What is his connection to Coco?
+    - Who was that man in black? Why was he targeting Coco?
     - Who is Coco? Where did she come from?
     - Even with Oswald's rescue, many questions remain unanswered...
-    - However, King's Journey has only just begun.
+    - However, King's journey has only just begun.
     - This ragtag bunch is still missing someone, after all...
 --- !u!4 &182232838
 Transform:
@@ -450,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490404005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.09, y: -0.43, z: 0}
+  m_LocalPosition: {x: -4.18, y: -0.43, z: 0}
   m_LocalScale: {x: 1.5095, y: 1.5095, z: 1.5095}
   m_Children: []
   m_Father: {fileID: 0}
@@ -551,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605689694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7, y: -0.46, z: 0.4}
+  m_LocalPosition: {x: 4.18, y: -0.46, z: 0.4}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1437,7 +1437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709423588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.87, y: 0.26, z: 0}
+  m_LocalPosition: {x: -4.18, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
