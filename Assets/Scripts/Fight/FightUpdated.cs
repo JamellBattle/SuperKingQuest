@@ -491,7 +491,7 @@ public class FightUpdated : MonoBehaviour
             heroStatDamage = 1;
             statTimeIncrease = 0;
         }
-        if (timer >= 3.75 && hero.getStatus() == "Burn" && heroStatDamage == 1)
+        if (timer >= 3.75 && timer < 4 && hero.getStatus() == "Burn" && heroStatDamage == 1)
         {
             Hit.Play();
             hero.hurt(1);
@@ -505,7 +505,7 @@ public class FightUpdated : MonoBehaviour
             }
             heroStatDamage = 0;
         }
-        if (timer >= 3.75 && hero.getStatus() == "Poison" && heroStatDamage == 1)
+        if (timer >= 3.75 && timer < 4 && hero.getStatus() == "Poison" && heroStatDamage == 1)
         {
             Hit.Play();
             hero.hurt(1);
@@ -540,9 +540,9 @@ public class FightUpdated : MonoBehaviour
             effectOpacity -= 0.05f;
         }
 
-        if (timer > 4 && timer < 4.2)
+        if (timer >= 4 && timer < 4.2)
         {
-            damageTextDecrease("enemy");
+            damageTextDecrease("poison");
             hero.hurt(0);
         }
         if (timer >= 4.2 && timer < 4.4)
@@ -554,7 +554,7 @@ public class FightUpdated : MonoBehaviour
     public void enemyTurn(string action)
     {
         //Enemy Deal Damage
-        if (timer > 2.09 && timer < 2.1)
+        if (timer > 2 && timer < 2.1)
         {
             dmgTextOff("hero");
             dmgTextOff("enemy");
@@ -889,7 +889,11 @@ public class FightUpdated : MonoBehaviour
         dmgTextTimer++;
         if (dmgTextTimer > 0)
         {
-            dmgTextOpacity -= 0.05f;
+            dmgTextOpacity -= 0.1f;
+            if (dmgTextOpacity < 0)
+            {
+                dmgTextOpacity = 0;
+            }
             dmgText.setOpacity(who, dmgTextOpacity);
             if (who == "hero")
             {
@@ -903,6 +907,14 @@ public class FightUpdated : MonoBehaviour
             if (who == "item")
             {
                 dmgText.move("item", 3.075f);
+            }
+            if (who == "burn")
+            {
+                dmgText.move("burn", 3.075f);
+            }
+            if (who == "poison")
+            {
+                dmgText.move("poison", 3.075f);
             }
         }
         if (dmgTextOpacity <= 0)
@@ -918,6 +930,14 @@ public class FightUpdated : MonoBehaviour
             if (who == "item")
             {
                 dmgText.setY("item", 2.565104f, -3.567708f);
+            }
+            if (who == "burn")
+            {
+                dmgText.setY("burn", 2.565104f, -3.567708f);
+            }
+            if (who == "poison")
+            {
+                dmgText.setY("poison", 2.565104f, -3.567708f);
             }
         }
     }
