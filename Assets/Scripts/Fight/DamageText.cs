@@ -28,9 +28,10 @@ public class DamageText : MonoBehaviour
         if (who == "enemy")
         {
             EnemyDMG.text = "-" + dmg;
-            Color tmp = HeroDMG.GetComponent<Text>().color;
+            Color tmp = EnemyDMG.GetComponent<Text>().color;
             tmp.r = 1;
             tmp.b = 1;
+            tmp.g = 1;
             EnemyDMG.GetComponent<Text>().color = tmp;
         }
         if (who == "item")
@@ -43,15 +44,16 @@ public class DamageText : MonoBehaviour
             {
                 EnemyDMG.text = "+" + dmg;
             }
-            Color tmp = HeroDMG.GetComponent<Text>().color;
+            Color tmp = EnemyDMG.GetComponent<Text>().color;
             tmp.r = 0;
             tmp.b = 0;
+            tmp.g = 1;
             EnemyDMG.GetComponent<Text>().color = tmp;
         }
         if (who == "burn")
         {
             EnemyDMG.text = "-" + dmg;
-            Color tmp = HeroDMG.GetComponent<Text>().color;
+            Color tmp = EnemyDMG.GetComponent<Text>().color;
             tmp.r = 1;
             tmp.b = 0;
             tmp.g = 0;
@@ -60,7 +62,7 @@ public class DamageText : MonoBehaviour
         if (who == "poison")
         {
             EnemyDMG.text = "-" + dmg;
-            Color tmp = HeroDMG.GetComponent<Text>().color;
+            Color tmp = EnemyDMG.GetComponent<Text>().color;
             tmp.r = 1;
             tmp.b = 1;
             tmp.g = 0;
